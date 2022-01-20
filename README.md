@@ -7,6 +7,8 @@
 ## General Info
 This browser based web application to ...
 * Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
+* Hi my name is Alex. I'm excited about this project because it is useful for co-op
+	
 ## Technologies
 Technologies used for this project:
 * HTML, CSS

@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+This browser based web application to help people find where watch Olympics games
 * Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
 * Hi my name is Alex. I'm excited about this project because it is useful for co-op
 * Hi my name is Eric. I am excited about this project because it's helpful to gain some project experience

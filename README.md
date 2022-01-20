@@ -1,14 +1,12 @@
 ## My Web Application (Add your Title here)
 
 * [General info](#general-info)
-This a browser based application that we have not started yet
-* Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
 * [Technologies](#technologies)
 * [Contents](#content)
 
 ## General Info
 This browser based web application to ...
-	
+* Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
 ## Technologies
 Technologies used for this project:
 * HTML, CSS

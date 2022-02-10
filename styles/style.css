@@ -1,1 +1,6 @@
 
+.align-right {
+    display:flex;
+    justify-content: right;
+    gap: 30px;
+}

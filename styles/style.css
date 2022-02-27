@@ -1,3 +1,6 @@
 .filler {
     width:20vw;
 }
+#hero{
+  background: url("../images/flag.webp") cover/center no-repeat;
+}

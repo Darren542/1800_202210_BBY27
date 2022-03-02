@@ -76,13 +76,42 @@
               </div>
           </form>
       </div>
+      <div class="cards">  
+        <h1>Events Found:</h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="cards-go-here" class="row row-cols-auto">
+            </div>
+        </div>
+      </div>
   </div>
+
+  <!-- Templates for general use, not displayed -->
+<template id="eventCardTemplate2">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start card-image" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-time text-muted">time will go here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
   <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/seachPage.js"></script>
+  <script src="./scripts/searchPage.js"></script>
+  <script src="./scripts/script.js"></script>
+
 </body>
 
 </html>

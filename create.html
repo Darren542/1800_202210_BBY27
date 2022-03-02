@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+  <link rel="stylesheet" href="./styles/create.css" />
 </head>
+
 <body>
-    <div class="container">Nothing here yet</div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"> <img class="d-block" src="./images/olympics.png" alt="" width="50"
+          height="50"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="filler"></li>
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./create.html">Create</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./search.html">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login.html">Login</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Roar</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="./profile.html">My Profile</a></li>
+              <li><a class="dropdown-item" href="#">My Events</a></li>
+              <li><a class="dropdown-item" href="#">My Event History</a></li>
+              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
+              <li><a class="dropdown-item" href="#">My Calendar</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+
+
+  <form id="create-form">
+
+    <h1 class="display-4 fw-bold">Create Event</h1>
+    <div class="btn-group ">
+      <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"  />
+      <label class="btn btn-primary" for="option1">Online</label>
+    
+      <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" checked/>
+      <label class="btn btn-primary" for="option2">In-Person</label>
+    
+      <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" />
+      <label class="btn btn-primary" for="option3">Both</label>
+    </div>
+
+    <div id="formRow" class="row">
+      <div class="form-group col-lg col-md-12">
+        <label for="inputEventName" class="form-label">Edit Event Name</label>
+        <input type="text" class="form-control" id="inputEventName" placeholder="Event Name">
+      </div>
+      <div class="form-group col-lg-6 col-sm-12">
+        <label for="inputAddress" class="form-label">Edit Street Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="Street Address">
+      </div>
+
+      <div class="form-group col-lg-3 col-sm-12">
+        <label for="inputStartDate" class="form-label">Edit Start Date</label>
+        <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date">
+      </div>
+      <div class="form-group col-lg-3 col-sm-12">
+        <label for="inputEndDate" class="form-label">Edit End Date</label>
+        <input type="date" class="form-control" id="inputEndDate" placeholder="End Date">
+      </div>
+
+      <div class="form-group col-lg-6 col-sm-12">
+        <label for="inputCity" class="form-label">Edit City</label>
+        <input type="text" class="form-control" id="inputCity" placeholder="City">
+      </div>
+
+      <div class="form-group col-lg-3 col-sm-12">
+        <label for="inputStartTime" class="form-label">Edit Start Time</label>
+        <input type="time" class="form-control" id="inputStartTime" placeholder="Start Time">
+      </div>
+      <div class="form-group col-lg-3 col-sm-12">
+        <label for="inputEndTime" class="form-label">Edit End Time</label>
+        <input type="time" class="form-control" id="inputEndTime" placeholder="End Time">
+      </div>
+
+      
+      <div class="form-group col-lg-3">
+        <label for="inputProvince" class="form-label">Edit Province</label>
+        <select id="inputProvince" class="form-control">
+          <option selected>Choose...</option>
+          <option>Alberta</option>
+          <option>British Columbia</option>
+          <option>Manitoba</option>
+          <option>New Brunswick</option>
+          <option>Newfoundland and Labrador</option>
+          <option>Northwest Territories</option>
+          <option>Nova Scotia</option>
+          <option>Nunavut</option>
+          <option>Ontario</option>
+          <option>Prince Edward Island</option>
+          <option>Quebec</option>
+          <option>Saskatchewan</option>
+          <option>Yukon</option>
+        </select>
+      </div>
+
+      <div class="form-group col-lg-3">
+        <label for="inputZip" class="form-label">Edit Postal Code</label>
+        <input type="text" class="form-control" id="inputZip" placeholder="Postal Code">
+      </div>
+
+      
+      <div class="form-group col-lg-6 col-md-12">
+        <label for="Description" class="form-label">Edit Description</label>
+        <textarea class="form-control" id="Description" rows="1" placeholder="Description"></textarea>
+      </div>
+      
+  
+      <div id="submit-button-container">
+        <!-- btn btn-primary block button-->
+        <button type="submit" class="btn btn-primary" id="submit-button" style="width:100%">Confirm</button>
+      </div>
+    </div>
+
+    
+  </form>
+
+
 </body>
+
 </html>

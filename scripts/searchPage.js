@@ -9,6 +9,9 @@ function displayCards(collection) {
                 var description = doc.data().description;   // get value of the "details" key
                 var type = doc.data().type;   // get value of the "details" key
                 var time = doc.data().startDate;   // get value of the "details" key
+                var time = new Date(time.toDate());
+                time = time.toString();
+                time = time.slice(0, 24);
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
@@ -30,4 +33,8 @@ function displayCards(collection) {
         })
 }
 
+db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx").get().then(snap => {
+    console.log(snap);
+    console.log(snap.data());
+})
 displayCards("events");

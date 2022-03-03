@@ -1,3 +1,6 @@
+
+/**displays your location in latitude and longitude coordinates, in the input field Location */
+
 var x = document.getElementById("inputLocation");
 
 function getLocation() {
@@ -12,3 +15,5 @@ function showPosition(position) {
   x.value = "Latitude: " + position.coords.latitude + 
   " Longitude: " + position.coords.longitude;
 }
+
+

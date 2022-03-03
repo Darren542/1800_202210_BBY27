@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>My BCIT Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
 
@@ -27,6 +28,7 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <link rel="stylesheet" href="./styles/style.css"/>
+  <link rel="stylesheet" href="./styles/search.css"/>
 </head>
 
 <body>
@@ -88,14 +90,14 @@
 
   <!-- Templates for general use, not displayed -->
 <template id="eventCardTemplate2">
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start card-image" alt="...">
+  <div class="card mb-3">
+    <div class="row grid-test">
+      <div class="image-box">
+        <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
       </div>
-      <div class="col-md-8">
+      <div class="test-box">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
+          <a href="./eventPage/" class="card-title">Card title</a>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-time text-muted">time will go here</p>
         </div>

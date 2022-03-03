@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>My BCIT Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
 
@@ -19,6 +20,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="./styles/create.css" />
+
+  <script src="./scripts/create.js"></script>
+
 </head>
 
 
@@ -31,12 +35,13 @@
     <form id="create-form">
 
       <h1 class="display-4 fw-bold">Create Event</h1>
-      <div class="btn-group ">
-        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" />
-        <label class="btn btn-primary" for="option1">Online</label>
 
-        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" checked />
-        <label class="btn btn-primary" for="option2">In-Person</label>
+      <div class="btn-group" style="width: 100%;">
+        <input type="radio" class="btn-check" name="options" id="onlineOption" autocomplete="off" />
+        <label class="btn btn-primary" for="onlineOption">Online</label>
+
+        <input type="radio" class="btn-check" name="options" id="inPersonOption" autocomplete="off" checked />
+        <label class="btn btn-primary" for="inPersonOption">In-Person</label>
       </div>
 
       <div id="formRow" class="row">
@@ -45,54 +50,59 @@
           <input type="text" class="form-control" id="inputEventName" placeholder="Event Name">
         </div>
 
-        <div class="form-group col-lg col-md-12">
-          <label for="Description" class="form-label">Edit Description</label>
+        <div class="form-group col-lg-9 col-md-12">
+          <label for="Description" class="form-label">Description</label>
           <textarea class="form-control" id="Description" rows="1" placeholder="Description"></textarea>
         </div>
 
-        <div class="form-group col-lg-8 col-sm-12">
+        <div class="form-group col-lg-3 col-sm-12">
+          <label for="uploadFile" class="form-label">Upload File</label>
+          <input type="file" id="uploadFile" name="filename" class="btn btn-primary"
+            style="color:white; width: 100%; height: 58px;">
+        </div>
+
+        <div class="form-group col-lg-9 col-sm-12">
           <label for="inputLocation" class="form-label">Location</label>
           <input type="text" class="form-control" id="inputLocation" placeholder="Location">
         </div>
 
-        <div class="form-group col-lg-4 col-sm-12" id="locationButton">
-          <button class="btn btn-primary" id="getLocation" style="width: 100%;" onclick="inputLocation()">Use my location</button>
+        <div class="form-group col-lg-3 col-sm-12">
+          <label for="locationBtn" class="form-label">Use Your Location</label>
+          <button class="btn btn-primary" id="locationBtn" style="width: 100%; height: 57px;"
+            onclick="getLocation()">Get
+            my location</button>
         </div>
-
 
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputStartDate" class="form-label">Edit Start Date</label>
           <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date">
         </div>
+
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputEndDate" class="form-label">Edit End Date</label>
           <input type="date" class="form-control" id="inputEndDate" placeholder="End Date">
         </div>
 
-      
-
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputStartTime" class="form-label">Edit Start Time</label>
           <input type="time" class="form-control" id="inputStartTime" placeholder="Start Time">
         </div>
+
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputEndTime" class="form-label">Edit End Time</label>
           <input type="time" class="form-control" id="inputEndTime" placeholder="End Time">
         </div>
 
         <div id="submit-button-container">
-          <button type="submit" class="btn btn-primary" id="submit-button" style="width:100%">Confirm</button>
+          <button type="submit" class="btn btn-primary" id="submit-button"
+            style="width:100%; height: 55px;">Confirm</button>
         </div>
       </div>
-
-
     </form>
   </div>
 
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
-
-  <script src="./scripts/create.js"></script>
 
   <script src="./scripts/skeleton.js"></script>
 

@@ -47,10 +47,8 @@
     align-items: center; 
 }
 
-.locationbutton {
-    margin: auto;
-    display: flex;
-    text-align: center;
+#btn-group {
+    width: 25%;
 }
 
 .form-group {
@@ -58,8 +56,13 @@
 }
 
 h1{
-    padding: 0.15em;
+    padding: 0.5em;
+    text-align: center;
 }
+
+input[type=file]::file-selector-button {
+    display: none;
+  }
 
 @media (max-width: 700px){
 

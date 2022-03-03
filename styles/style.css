@@ -11,6 +11,7 @@ body {
   display: grid;
   grid-template-rows: 77px 1fr auto;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 #navbarPlaceholder {

@@ -25,6 +25,11 @@
     background-color: red;
 }
 
+.advancedOptions {
+    display: grid;
+    padding: 10px;
+}
+
 #searchBarDiv {
     display: flex;
     align-items:center;
@@ -39,3 +44,11 @@
     justify-content: center;
     gap: 10px;
 }
+
+.sortBy {
+    display:flex;
+    align-items: center;
+    gap: 10px;
+
+}
+

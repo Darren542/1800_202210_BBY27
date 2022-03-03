@@ -12,7 +12,7 @@ function read_events_info() {
          document.querySelector("#description").innerHTML = doc.data().description;
          console.log(doc.data().eventName);                       
          document.querySelector("#event").innerHTML = doc.data().eventName;
-         console.log(doc.data().start-time);                       
+         console.log(doc.data().startTime);                       
          document.querySelector("#start-time").innerHTML = doc.data().startTime;
          console.log(doc.data().endTime);                       
          document.querySelector("#end-time").innerHTML = doc.data().endTime;

@@ -1,5 +1,11 @@
+const queryString = window.location.search;
+console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+console.log(urlParams);
+const eventId = urlParams.get('eventId');
+
 function read_events_info() {
-  db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx")                                                      
+  db.collection("events").doc(eventId)                                                      
     .onSnapshot(doc => {                                                               
          console.log("current document data: " + doc.data());
          console.log(doc.data().description);                       

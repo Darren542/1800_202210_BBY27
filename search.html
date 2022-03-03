@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>My BCIT Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
 
@@ -15,7 +15,7 @@
   <!-- Boostrap Library JS CDN  go here -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-  </script>
+    </script>
 
   <!-------------------------------------------------------->
   <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
@@ -24,87 +24,99 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <link rel="stylesheet" href="./styles/style.css"/>
-  <link rel="stylesheet" href="./styles/search.css"/>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/search.css" />
 </head>
 
 <body>
   <!-- navbar is loaded into here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <!-- Code for the new HTML page goes here--> 
+  <!-- Code for the new HTML page goes here-->
   <div id="body">
-      <div id="searchBar">
-          <form>
-              <input id="searchText" type="text"/>
-              <input id="submit" type="submit" value="Search" />
-              <button id="searchOptions">Search Options</button>
-              <div id="advancedOptions" class="hidden">
-                <label for="locationToggle">Filter by location</label>
-                <input id="locationToggle" name="locationToggle" type="checkbox"/>
-                <label for="locations">Choose a location:</label>
-                <select name="locations" id="locations">
-                  <option value="burnaby">Burnaby</option>
-                  <option value="richmond">Richmond</option>
-                  <option value="vancouver">Vancouver</option>
-                  <option value="surrey">Surrey</option>
-                  <option value="other">Other</option>
-                </select>
+    <div id="searchBar">
+      <form class="d-flex searchBarDiv">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+      <button id="searchOptions">Search Options</button>
+    </div>
+    <!-- hidden by default for changing search options-->
+    <div id="advancedOptions" class="hidden">
 
-                <label for="categoryToggle">Filter by category</label>
-                <input id="categoryToggle" name="categoryToggle" type="checkbox"/>
-                <label for="categories">Choose a category:</label>
-                <select name="categories" id="categories">
-                  <option value="AlpineSkiing">Alpine Skiing</option>
-                  <option value="Biathlon">Biathlon</option>
-                  <option value="Bobsleigh">Bobsleigh</option>
-                  <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
-                  <option value="Curling">Curling</option>
-                  <option value="FigureSkating">Figure Skating</option>
-                  <option value="FreestyleSkiing">Freestyle Skiing</option>
-                  <option value="Hockey">Hockey</option>
-                  <option value="Luge">Luge</option>
-                  <option value="NordicCombined">Nordic Combined</option>
-                  <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
-                  <option value="Skeleton">Skeleton</option>
-                  <option value="SkiJumping">Ski Jumping</option>
-                  <option value="Snowboard">Snowboard</option>
-                  <option value="SpeedSkating">Speed Skating</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-          </form>
-      </div>
-      <div class="cards">  
-        <h1>Events Found:</h1>
-        <!-- Here is container for cards  -->
-        <div class="container">
-            <div id="cards-go-here" class="row row-cols-auto">
-            </div>
-        </div>
-      </div>
-  </div>
+      <label for="locationToggle">Filter by location</label>
+      <input id="locationToggle" name="locationToggle" type="checkbox" />
+      <label for="locations">Choose a location:</label>
+      <select name="locations" id="locations">
+        <option value="burnaby">Burnaby</option>
+        <option value="richmond">Richmond</option>
+        <option value="vancouver">Vancouver</option>
+        <option value="surrey">Surrey</option>
+        <option value="other">Other</option>
+      </select>
 
-  <!-- Templates for general use, not displayed -->
-<template id="eventCardTemplate2">
-  <div class="card mb-3">
-    <div class="row grid-test">
-      <div class="image-box">
-        <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
-      </div>
-      <div class="test-box">
-        <div class="card-body">
-          <a href="./eventPage.html" class="card-title">Card title</a>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-time text-muted">time will go here</p>
+      <label for="categoryToggle">Filter by category</label>
+      <input id="categoryToggle" name="categoryToggle" type="checkbox" />
+      <label for="categories">Choose a category:</label>
+      <select name="categories" id="categories">
+        <option value="AlpineSkiing">Alpine Skiing</option>
+        <option value="Biathlon">Biathlon</option>
+        <option value="Bobsleigh">Bobsleigh</option>
+        <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
+        <option value="Curling">Curling</option>
+        <option value="FigureSkating">Figure Skating</option>
+        <option value="FreestyleSkiing">Freestyle Skiing</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Luge">Luge</option>
+        <option value="NordicCombined">Nordic Combined</option>
+        <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
+        <option value="Skeleton">Skeleton</option>
+        <option value="SkiJumping">Ski Jumping</option>
+        <option value="Snowboard">Snowboard</option>
+        <option value="SpeedSkating">Speed Skating</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input type="radio" id="distance" name="sort-by" value="distance">
+      <label for="html">HTML</label><br>
+      <input type="radio" id="start" name="sort-by" value="start">
+      <label for="css">CSS</label><br>
+      <input type="radio" id="end" name="sort-by" value="end">
+      <label for="javascript">JavaScript</label>
+    </div>
+
+    <br />
+    <div class="cards">
+      <h1>Events Found:</h1>
+      <!-- Here is container for cards  -->
+      <div class="container">
+        <div id="cards-go-here" class="row row-cols-auto">
         </div>
       </div>
     </div>
   </div>
-</template>
+
+  <!-- Templates for general use, not displayed -->
+  <template id="eventCardTemplate2">
+    <div class="card mb-3">
+      <div class="row grid-test">
+        <div class="image-box">
+          <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
+        </div>
+        <div class="test-box">
+          <div class="card-body">
+            <a href="./eventPage.html" class="card-title">Card title</a>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-time text-muted">time will go here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>

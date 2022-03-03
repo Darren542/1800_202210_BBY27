@@ -73,5 +73,6 @@ const advancedOptions = document.querySelector("#advancedOptions");
 
 function hiddenToggle() {
     advancedOptions.classList.toggle('hidden');
+    advancedOptions.classList.toggle('advancedOptions');
 }
 searchOptions.addEventListener("click", hiddenToggle);

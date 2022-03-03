@@ -47,45 +47,53 @@
     <!-- hidden by default for changing search options-->
     <div id="advancedOptions" class="hidden">
 
-      <label for="locationToggle">Filter by location</label>
-      <input id="locationToggle" name="locationToggle" type="checkbox" />
-      <label for="locations">Choose a location:</label>
-      <select name="locations" id="locations">
-        <option value="burnaby">Burnaby</option>
-        <option value="richmond">Richmond</option>
-        <option value="vancouver">Vancouver</option>
-        <option value="surrey">Surrey</option>
-        <option value="other">Other</option>
-      </select>
+      <div id="locationSearch">
+        <label for="locationToggle">Filter by location</label>
+        <input id="locationToggle" name="locationToggle" type="checkbox" />
+        <label for="locations">Choose a location:</label>
+        <select name="locations" id="locations">
+          <option value="burnaby">Burnaby</option>
+          <option value="richmond">Richmond</option>
+          <option value="vancouver">Vancouver</option>
+          <option value="surrey">Surrey</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
 
-      <label for="categoryToggle">Filter by category</label>
-      <input id="categoryToggle" name="categoryToggle" type="checkbox" />
-      <label for="categories">Choose a category:</label>
-      <select name="categories" id="categories">
-        <option value="AlpineSkiing">Alpine Skiing</option>
-        <option value="Biathlon">Biathlon</option>
-        <option value="Bobsleigh">Bobsleigh</option>
-        <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
-        <option value="Curling">Curling</option>
-        <option value="FigureSkating">Figure Skating</option>
-        <option value="FreestyleSkiing">Freestyle Skiing</option>
-        <option value="Hockey">Hockey</option>
-        <option value="Luge">Luge</option>
-        <option value="NordicCombined">Nordic Combined</option>
-        <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
-        <option value="Skeleton">Skeleton</option>
-        <option value="SkiJumping">Ski Jumping</option>
-        <option value="Snowboard">Snowboard</option>
-        <option value="SpeedSkating">Speed Skating</option>
-        <option value="Other">Other</option>
-      </select>
+      <div id="categorySearch">
+        <label for="categoryToggle">Filter by category</label>
+        <input id="categoryToggle" name="categoryToggle" type="checkbox" />
+        <label for="categories">Choose a category:</label>
+        <select name="categories" id="categories">
+          <option value="AlpineSkiing">Alpine Skiing</option>
+          <option value="Biathlon">Biathlon</option>
+          <option value="Bobsleigh">Bobsleigh</option>
+          <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
+          <option value="Curling">Curling</option>
+          <option value="FigureSkating">Figure Skating</option>
+          <option value="FreestyleSkiing">Freestyle Skiing</option>
+          <option value="Hockey">Hockey</option>
+          <option value="Luge">Luge</option>
+          <option value="NordicCombined">Nordic Combined</option>
+          <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
+          <option value="Skeleton">Skeleton</option>
+          <option value="SkiJumping">Ski Jumping</option>
+          <option value="Snowboard">Snowboard</option>
+          <option value="SpeedSkating">Speed Skating</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
 
-      <input type="radio" id="distance" name="sort-by" value="distance">
-      <label for="html">HTML</label><br>
-      <input type="radio" id="start" name="sort-by" value="start">
-      <label for="css">CSS</label><br>
-      <input type="radio" id="end" name="sort-by" value="end">
-      <label for="javascript">JavaScript</label>
+      <div class="sortBy">
+        <div id="sortByText">Sort by:</div>
+        <input type="radio" id="distance" checked="checked" name="sort-by" value="distance">
+        <label for="html">Distance</label><br>
+        <input type="radio" id="start" name="sort-by" value="start">
+        <label for="css">Start time</label><br>
+        <input type="radio" id="end" name="sort-by" value="end">
+        <label for="javascript">End time</label>
+      </div>
+
     </div>
 
     <br />

@@ -16,8 +16,15 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
 
-  <!-- Jquery Library-->
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <link rel="stylesheet" href="./styles/style.css"/>
 </head>
@@ -27,20 +34,84 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Code for the new HTML page goes here--> 
-  <div id="body">Stuff here
-    <br><span>text1</span>
-    <br><span>text2</span>
-    <br><span>text3</span>
-    <br><span>text4</span>
-    <br><span>text</span>
-    <br><span>text</span>
+  <div id="body">
+      <div id="searchBar">
+          <form>
+              <input id="searchText" type="text"/>
+              <input id="submit" type="submit" value="Search" />
+              <button id="searchOptions">Search Options</button>
+              <div id="advancedOptions" class="hidden">
+                <label for="locationToggle">Filter by location</label>
+                <input id="locationToggle" name="locationToggle" type="checkbox"/>
+                <label for="locations">Choose a location:</label>
+                <select name="locations" id="locations">
+                  <option value="burnaby">Burnaby</option>
+                  <option value="richmond">Richmond</option>
+                  <option value="vancouver">Vancouver</option>
+                  <option value="surrey">Surrey</option>
+                  <option value="other">Other</option>
+                </select>
 
+                <label for="categoryToggle">Filter by category</label>
+                <input id="categoryToggle" name="categoryToggle" type="checkbox"/>
+                <label for="categories">Choose a category:</label>
+                <select name="categories" id="categories">
+                  <option value="AlpineSkiing">Alpine Skiing</option>
+                  <option value="Biathlon">Biathlon</option>
+                  <option value="Bobsleigh">Bobsleigh</option>
+                  <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
+                  <option value="Curling">Curling</option>
+                  <option value="FigureSkating">Figure Skating</option>
+                  <option value="FreestyleSkiing">Freestyle Skiing</option>
+                  <option value="Hockey">Hockey</option>
+                  <option value="Luge">Luge</option>
+                  <option value="NordicCombined">Nordic Combined</option>
+                  <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
+                  <option value="Skeleton">Skeleton</option>
+                  <option value="SkiJumping">Ski Jumping</option>
+                  <option value="Snowboard">Snowboard</option>
+                  <option value="SpeedSkating">Speed Skating</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+          </form>
+      </div>
+      <div class="cards">  
+        <h1>Events Found:</h1>
+        <!-- Here is container for cards  -->
+        <div class="container">
+            <div id="cards-go-here" class="row row-cols-auto">
+            </div>
+        </div>
+      </div>
   </div>
+
+  <!-- Templates for general use, not displayed -->
+<template id="eventCardTemplate2">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start card-image" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-time text-muted">time will go here</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
   <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/searchPage.js"></script>
+  <script src="./scripts/script.js"></script>
+
 </body>
 
 </html>

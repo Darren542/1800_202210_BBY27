@@ -9,7 +9,17 @@ function read_events_info() {
     .onSnapshot(doc => {                                                               
          console.log("current document data: " + doc.data());
          console.log(doc.data().description);                       
-         document.querySelector("#event-description").innerHTML = doc.data().description;
+         document.querySelector("#description").innerHTML = doc.data().description;
+         console.log(doc.data().eventName);                       
+         document.querySelector("#event").innerHTML = doc.data().eventName;
+         console.log(doc.data().startTime);                       
+         document.querySelector("#start-time").innerHTML = doc.data().startTime;
+         console.log(doc.data().endTime);                       
+         document.querySelector("#end-time").innerHTML = doc.data().endTime;
+         console.log(doc.data().owner);                       
+         document.querySelector("#owner").innerHTML = doc.data().owner;
+         console.log(doc.data().streetAddress);                       
+         document.querySelector("#address").innerHTML = doc.data().streetAddress;
          document.querySelector("#test2").innerHTML = "test text";
     })
 }

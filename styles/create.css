@@ -8,7 +8,7 @@
     padding: 2em;
     padding-left: 15em;
     padding-right: 15em;
-
+    padding-top: 5em;
 }
 
 #create-form > div {
@@ -34,12 +34,6 @@
 
 }
 
-#create-form > div > select {
-    color:#8e8e8e;
-    padding-top: 15px;
-    padding-bottom:15px;
-}
-
 #create-form > div > textarea {
     color:#8e8e8e;
     padding-top: 15px;
@@ -51,6 +45,12 @@
     display: flex;
     justify-content: center;
     align-items: center; 
+}
+
+.locationbutton {
+    margin: auto;
+    display: flex;
+    text-align: center;
 }
 
 .form-group {
@@ -66,6 +66,8 @@ h1{
 
     #create-form {
         padding: 2em;
+        padding-top: 5em;
+
     }
 
     #create-form > div {
@@ -73,12 +75,6 @@ h1{
     }
 
     #create-form > div > input {
-        color:#8e8e8e;
-        padding-top: 15px;
-        padding-bottom:15px;
-    }
-
-    #create-form > div > select {
         color:#8e8e8e;
         padding-top: 15px;
         padding-bottom:15px;

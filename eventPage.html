@@ -37,46 +37,26 @@
   <!-- Code for the new HTML page goes here--> 
   
 
-  <div id="body">
-    <dl class="row">
-      <figure class="figure">
-        <img src="./images/Hockey.jpeg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." width="30%" height= "auto">
-        <figcaption class="figure-caption">A caption for the above image.</figcaption>
-      </figure>
-      <dt class="col-sm-3">Events</dt>
-      <dd class="col-sm-9"><p id = "event">Event details</p></dd>
+  <div class="card" style="width: 70% ; margin: auto ;background-color:#F5F5F5">
+    <img class="card-img-top" src="./images/Hockey_EventPage.jpg" alt="Card image cap" style="width: 100% ; height :auto; margin: auto">
+    <div class="card-body">
+      <h5 class="card-title">Description</h5>
+      <p id = "description" class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto iure molestiae maxime voluptas sapiente quis, impedit odit dolores possimus repudiandae corrupti sed. Aliquam ullam consectetur libero quod, illo incidunt qui?</p>
+    </div>
+      <ul class="list-group list-group-flush" >
+        <li class="list-group-item"><p><b>Event: </b><span id="event">Event details</span></p></li>
+        <li class="list-group-item"><p><b>Type: </b><span id="type">Type details</span></p></li>
+        <li class="list-group-item"><p><b>Start time: </b><span id="start-time">Start time details</span></p></li>
+        <li class="list-group-item"><p><b>End time: </b><span id="end-time">End time details</span></p></li>
+        <li class="list-group-item"><p><b>Address: </b><span id="address">Address details</span></p></li>
+        <li class="list-group-item"><p><b>Owner: </b><span id="owner">Owner details</span></p></li>
+      </ul>
     
-      <dt class="col-sm-3">Type</dt>
-      <dd class="col-sm-9">
-        <p id = "type">Type details</p>
-      </dd>
-    
-      <dt class="col-sm-3">Start time</dt>
-      <dd class="col-sm-9">
-        <p id = "start-time">Start time details</p>
-      </dd>
-    
-      <dt class="col-sm-3">End time</dt>
-      <dd class="col-sm-9">
-        <p id="end-time">End time details</p>
-      </dd>
-    
-      <dt class="col-sm-3">Address</dt>
-      <dd class="col-sm-9">
-        <p id = "address">Address details</p>
-      </dd>
-
-      <dt class="col-sm-3">Owner</dt>
-      <dd class="col-sm-9">
-        <p id = "owner">Owner name</p>
-      </dd>
-      <dt class="col-sm-3">Description</dt>
-      <dd class="col-sm-9">
-        <p id = "description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora distinctio error ut voluptas hic sit laudantium, repellat fugiat beatae perferendis quod! Ullam eveniet voluptatibus itaque deserunt harum, obcaecati pariatur!</p>
-      </dd>
-    </dl>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
   </div>
-
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 

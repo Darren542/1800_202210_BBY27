@@ -21,7 +21,7 @@
 
   <link rel="stylesheet" href="./styles/create.css" />
 
-  <script src="./scripts/create.js"></script>
+  <script src="./scripts/create-copy.js"></script>
 
 </head>
 
@@ -93,14 +93,15 @@
             style="width:100%; height: 55px;">Confirm</button>
         </div>
       </div>
+      <div class="form-group col-lg-3 col-sm-12">
+        <label for="locationBtn" class="form-label">Use Your Location</label>
+        <button type="button" class="btn btn-primary" id="locationBtn" style="width: 100%; height: 57px;"
+          onclick="getLocation()">Get
+          my location</button>
+      </div>
     </form>
 
-    <div class="form-group col-lg-3 col-sm-12">
-      <label for="locationBtn" class="form-label">Use Your Location</label>
-      <button class="btn btn-primary" id="locationBtn" style="width: 100%; height: 57px;"
-        onclick="getLocation()">Get
-        my location</button>
-    </div>
+
   </div>
 
   <!-- Footer is loaded into here-->

@@ -17,7 +17,7 @@ var uiConfig = {
             email: user.email
           }).then(function() {  
             console.log("new user added to firestore");
-            window.location.assign("index.html");
+            window.location.assign("main.html");
           })
           .catch(function(error){
             console.log(error);

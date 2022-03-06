@@ -52,9 +52,6 @@
           <li class="nav-item">
             <a class="nav-link" href="./search.html">Search</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./login.html">Login</a>
-          </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
@@ -81,7 +78,7 @@
         <div class="btn-group">
           <img src="./images/profile.png" style="width: 40px;height: 40px; margin-left: 1rem;">
           <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            User name
+            <span class = "username">User name</span>
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -96,7 +93,7 @@
   <div id="body">
     <div class="p-5 mb-4 bg-light rounded-3" style="background: url('./images/flag_1.jpg') center/cover no-repeat;">
       <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Welcome to our 2030 Vancouver Winter Olympic Event App</h1>
+        <h1 class="display-5 fw-bold">Hi <span class="username">user</span>, welcome to our 2030 Vancouver Winter Olympic Event App</h1>
         <p class="col-md-8 fs-4">Let's watch Olympic events in your favorite local restaurant or pub.</p>
       </div>
     </div>
@@ -121,8 +118,10 @@
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 
-
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
   <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/authentication.js"></script>
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>

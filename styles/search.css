@@ -43,7 +43,7 @@
     display:grid;
     margin-left:auto;
     margin-right:auto;
-    grid-template-rows: 70px 70px 70px;
+    grid-template-rows:50px 50px 50px 30px 50px;
     
 }
 
@@ -116,9 +116,27 @@
     grid-column: 2 /span 1;
 }
 
+#datesSelector{
+    grid-row: 3 / span 1;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+#datesLabel {
+    padding-left: 8px;
+}
+
+#dates {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 2;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
 .sortBy {
-    grid-row: 3 / span 1;
+    grid-row: 5 / span 1;
     grid-column: 1 / span 2;
     display:flex;
     align-items:center;

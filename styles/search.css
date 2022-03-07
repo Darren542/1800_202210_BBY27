@@ -26,14 +26,110 @@
 }
 
 .advancedOptions {
-    display: grid;
+    position:absolute;
+    display: flex;
     padding: 10px;
+    z-index: 100;
+    background-color:rgb(207, 242, 248);
+    width: 80%;
+    justify-content: center;
+    margin-left:10%;
+    margin-right:10%;
+    margin-top: 5px;
+    box-shadow: 4px 4px 4px rgb(190, 190, 248);
+}
+
+#advancedContainer {
+    display:grid;
+    margin-left:auto;
+    margin-right:auto;
+    grid-template-rows: 70px 70px 70px;
+    
+}
+
+#locationSearch {
+    grid-row: 1 / span 1;
+    display:grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+}
+
+#locationToggle {
+    display:flex;
+    align-self:center;
+    grid-row: 1 / span 1;
+    grid-column: 1 /span 1;
+    z-index: 200;
+}
+
+#locationsLabel {
+    display:flex;
+    align-self:center;
+    padding-left: 30px;
+    grid-row: 1 / span 1;
+    grid-column: 1 /span 1;
+}
+
+#locationsBar {
+    display:flex;
+    align-self:center;
+    padding-left: 30px;
+    grid-row: 1 / span 1;
+    grid-column: 2 /span 1;
+}
+
+#locations {
+    grid-row:1 / span 1;
+    grid-column: 2 / span 2;
+}
+
+#categorySearch{
+    grid-row: 2 / span 1;
+    display:grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 1fr;
+    gap: 5px;
+}
+
+#categoryToggle {
+    display:flex;
+    align-self:center;
+    grid-row: 1 / span 1;
+    grid-column: 1 /span 1;
+    z-index: 200;
+}
+
+#categoriesLabel {
+    display:flex;
+    align-self:center;
+    padding-left: 30px;
+    grid-row: 1 / span 1;
+    grid-column: 1 /span 1;
+}
+
+.categoriesBar {
+    display:flex;
+    align-self:center;
+    padding-left: 30px;
+    grid-row: 1 / span 1;
+    grid-column: 2 /span 1;
+}
+
+
+.sortBy {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
 #searchBarDiv {
     display: flex;
-    align-items:center;
+    align-items:right;
     width: 60vw;
+    gap: 10px;
 }
 
 #searchBar {
@@ -42,13 +138,19 @@
     margin-right: 10px;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap:12px;
 }
 
-.sortBy {
-    display:flex;
-    align-items: center;
-    gap: 10px;
 
+.card-body {
+    display:grid;
+    justify-content:left;
+    align-content:center;
+    height: 100%;
+}
+
+button {
+    margin-right:10px;
+    width: 150px;
 }
 

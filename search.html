@@ -40,61 +40,67 @@
     <div id="searchBar">
       <form class="d-flex searchBarDiv">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
-      <button id="searchOptions">Search Options</button>
+        <button id="searchButton" class="btn btn-primary" type="submit">Search</button>
+
+        <button id="searchOptions" class="btn btn-info" type="button">Search Options</button>
     </div>
     <!-- hidden by default for changing search options-->
     <div id="advancedOptions" class="hidden">
+      <div id="advancedContainer">
 
-      <div id="locationSearch">
-        <label for="locationToggle">Filter by location</label>
-        <input id="locationToggle" name="locationToggle" type="checkbox" />
-        <label for="locations">Choose a location:</label>
-        <select name="locations" id="locations">
-          <option value="burnaby">Burnaby</option>
-          <option value="richmond">Richmond</option>
-          <option value="vancouver">Vancouver</option>
-          <option value="surrey">Surrey</option>
-          <option value="other">Other</option>
-        </select>
+        <div id="locationSearch">
+          <input id="locationToggle" name="locationToggle" type="checkbox" />
+          <div id="locationsLabel">Filter by location:</div>
+          <div id="locationsBar">
+          <select name="locations" id="locations">
+            <option value="burnaby">Burnaby</option>
+            <option value="richmond">Richmond</option>
+            <option value="vancouver">Vancouver</option>
+            <option value="surrey">Surrey</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        </div>
+
+        <div id="categorySearch">
+          <input id="categoryToggle" name="categoryToggle" type="checkbox" />
+          <div id="categoriesLabel">Filter by category:</div>
+          <div class="categoriesBar">
+          <select name="categories" id="categories">
+            <option value="AlpineSkiing">Alpine Skiing</option>
+            <option value="Biathlon">Biathlon</option>
+            <option value="Bobsleigh">Bobsleigh</option>
+            <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
+            <option value="Curling">Curling</option>
+            <option value="FigureSkating">Figure Skating</option>
+            <option value="FreestyleSkiing">Freestyle Skiing</option>
+            <option value="Hockey">Hockey</option>
+            <option value="Luge">Luge</option>
+            <option value="NordicCombined">Nordic Combined</option>
+            <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
+            <option value="Skeleton">Skeleton</option>
+            <option value="SkiJumping">Ski Jumping</option>
+            <option value="Snowboard">Snowboard</option>
+            <option value="SpeedSkating">Speed Skating</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        </div>
+
+        <div class="sortBy">
+          <div id="sortByText">Sort by:</div>
+          <input type="radio" id="distance" checked="checked" name="sort-by" value="distance">
+          <label for="html">Distance</label><br>
+          <input type="radio" id="start" name="sort-by" value="start">
+          <label for="css">Start time</label><br>
+          <input type="radio" id="end" name="sort-by" value="end">
+          <label for="javascript">End time</label>
+        </div>
+
+
       </div>
-
-      <div id="categorySearch">
-        <label for="categoryToggle">Filter by category</label>
-        <input id="categoryToggle" name="categoryToggle" type="checkbox" />
-        <label for="categories">Choose a category:</label>
-        <select name="categories" id="categories">
-          <option value="AlpineSkiing">Alpine Skiing</option>
-          <option value="Biathlon">Biathlon</option>
-          <option value="Bobsleigh">Bobsleigh</option>
-          <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
-          <option value="Curling">Curling</option>
-          <option value="FigureSkating">Figure Skating</option>
-          <option value="FreestyleSkiing">Freestyle Skiing</option>
-          <option value="Hockey">Hockey</option>
-          <option value="Luge">Luge</option>
-          <option value="NordicCombined">Nordic Combined</option>
-          <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
-          <option value="Skeleton">Skeleton</option>
-          <option value="SkiJumping">Ski Jumping</option>
-          <option value="Snowboard">Snowboard</option>
-          <option value="SpeedSkating">Speed Skating</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-
-      <div class="sortBy">
-        <div id="sortByText">Sort by:</div>
-        <input type="radio" id="distance" checked="checked" name="sort-by" value="distance">
-        <label for="html">Distance</label><br>
-        <input type="radio" id="start" name="sort-by" value="start">
-        <label for="css">Start time</label><br>
-        <input type="radio" id="end" name="sort-by" value="end">
-        <label for="javascript">End time</label>
-      </div>
-
     </div>
+    </form>
 
     <br />
     <div class="cards">
@@ -109,14 +115,15 @@
 
   <!-- Templates for general use, not displayed -->
   <template id="eventCardTemplate2">
-    <div class="card mb-3">
+
+    <div class="card mb-3" onclick="location.href='./main.html';" style="cursor: pointer;">
       <div class="row grid-test">
         <div class="image-box">
           <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
         </div>
         <div class="test-box">
           <div class="card-body">
-            <a href="./eventPage.html" class="card-title">Card title</a>
+            <h3 class="card-title">Card title</h3>
             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
               content. This content is a little bit longer.</p>
             <p class="card-time text-muted">time will go here</p>

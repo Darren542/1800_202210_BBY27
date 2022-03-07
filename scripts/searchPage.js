@@ -18,7 +18,7 @@ function displayCards(collection) {
 
                 //update title and text and image
                 newcard.querySelector('.card-title').innerHTML = eventName;
-                newcard.querySelector('.card-title').href = "./eventPage.html?eventId=" + eventID;
+                //newcard.querySelector('.card-title').href = "./eventPage.html?eventId=" + eventID;
                 newcard.querySelector('.card-text').innerHTML = description;
                 newcard.querySelector('.card-time').innerHTML = time;
                 newcard.querySelector('.card-image').src = "./images/" + type + ".jpeg"; //hikes.jpg
@@ -29,8 +29,13 @@ function displayCards(collection) {
                 newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
                 newcard.querySelector('.card-time').setAttribute("id", "ctime" + i);
 
+                let formatedLink = "location.href='./eventPage.html?eventId=" + eventID + "'";
+                newcard.querySelector('.card').setAttribute("onClick", formatedLink);
                 //attach to gallery
                 document.getElementById("cards-go-here").appendChild(newcard);
+                //newcard.addEventListener('click' => {
+                //    alert("test");
+                //});
                 i++;
             })
         })
@@ -41,6 +46,8 @@ db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx").get().then(snap => {
     console.log(snap.data());
 })
 displayCards("events");
+
+//Testing code here
 var myDate = "26-02-2022";
 myDate = myDate.split("-");
 var newDate = new Date( myDate[2], myDate[1] - 1, myDate[0]);
@@ -68,6 +75,9 @@ function writeEvents() {
     });
 }
 
+
+
+//for turning visibility on or off
 const searchOptions = document.querySelector("#searchOptions");
 const advancedOptions = document.querySelector("#advancedOptions");
 

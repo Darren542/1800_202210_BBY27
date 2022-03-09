@@ -1,11 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Document</title>
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <link rel="stylesheet" href="./styles/style.css"/>
+  <link rel="stylesheet" href="./styles/profile.css"/>
 </head>
+
 <body>
-    <div class="container">Nothing in here yet</div>
+  <!-- navbar is loaded into here -->
+  <nav id="navbarPlaceholder"></nav>
+
+  <!-- Code for the new HTML page goes here--> 
+  <div id="body">
+      <div class="profileNav">
+          <ul class="profileNavList">
+              <li class="profileNavItem" id="myProfileNav">My Profile</li>
+              <li class="profileNavItem" id="attendingNav">Attending</li>
+              <li class="profileNavItem" id="hostingNav">Hosting</li>
+              <li class="profileNavItem" id="favouritesNav">Favourites</li>
+              <li class="profileNavItem" id="historyNav">History</li>
+              <li class="profileNavItem" id="calendarNav">Calendar</li>
+          </ul>
+      </div>
+      <div class="profileBody">The body of the profile page
+          
+        <!-- For seeing the different events-->
+        <div class="cards">
+            <h1>Events Found:</h1>
+            <!-- Here is container for cards  -->
+            <div class="container">
+              <div id="cards-go-here" class="row row-cols-auto">
+              </div>
+            </div>
+        </div>
+
+
+        <!-- For the my Profile View-->
+        <div class="UserProfile hidden" id="userProfile">
+            <div class="container">
+                <h1>User Profile </h1>
+                <form>
+                  <fieldset class="mb-3" id="personalInfoFields" disabled>
+                    <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                      <label>City</label>
+                      <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
+                    </div>
+                    <div class="form-group">
+                        <label>About me</label>
+                        <textarea id="aboutMeInput" name="aboutMeInput" class="form-control" rows="6" cols="50" placeholder="Write about yourself"></textarea>
+                    </div>
+                  </fieldset>
+                  <div class="d-flex justify-content-end mt-5">
+                    <!--event-listener that call the function editUserInfo after clicking on the button. -->
+                    <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+                    <span style="width: 10px"></span>
+                    <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <!-- Templates for general use, not displayed -->
+    <template id="eventCardTemplate2">
+
+        <div class="card mb-3" onclick="location.href='./main.html';" style="cursor: pointer;">
+          <div class="row grid-test">
+            <div class="image-box">
+              <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
+            </div>
+            <div class="test-box">
+              <div class="card-body">
+                <h3 class="card-title">Card title</h3>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <p class="card-time text-muted">time will go here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+
+  <!-- Footer is loaded into here-->
+  <nav id="footerPlaceholder"></nav>
+
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/profile.js"></script>
 </body>
+
 </html>

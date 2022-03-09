@@ -37,10 +37,10 @@
       <h1 class="display-4 fw-bold">Create Event</h1>
 
       <div class="btn-group" style="width: 100%;">
-        <input type="radio" class="btn-check" name="options" id="onlineOption" autocomplete="off" />
+        <input type="radio" class="btn-check" name="options" id="onlineOption" onclick="onlineSwitch()" autocomplete="off" />
         <label class="btn btn-primary" for="onlineOption">Online</label>
 
-        <input type="radio" class="btn-check" name="options" id="inPersonOption" autocomplete="off" checked />
+        <input type="radio" class="btn-check" name="options" id="inPersonOption" onclick="inPersonSwitch()" autocomplete="off" checked />
         <label class="btn btn-primary" for="inPersonOption">In-Person</label>
       </div>
 
@@ -84,12 +84,12 @@
         </div>
 
         <div class="form-group col-lg-9 col-sm-12">
-          <label for="inputLocation" class="form-label">Location</label>
+          <label for="inputLocation" class="form-label" id="locationlabel">Location</label>
           <input type="text" class="form-control"  id="inputLocation" placeholder="Location">
         </div>
 
-        <div class="form-group col-lg-3 col-sm-12">
-          <label for="locationBtn" class="form-label">Use Your Location</label>
+        <div class="form-group col-lg-3 col-sm-12" id="locationdiv">
+          <label for="locationBtn" class="form-label" id="locationbtnlbl">Use Your Location</label>
           <button class="btn btn-primary" type="button" id="locationBtn" style="width: 100%; height: 57px;"
             onclick="getLocation()">Get my location</button>
         </div>

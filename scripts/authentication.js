@@ -54,6 +54,7 @@ var uiConfig = {
   ui.start('#firebaseui-auth-container', uiConfig);
 
   const logout = document.querySelector("#logout");
+  console.log("logout", logout);
   const auth = firebase.auth();
   logout.addEventListener("click", (e) => {
     e.preventDefault();

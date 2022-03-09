@@ -32,63 +32,7 @@
 
 <body>
   <!-- navbar is loaded into here -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="./index.html"> <img class="d-block" src="./images/olympics.png" alt="" width="50"
-          height="50"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="filler"></li>
-          <li class="nav-item">
-            <a class="nav-link" href="./index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./create.html">Create</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./search.html">Search</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Profile
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Roar</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="./profile.html">My Profile</a></li>
-              <li><a class="dropdown-item" href="#">My Events</a></li>
-              <li><a class="dropdown-item" href="#">My Event History</a></li>
-              <li><a class="dropdown-item" href="#">Edit Profile</a></li>
-              <li><a class="dropdown-item" href="#">My Calendar</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-dark" type="submit">Search</button>
-        </form>
-        
-        <div class="btn-group">
-          <img src="./images/profile.png" style="width: 40px;height: 40px; margin-left: 1rem;">
-          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class = "username">User name</span>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a id = "logout" class="dropdown-item" href="#">Log out</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-  
+  <nav id="navbarPlaceholder"></nav>
 
   <div id="body">
     <div class="p-5 mb-4 bg-light rounded-3" style="background: url('./images/flag_1.jpg') center/cover no-repeat;">
@@ -118,10 +62,11 @@
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 
-  <script src="./scripts/firebaseAPI_bby27.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/authentication.js"></script>
-  <script src="./scripts/main.js"></script>
+  <script src="./scripts/firebaseAPI_bby27.js" defer></script>
+  <script src="./scripts/main.js" defer></script>
+  <script src="./scripts/authentication.js" defer></script>
+
+  
 </body>
 
 </html>

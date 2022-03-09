@@ -1,3 +1,4 @@
+var userId;
 //check the URL bar for the page wanted in profile
 
 //get variables saved for all the items on page (the nav buttons and where items will be loaded)
@@ -8,13 +9,16 @@ const favouritesNav = document.querySelector("#favouritesNav");
 const historyNav = document.querySelector("#historyNav");
 const calendarNav = document.querySelector("#calendarNav");
 const userProfile = document.querySelector("#userProfile");
+const cards = document.querySelector("#cards");
 
 //event listeners set up on the buttons
 myProfileNav.addEventListener("click", () => {
     changeDisplay("profile");
 });
-myProfileNav.myParam = "profile";
-attendingNav.addEventListener("click", testFunction);
+
+attendingNav.addEventListener("click", () => {
+    changeDisplay("attending");
+});
 hostingNav.addEventListener("click", testFunction);
 
 function testFunction() {
@@ -24,11 +28,15 @@ function testFunction() {
 function changeDisplay(choice) {
     if (choice == "profile") {
         userProfile.classList.remove('hidden');
+        cards.classList.add('hidden');
+        populateInfo();
         console.log("user profile");
     }
     else {
         console.log("Not user profile");
         userProfile.classList.add('hidden');
+        cards.classList.remove('hidden');
+        displayCards(choice);
     }
 
 }
@@ -40,7 +48,7 @@ function displayCards(collection) {
 
     //performs the search with the categories selected
     //only does category atm.
-    db.collection(collection).where('type', catSym, category).limit(2).get()
+    db.collection('users').doc(userId).collection(collection).limit(5).get()
         .then(snap => {
             var i = 1;
 
@@ -141,4 +149,36 @@ function saveUserInfo() {
     });
 }
 
-populateInfo();
+
+firebase.auth().onAuthStateChanged(user => {
+    userId = user.uid;
+    console.log(userId);
+});
+
+//Testing code here
+var myDate = "09-03-2022";
+myDate = myDate.split("-");
+var newDate = new Date( myDate[2], myDate[1] - 1, myDate[0]);
+//newDate = newDate.getTime();
+console.log(newDate);
+var myDate2 = "11-03-2022";
+myDate2 = myDate2.split("-");
+var newDate2 = new Date( myDate2[2], myDate2[1] - 1, myDate2[0]);
+//newDate2 = newDate2.getTime();
+
+function writeEvents() {
+    //define a variable for the collection you want to create in Firestore to populate data
+    var EventRef = db.collection("users").doc(userId).collection("attending");
+
+    EventRef.add({
+        description: "A test event for the database",
+        endTime: newDate,
+        eventName: "test Event",
+        owner: "test",
+        postalCode: "V7E-2T9",
+        province: "BC",
+        startDate: newDate2,
+        streetAddress: "4-4051 Garry St",
+        type: "Hockey" 
+    });
+}

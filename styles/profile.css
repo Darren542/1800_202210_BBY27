@@ -65,3 +65,33 @@
         margin-top:30px;
     }
 }
+
+/* CSS for the cards */
+.grid-test {
+    display:grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto;
+    padding: 0;
+}
+
+.image-box {
+    display:flex;
+    margin:0 ;
+    padding:0;
+}
+
+.card-image-test {
+    display:flex;
+    justify-self:center;
+    align-self:center;
+    padding-top:auto;
+    padding-bottom:auto;
+    
+}
+
+.card-body {
+    display:grid;
+    justify-content:left;
+    align-content:center;
+    height: 100%;
+}

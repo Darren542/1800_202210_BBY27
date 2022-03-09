@@ -37,17 +37,39 @@
       <h1 class="display-4 fw-bold">Create Event</h1>
 
       <div class="btn-group" style="width: 100%;">
-        <input type="radio" class="btn-check" name="options" id="onlineOption" autocomplete="off" />
+        <input type="radio" class="btn-check" name="options" id="onlineOption" onclick="onlineSwitch()" autocomplete="off" />
         <label class="btn btn-primary" for="onlineOption">Online</label>
 
-        <input type="radio" class="btn-check" name="options" id="inPersonOption" autocomplete="off" checked />
+        <input type="radio" class="btn-check" name="options" id="inPersonOption" onclick="inPersonSwitch()" autocomplete="off" checked />
         <label class="btn btn-primary" for="inPersonOption">In-Person</label>
       </div>
 
       <div id="formRow" class="row">
-        <div class="form-group col-lg col-md-12">
+        <div class="form-group col-lg-9 col-md-12">
           <label for="inputEventName" class="form-label">Event Name</label>
           <input type="text" class="form-control" id="inputEventName" placeholder="Event Name">
+        </div>
+
+        <div class="form-group col-lg-3 col-md-12">
+          <label for="inputSport" class="form-label">Sport</label>
+          <select type="text" class="form-control" id="inputSport" placeholder="Sport">
+            <option value="AlpineSkiing">Alpine Skiing</option>
+            <option value="Biathlon">Biathlon</option>
+            <option value="Bobsleigh">Bobsleigh</option>
+            <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
+            <option value="Curling">Curling</option>
+            <option value="FigureSkating">Figure Skating</option>
+            <option value="FreestyleSkiing">Freestyle Skiing</option>
+            <option value="Hockey">Hockey</option>
+            <option value="Luge">Luge</option>
+            <option value="NordicCombined">Nordic Combined</option>
+            <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
+            <option value="Skeleton">Skeleton</option>
+            <option value="SkiJumping">Ski Jumping</option>
+            <option value="Snowboard">Snowboard</option>
+            <option value="SpeedSkating">Speed Skating</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
 
         <div class="form-group col-lg-9 col-md-12">
@@ -62,15 +84,14 @@
         </div>
 
         <div class="form-group col-lg-9 col-sm-12">
-          <label for="inputLocation" class="form-label">Location</label>
-          <input type="text" class="form-control" id="inputLocation" placeholder="Location">
+          <label for="inputLocation" class="form-label" id="locationlabel">Location</label>
+          <input type="text" class="form-control"  id="inputLocation" placeholder="Location">
         </div>
 
-        <div class="form-group col-lg-3 col-sm-12">
-          <label for="locationBtn" class="form-label">Use Your Location</label>
-          <button class="btn btn-primary" id="locationBtn" style="width: 100%; height: 57px;"
-            onclick="getLocation()">Get
-            my location</button>
+        <div class="form-group col-lg-3 col-sm-12" id="locationdiv">
+          <label for="locationBtn" class="form-label" id="locationbtnlbl">Use Your Location</label>
+          <button class="btn btn-primary" type="button" id="locationBtn" style="width: 100%; height: 57px;"
+            onclick="getLocation()">Get my location</button>
         </div>
 
         <div class="form-group col-lg-3 col-sm-12">

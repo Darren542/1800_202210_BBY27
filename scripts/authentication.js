@@ -52,3 +52,13 @@ var uiConfig = {
   };
 
   ui.start('#firebaseui-auth-container', uiConfig);
+
+  const logout = document.querySelector("#logout");
+  const auth = firebase.auth();
+  logout.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+      console.log("user signed out");
+      window.location.assign("index.html");
+  });
+  });

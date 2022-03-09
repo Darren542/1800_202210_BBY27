@@ -1,0 +1,30 @@
+.row {
+    padding-left: 160px;
+    padding-right: 150px;
+    padding-bottom: 40px;
+    width: 100%;
+    
+}
+
+.card {
+    padding: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.card:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: black;
+}
+
+.card-body > ul {
+    list-style-type: none;
+}
+
+/*center cards in both views*/

@@ -19,7 +19,9 @@ myProfileNav.addEventListener("click", () => {
 attendingNav.addEventListener("click", () => {
     changeDisplay("attending");
 });
-hostingNav.addEventListener("click", testFunction);
+hostingNav.addEventListener("click", () => {
+    changeDisplay("hosting");
+});
 
 function testFunction() {
     console.log("test function has run");
@@ -51,6 +53,7 @@ function displayCards(collection) {
     db.collection('users').doc(userId).collection(collection).limit(5).get()
         .then(snap => {
             var i = 1;
+            document.getElementById("cards-go-here").innerHTML = "";
 
             snap.forEach(doc => { //iterate thru each doc
                 var eventName = doc.data().eventName;   // get value of the "name" key
@@ -168,10 +171,10 @@ var newDate2 = new Date( myDate2[2], myDate2[1] - 1, myDate2[0]);
 
 function writeEvents() {
     //define a variable for the collection you want to create in Firestore to populate data
-    var EventRef = db.collection("users").doc(userId).collection("attending");
+    var EventRef = db.collection("users").doc(userId).collection("hosting");
 
     EventRef.add({
-        description: "A test event for the database",
+        description: "First hosting event",
         endTime: newDate,
         eventName: "test Event",
         owner: "test",
@@ -179,6 +182,7 @@ function writeEvents() {
         province: "BC",
         startDate: newDate2,
         streetAddress: "4-4051 Garry St",
-        type: "Hockey" 
+        type: "Hockey",
+        id: "we can put id here or write with same id" 
     });
 }

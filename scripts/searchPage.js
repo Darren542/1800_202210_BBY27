@@ -37,7 +37,7 @@ function displayCards(collection) {
 
     //performs the search with the categories selected
     //only does category atm.
-    db.collection(collection).where('type', catSym, category).limit(2).get()
+    db.collection(collection).where('type', catSym, category).limit(5).get()
         .then(snap => {
             var i = 1;
 

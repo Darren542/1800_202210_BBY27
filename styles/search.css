@@ -167,7 +167,7 @@
     height: 100%;
 }
 
-button {
+.searchBtn {
     margin-right:10px;
     width: 150px;
 }

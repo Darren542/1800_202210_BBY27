@@ -20,6 +20,8 @@ function insertName() {
 
         })
     } else {
+      console.log($('#navbarPlaceholder').load('./templates/navbar.html'));
+      console.log($('#footerPlaceholder').load('./templates/footer/html'));
     }
   });
 }

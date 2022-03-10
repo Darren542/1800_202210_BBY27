@@ -1,16 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="./index.html"> <img class="d-block" src="./images/olympics.png" alt="" width="50"
-        height="50"></a>
+    <a class="navbar-brand" href="./main.html"> <img class="d-block" src="./images/AppIcon.png" alt="appIcon" height="50"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="filler"></li>
+        <!-- <li class="filler"></li> -->
         <li class="nav-item">
-          <a class="nav-link" href="./index.html">Home</a>
+          <a class="nav-link" href="./main.html">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./create.html">Create</a>
@@ -18,23 +17,25 @@
         <li class="nav-item">
           <a class="nav-link" href="./search.html">Search</a>
         </li>
-        <li class="nav-item dropdown">
+        <!-- unused old profile menu-->
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Profile
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">My Profile</a></li>
+          </a> -->
+          
+          <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="./profile.html">My Profile</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="./profile.html"></a></li>
+            
             <li><a class="dropdown-item" href="./myevents.html">Attending</a></li>
             <li><a class="dropdown-item" href="#">Hosting</a></li>
             <li><a class="dropdown-item" href="#">Favourites</a></li>
             <li><a class="dropdown-item" href="#">History</a></li>
             <li><a class="dropdown-item" href="./mycalendar.html">My Calendar</a></li>
-          </ul>
+          </ul> -->
         </li>
       </ul>
       <form class="d-flex">
@@ -48,7 +49,16 @@
           <span class = "username">User name</span>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="./profile.html">My Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <!-- <li><a class="dropdown-item" href="./profile.html"></a></li> -->
+          <li><a class="dropdown-item" href="./myevents.html">Attending</a></li>
+          <li><a class="dropdown-item" href="#">Hosting</a></li>
+          <li><a class="dropdown-item" href="#">Favourites</a></li>
+          <li><a class="dropdown-item" href="#">History</a></li>
+          <li><a class="dropdown-item" href="./mycalendar.html">My Calendar</a></li>
           <li><a id="logout" class="dropdown-item" href="#">Log out</a></li>
         </ul>
       </div>

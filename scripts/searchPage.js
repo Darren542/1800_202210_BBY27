@@ -125,18 +125,3 @@ function hiddenToggle() {
 searchOptions.addEventListener("click", hiddenToggle);
 
 
-window.addEventListener("load", function () {
-    setTimeout(function(){
-        //do what you need here
-    }, 2000);
-    const logout = document.querySelector("#logout");
-    console.log("logout2", logout);
-    const auth = firebase.auth();
-    logout.addEventListener("click", (e) => {
-        e.preventDefault();
-        auth.signOut().then(() => {
-            console.log("user signed out");
-            window.location.assign("index.html");
-        });
-    });
-});

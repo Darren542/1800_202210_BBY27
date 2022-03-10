@@ -17,9 +17,6 @@ function loadSkeleton() {
           .then(userDoc => {
             var user_Name = userDoc.data().name;
             console.log(user_Name);
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
             $(".username").text(user_Name);
             const logout = document.querySelector("#logout");
             console.log("logout3", logout);
@@ -34,7 +31,7 @@ function loadSkeleton() {
           })
       } else {
         console.log($('#navbarPlaceholder').load('./templates/navbar.html'));
-        console.log($('#footerPlaceholder').load('./templates/footer/html'));
+        console.log($('#footerPlaceholder').load('./templates/footer.html'));
       }
     });
   }

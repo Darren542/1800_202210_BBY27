@@ -1,3 +1,36 @@
+//get the params from the url bar
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+//get the category from params
+let category = "nothing";
+let catSym = "!=";
+if (urlParams.get('categoryToggle')) {
+    category = urlParams.get('categories');
+    catSym = "==";
+} 
+
+//get the location from params
+let locationId = "nothing"
+if (urlParams.get('locationToggle')) {
+    location = urlParams.get('locationId');
+} 
+
+//get the distance from user
+//TODO no code here yet
+
+//get the start and end date user wants
+//TODO no code here yet
+
+//testing searchs on database
+// db.collection('events').where('type', '==', 'Hockey').get().then(test87 =>{
+//     test87.forEach(doc => {
+//         console.log('test77', doc.data());
+//     })
+    
+// });
+
+
 function displayCards(collection) {
     let cardTemplate = document.getElementById("eventCardTemplate2");
 
@@ -43,10 +76,10 @@ function displayCards(collection) {
         })
 }
 
-db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx").get().then(snap => {
-    console.log(snap);
-    console.log(snap.data());
-})
+// db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx").get().then(snap => {
+//     console.log(snap);
+//     console.log(snap.data());
+// })
 displayCards("events");
 
 //Testing code here

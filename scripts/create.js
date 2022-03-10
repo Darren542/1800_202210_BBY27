@@ -8,27 +8,27 @@ const locationBtnLbl = document.getElementById("#locationbtnlbl");
 function onlineSwitch() {
 
   /** changes the label to Link */
-  locationLabel.innerHTML = "Link";
+  document.getElementById("locationlabel").innerHTML = "Link";
 
   /** changes the placeholder to Link */
-  inputLocation.placeholder = "Link";
+  document.getElementById("inputLocation").placeholder = "Link";
 
   /** changes the input type to url */
-  inputLocation.type = 'url';
+  document.getElementById('inputLocation').type = 'url';
 
   /** changes the input pattern to url */
-  inputLocation.setAttribute("pattern", "https://.*"); 
+  document.getElementById("inputLocation").setAttribute("pattern", "https://.*"); 
 
   /** clears the field  */
-  inputLocation.setAttribute("value", ""); 
+  document.getElementById("inputLocation").setAttribute("value", ""); 
 
-  locationBtn.setAttribute("onclick", "window.open('https://zoom.us/signin')"); 
+  document.getElementById("locationBtn").setAttribute("onclick", "window.open('https://zoom.us/signin')"); 
 
-  locationBtn.setAttribute("target", "_blank"); 
+  document.getElementById("locationBtn").setAttribute("target", "_blank"); 
 
-  locationBtnLbl.innerHTML = "Start a Video Call"; 
+  document.getElementById("locationbtnlbl").innerHTML = "Start a Video Call"; 
 
-  locationBtn.innerHTML = "Start a Video Call"; 
+  document.getElementById("locationBtn").innerHTML = "Start a Video Call"; 
 
 
 
@@ -39,25 +39,25 @@ function onlineSwitch() {
 function inPersonSwitch() {
 
   /** changes the label to Location */
-  locationLabel.innerHTML = "Location";
+  document.getElementById("locationlabel").innerHTML = "Location";
 
   /** changes the placeholder to Location */
-  inputLocation.placeholder = "Location";
+  document.getElementById("inputLocation").placeholder = "Location";
 
   /** changes the input type to text */
-  inputLocation.type = 'text';
+  document.getElementById('inputLocation').type = 'text';
 
   /** changes the input pattern to no restrictions */
-  inputLocation.removeAttribute("pattern"); 
+  document.getElementById("inputLocation").removeAttribute("pattern"); 
 
   /** clears the field  */
-  inputLocation.setAttribute("value", ""); 
+  document.getElementById("inputLocation").setAttribute("value", ""); 
 
-  locationBtnLbl.innerHTML = "Use Your Location"; 
+  document.getElementById("locationbtnlbl").innerHTML = "Use Your Location"; 
 
-  locationBtn.innerHTML = "Get my location";
+  document.getElementById("locationBtn").innerHTML = "Get my location";
   
-  locationBtn.setAttribute("onclick", "getLocation()"); 
+  document.getElementById("locationBtn").setAttribute("onclick", "getLocation()"); 
 
 }
 
@@ -68,14 +68,14 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
-    inputLocation.setAttribute("value", "Geolocation is not supported by this browser.");
+    document.getElementById("inputLocation").setAttribute("value", "Geolocation is not supported by this browser.");
   }
 }
 
 function showPosition(position) {
   
 
-  inputLocation.setAttribute("value", "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
+  document.getElementById("inputLocation").setAttribute("value", "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
 
 }
 

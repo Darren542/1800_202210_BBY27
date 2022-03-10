@@ -18,6 +18,8 @@ function loadSkeleton() {
             var user_Name = userDoc.data().name;
             console.log(user_Name);
             $(".username").text(user_Name);
+
+            //code to logout user
             const logout = document.querySelector("#logout");
             console.log("logout3", logout);
             const auth = firebase.auth();

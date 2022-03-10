@@ -1,3 +1,6 @@
+//TODO Make document element references variables
+const locationLabel
+
 /**changes the view to online */
 
 function onlineSwitch() {
@@ -74,3 +77,26 @@ function showPosition(position) {
 
 }
 
+// Code to write event to database
+
+//code to get information entered
+  // descVar = element.reference.value
+// function writeEvents() {
+    //define a variable for the collection you want to create in Firestore to populate data
+//    var EventRef = db.collection("events");
+
+//     EventRef.add({
+//         description: descVar,
+//         endTime: DateVar,
+//         eventName: eventVar,
+//         owner: user.uid, firebase.auth().onAuthStateChanged(user => {
+//                                userId = user.uid;
+//                                console.log(userId);
+//                            });
+//         postalCode: "V7E-2T9",
+//         province: "BC",
+//         startDate: DateVar,
+//         streetAddress: "4-4051 Garry St",
+//         type: "Hockey" 
+//     });
+// }

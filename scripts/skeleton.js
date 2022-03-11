@@ -10,12 +10,14 @@ function loadSkeleton() {
         console.log($('#footerPlaceholder').load('./templates/footer.html'));
         // Do something for the current logged-in user here: 
         console.log(user.uid);
+        sessionStorage.setItem('userId', user.uid);
         //go to the correct user document by referencing to the user uid
         currentUser = db.collection("users").doc(user.uid);
         //get the document for current user.
         currentUser.get()
           .then(userDoc => {
             var user_Name = userDoc.data().name;
+            sessionStorage.setItem('userName', user_Name);
             console.log(user_Name);
             $(".username").text(user_Name);
 

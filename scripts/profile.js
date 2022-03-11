@@ -60,7 +60,7 @@ function displayCards(collection) {
                 var description = doc.data().description;   // get value of the "details" key
                 var type = doc.data().type;   // get value of the "details" key
                 var time = doc.data().startDate;   // get value of the "details" key
-                var time = time.toDate();
+                //var time = time.toDate();
                 var eventID = doc.data().eventId;
                 console.log(eventID);
                 time = time.toString();

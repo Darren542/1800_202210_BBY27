@@ -1,8 +1,42 @@
 //TODO Make document element references variables
-const locationLabel = document.getElementById("locationlabel");
-const inputLocation = document.getElementById("inputLocation");
-const locationBtn = document.getElementById("#locationBtn");
-const locationBtnLbl = document.getElementById("#locationbtnlbl");
+document.addEventListener('DOMContentLoaded', (event) => {
+  const locationLabel = document.getElementById("locationlabel");
+  const inputLocation = document.getElementById("inputLocation");
+  const locationBtn = document.getElementById("#locationBtn");
+  const locationBtnLbl = document.getElementById("#locationbtnlbl");
+  const inputEventName = document.getElementById("#inputEventName");
+  const inputSport = document.getElementById("#inputSport"); 
+  console.log('DOM fully loaded and parsed');
+});
+
+
+// make create form save into database
+document.querySelector("#submit-button").addEventListener("click", () => {
+  //save the document to be created into database
+  saveDocument();
+  // redirect to the newly created events page
+  //window.location.assign(`eventPage/{eventId}`);
+
+});
+// Data to be saved into database
+var online = false;
+var userId;
+var userName;
+
+/** This got replaced with sessionStorage
+firebase.auth().onAuthStateChanged(user => {
+  userId = user.uid;
+  currentUser = db.collection("users").doc(userId);
+//get the document for current user.
+  currentUser.get()
+    .then(userDoc => {
+      userName = userDoc.data().name;
+      console.log("test", userName);
+    });
+  console.log("userName and Id", userId, userName);
+});
+*/
+
 /**changes the view to online */
 
 function onlineSwitch() {
@@ -30,7 +64,8 @@ function onlineSwitch() {
 
   document.getElementById("locationBtn").innerHTML = "Start a Video Call"; 
 
-
+  //track which page user on
+  online = true;
 
 }
 
@@ -59,6 +94,8 @@ function inPersonSwitch() {
   
   document.getElementById("locationBtn").setAttribute("onclick", "getLocation()"); 
 
+  //track which page user on
+  online = false;
 }
 
 
@@ -78,27 +115,95 @@ function showPosition(position) {
   document.getElementById("inputLocation").setAttribute("value", "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
 
 }
-
+var newDocId;
+var eventName;
+var eventDesc;
+var inputSportVar; 
+var locationValue;
+var startDate;
+var startTime;
+var timeStampStart;
+var endDate;
+var endTime;
+var timeStampEnd;
+var userId;
+var EventRef;
 // Code to write event to database
 
-//code to get information entered
-  // descVar = element.reference.value
-// function writeEvents() {
-    //define a variable for the collection you want to create in Firestore to populate data
-//    var EventRef = db.collection("events");
+function saveDocument() {
+  eventName = inputEventName.value;
+  eventDesc = document.querySelector("#descriptionBox").value;
+  inputSportVar = inputSport.value;
+  locationValue = document.querySelector("#inputLocation").value;
+  startDate = document.querySelector("#inputStartDate").value
+  startTime = document.querySelector("#inputStartTime").value
+  timeStampStart = document.querySelector("#inputStartTime").valueAsNumber + document.querySelector("#inputStartDate").valueAsNumber;
+  endDate = document.querySelector("#inputEndDate").value
+  endTime = document.querySelector("#inputEndTime").value
+  timeStampEnd = document.querySelector("#inputEndTime").valueAsNumber + document.querySelector("#inputEndDate").valueAsNumber;
+  console.log('eventName', eventName, eventDesc, inputSportVar, locationValue, startDate, startTime, timeStampStart);
+  console.log("userDetails", sessionStorage.getItem('userId'));
+  userId = sessionStorage.getItem('userId');
+  EventRef = db.collection("events");
 
-//     EventRef.add({
-//         description: descVar,
-//         endTime: DateVar,
-//         eventName: eventVar,
-//         owner: user.uid, firebase.auth().onAuthStateChanged(user => {
-//                                userId = user.uid;
-//                                console.log(userId);
-//                            });
-//         postalCode: "V7E-2T9",
-//         province: "BC",
-//         startDate: DateVar,
-//         streetAddress: "4-4051 Garry St",
-//         type: "Hockey" 
-//     });
-// }
+    EventRef.add({
+        description: eventDesc,
+        endTime: endTime,
+        endDate: endDate,
+        timeStampEnd: timeStampEnd,
+        startTime: startTime,
+        startDate: startDate,
+        timeStampStart: timeStampStart,
+        eventName: eventName,
+        owner: sessionStorage.getItem('userName'),
+        ownerId: userId,
+        postalCode: 'unused',
+        province: "unused",
+        streetAddress: "unused",
+        type: inputSportVar,
+        location: locationValue,
+        creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        online : online
+    }).then(function(docRef) {
+      console.log("First Document written with ID: ", docRef.id);
+      console.log(docRef);
+      newDocId = docRef.id;
+      console.log("newDocId", newDocId);
+      writeEvents();
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+}
+//code to get information entered
+function writeEvents() {
+    //define a variable for the collection you want to create in Firestore to populate data
+   //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
+    //console.log("new Doc idea function", newDocId);
+    db.collection('users').doc(userId).collection("hosting").doc(newDocId).set({
+      ownerId: userId,
+      description: eventDesc,
+      endTime: endTime,
+      endDate: endDate,
+      timeStampEnd: timeStampEnd,
+      startTime: startTime,
+      startDate: startDate,
+      timeStampStart: timeStampStart,
+      eventName: eventName,
+      owner: sessionStorage.getItem('userName'),
+      ownerId: sessionStorage.getItem('userId'),
+      postalCode: 'unused',
+      province: "unused",
+      streetAddress: "unused",
+      type: inputSportVar,
+      location: locationValue,
+      creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      online: online
+    }).then(function(docRef2) {
+      console.log("Second Document written with ID: ");
+      console.log(docRef2);
+  })
+  .catch(function(error) {
+      console.error("Error adding document: ", error);
+  });
+}

@@ -44,7 +44,11 @@ function displayCards(collection) {
                 var description = doc.data().description;   // get value of the "details" key
                 var type = doc.data().type;   // get value of the "details" key
                 var time = doc.data().startDate;   // get value of the "details" key
-                var time = time.toDate();
+                //var time = time.toDate();
+                var startTime = doc.data().startTime;
+                if (!startTime) {
+                    startTime = "no start time";
+                }
                 var eventID = doc.id;
                 console.log(eventID);
                 time = time.toString();
@@ -55,13 +59,15 @@ function displayCards(collection) {
                 newcard.querySelector('.card-title').innerHTML = eventName;
                 //newcard.querySelector('.card-title').href = "./eventPage.html?eventId=" + eventID;
                 newcard.querySelector('.card-text').innerHTML = description;
-                newcard.querySelector('.card-time').innerHTML = time;
+                newcard.querySelector('.card-date').innerHTML = time;
+                newcard.querySelector('.card-time').innerHTML = startTime;
                 newcard.querySelector('.card-image').src = "./images/" + type + ".jpeg"; //hikes.jpg
 
                 //give unique ids to all elements for future use
                 newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
                 newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
+                newcard.querySelector('.card-date').setAttribute("id", "cdate" + i);
                 newcard.querySelector('.card-time').setAttribute("id", "ctime" + i);
 
                 let formatedLink = "location.href='./eventPage.html?eventId=" + eventID + "'";

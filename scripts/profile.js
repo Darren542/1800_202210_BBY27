@@ -1,6 +1,8 @@
 var userId;
 //check the URL bar for the page wanted in profile
-
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+let displayedPage = urlParams.get('display');
 //get variables saved for all the items on page (the nav buttons and where items will be loaded)
 const myProfileNav = document.querySelector("#myProfileNav");
 const attendingNav = document.querySelector("#attendingNav");
@@ -39,8 +41,10 @@ function changeDisplay(choice) {
         userProfile.classList.add('hidden');
         cards.classList.remove('hidden');
         displayCards(choice);
-    }
-
+    }  
+    let newUrl = "/profile.html?display=" + choice;
+    window.history.pushState('page2', 'Title', newUrl);
+    
 }
 
 
@@ -186,3 +190,5 @@ function writeEvents() {
         id: "we can put id here or write with same id" 
     });
 }
+
+setTimeout(function() { changeDisplay(displayedPage); }, 500);

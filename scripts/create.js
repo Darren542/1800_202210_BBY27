@@ -171,6 +171,7 @@ function saveDocument() {
       console.log("newDocId", newDocId);
       uploadImage();
       writeEvents();
+      
   })
   .catch(function(error) {
       console.error("Error adding document: ", error);
@@ -203,6 +204,7 @@ function writeEvents() {
     }).then(function(docRef2) {
       console.log("Second Document written with ID: ");
       console.log(docRef2);
+      window.location.assign(`eventPage.html?eventId=${newDocId}`);
   })
   .catch(function(error) {
       console.error("Error adding document: ", error);
@@ -212,14 +214,15 @@ function writeEvents() {
 function uploadImage() {
   //get reference to file input
   var file = document.querySelector('input[type=file]').files[0];
+  //console.log("file", file);
   // create a file object of the file sellect by user
   // only have it for pngs atm
-  // read the file in
+  // read the file in not sure if this is needed, but can be used to display preview of image if we want
   var reader = new FileReader;
-  reader.readAsDataURL(file);
-  console.log("file", file);
-  //setTimeout(function() { console.log("file", file); }, 500);
-  // check to see if file created
+  
+  try {
+    reader.readAsDataURL(file);
+    console.log("image loaded");
     // get a reference to firebases storage
     var storageRef = firebase.storage().ref();
     // get a reference to where image will be stored
@@ -228,5 +231,13 @@ function uploadImage() {
     testImagesRef.put(file).then((snapshot) => {
       console.log('Uploaded an Image!');
     });
+  }
+  catch(err) {
+    console.log("no image loaded");
+  }
+  //console.log("file", file);
+  //setTimeout(function() { console.log("file", file); }, 500);
+
+
   
 }

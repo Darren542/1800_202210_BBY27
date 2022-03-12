@@ -193,3 +193,41 @@ function writeEvents() {
 }
 
 setTimeout(function() { changeDisplay(displayedPage); }, 500);
+
+
+function uploadImage() {
+    //get reference to file input
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader;
+    
+    try {
+      reader.readAsDataURL(file);
+      console.log("image loaded");
+      // get a reference to firebases storage
+      
+      var storageRef = firebase.storage().ref('users/' + userId + '/profile.png').put(file).then(function () {
+          console.log("successfully uploaded")
+      }).catch(error => {
+          console.log(error.message)
+      });
+      // get a reference to where image will be stored
+      
+    //   // write the image into storage
+    //   storageRef.put(file).then((snapshot) => {
+    //     console.log('Uploaded an Image!');
+    //   });
+     }
+    catch(err) {
+      console.log("no image loaded");
+    }
+    //console.log("file", file);
+    //setTimeout(function() { console.log("file", file); }, 500);
+  
+  
+}
+
+document.querySelector("#submit-button").addEventListener("click", () => {
+    //save the document to be created into database
+    uploadImage();
+  });
+

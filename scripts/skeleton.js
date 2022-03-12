@@ -11,6 +11,11 @@ function loadSkeleton() {
         // Do something for the current logged-in user here: 
         console.log(user.uid);
         sessionStorage.setItem('userId', user.uid);
+        //trying to get profile image to work
+        firebase.storage().ref('users/' + user.uid + '/profile.png').getDownloadURL().then(imgUrl => {
+          document.querySelector("#profile-img").src = imgUrl;
+          console.log("imgUrl", imgUrl);
+        });
         //go to the correct user document by referencing to the user uid
         currentUser = db.collection("users").doc(user.uid);
         //get the document for current user.

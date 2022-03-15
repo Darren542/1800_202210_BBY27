@@ -14,27 +14,12 @@ function read_events_info() {
       document.querySelector("#event").innerHTML = doc.data().eventName;
       console.log(doc.data().type);
       document.querySelector("#type").innerHTML = doc.data().type;
-      var time = doc.data().startDate;   // get value of the "details" key
-      var time = time.toDate();
-      var eventID = doc.id;
-      console.log(eventID);
-      time = time.toString();
-      time = time.slice(0, 24);
-      console.log(doc.data().startTime);
-      document.querySelector("#start-time").innerHTML = time;
-      time = doc.data().endDate;   // get value of the "details" key
-      time = time.toDate();
-      console.log(eventID);
-      time = time.toString();
-      time = time.slice(0, 24);
-      console.log(doc.data().endTime);
-      document.querySelector("#end-time").innerHTML = time;
-      console.log(doc.data().owner);
+      document.querySelector("#start-date").innerHTML = doc.data().startDate;
+      document.querySelector("#end-date").innerHTML = doc.data().endDate;
+      document.querySelector("#start-time").innerHTML = doc.data().startTime;
+      document.querySelector("#end-time").innerHTML = doc.data().endTime;
       document.querySelector("#owner").innerHTML = doc.data().owner;
-      console.log(doc.data().streetAddress);
-      document.querySelector("#address").innerHTML = doc.data().streetAddress;
-      
-      console.log(doc.data().type);
+      document.querySelector("#location").innerHTML = doc.data().location;
     })
 }
 read_events_info();

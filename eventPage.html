@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>My BCIT Project</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
 
@@ -28,42 +28,112 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <link rel="stylesheet" href="./styles/style.css"/>
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
 <body>
   <!-- navbar is loaded into here -->
   <nav id="navbarPlaceholder"></nav>
 
-  <!-- Code for the new HTML page goes here--> 
-  
+  <!-- Code for the new HTML page goes here-->
 
-  <div class="card" style="width: 70% ; margin: auto ;background-color:#F5F5F5">
-    <img class="card-img-top" src="./images/Hockey_EventPage.jpg" alt="Card image cap" style="width: 100% ; height :auto; margin: auto">
+
+  <!-- <div class="card" style="width: 70% ; margin: auto ;background-color:#F5F5F5">
+    <img class="card-img-top" src="./images/Hockey_EventPage.jpg" alt="Card image cap"
+      style="width: 100% ; height :auto; margin: auto">
     <div class="card-body">
       <h5 class="card-title">Description</h5>
-      <p id = "description" class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto iure molestiae maxime voluptas sapiente quis, impedit odit dolores possimus repudiandae corrupti sed. Aliquam ullam consectetur libero quod, illo incidunt qui?</p>
+      <p id="description" class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto iure
+        molestiae maxime voluptas sapiente quis, impedit odit dolores possimus repudiandae corrupti sed. Aliquam ullam
+        consectetur libero quod, illo incidunt qui?</p>
     </div>
-      <ul class="list-group list-group-flush" >
-        <li class="list-group-item"><p><b>Event: </b><span id="event">No event name</span></p></li>
-        <li class="list-group-item"><p><b>Type: </b><span id="type">No type details</span></p></li>
-        <li class="list-group-item"><p><b>Owner: </b><span id="owner">No owner details</span></p></li>
-        <li class="list-group-item"><p><b>Start date: </b><span id="start-date">No start date</span></p></li>
-        <li class="list-group-item"><p><b>End date: </b><span id="end-date">No end date</span></p></li>
-        <li class="list-group-item"><p><b>Start time: </b><span id="start-time">No start time</span></p></li>
-        <li class="list-group-item"><p><b>End time: </b><span id="end-time">No end time</span></p></li>
-        <li class="list-group-item"><p><b>Location: </b><span id="location">No location</span></p></li>
-      </ul>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <p><b>Event: </b><span id="event">No event name</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>Type: </b><span id="type">No type details</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>Owner: </b><span id="owner">No owner details</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>Start date: </b><span id="start-date">No start date</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>End date: </b><span id="end-date">No end date</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>Start time: </b><span id="start-time">No start time</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>End time: </b><span id="end-time">No end time</span></p>
+      </li>
+      <li class="list-group-item">
+        <p><b>Location: </b><span id="location">No location</span></p>
+      </li>
+    </ul>
 
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <button type="button" class="btn btn-secondary">Edit</button>
+      <button type="button" class="btn btn-info">Save</button>
     </div>
 
     <div class="comment-section">
       <p>Test comment section</p>
     </div>
-    
+
+  </div> -->
+
+  <div class="container">
+    <h1>Event Details</h1>
+    <img class="card-img-top" src="./images/Hockey_EventPage.jpg" alt="Card image cap"
+      style="width: 100% ; height :auto; margin: auto">
+    <form>
+      <fieldset class="mb-3" id="eventInfoFields" disabled>
+        <div class="form-group">
+          <label>Event</label>
+          <input type="text" id="event" class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label>Type</label>
+          <input type="text" id="type" class="form-control" placeholder="Enter sport type">
+        </div>
+        <div class="form-group">
+          <label>Owner</label>
+          <input type="text" id="owner" class="form-control" placeholder="Enter the owner">
+        </div>
+        <div class="form-group">
+          <label>Start date</label>
+          <input type="text" id="start-date" class="form-control" placeholder="Enter start date">
+        </div>
+        <div class="form-group">
+          <label>End date</label>
+          <input type="text" id="end-date" class="form-control" placeholder="Enter end date">
+        </div>
+        <div class="form-group">
+          <label>Start time</label>
+          <input type="text" id="start-time" class="form-control" placeholder="Enter start-time">
+        </div>
+        <div class="form-group">
+          <label>End time</label>
+          <input type="text" id="end-time" class="form-control" placeholder="Enter end time">
+        </div>
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" id="location" class="form-control" placeholder="Enter event location">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" id="description" class="form-control" placeholder="Enter event description">
+        </div>
+      </fieldset>
+      <div class="d-flex justify-content-end mt-5">
+        <button type="button" class="btn btn-secondary" onclick="editEventInfo()">Edit</button>
+        <span style="width: 10px"></span>
+        <button type="button" class="btn btn-info" onclick="saveEventInfo()">Save</button>
+      </div>
+    </form>
   </div>
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>

@@ -5,6 +5,7 @@ console.log(urlParams);
 const eventId = urlParams.get('eventId');
 console.log(eventId);
 
+var currentUser;
 var currentUserHostingEvent;
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
@@ -54,7 +55,11 @@ function populateInfo() {
           if (event_description != null) {
             document.getElementById("description").value = event_description;          
           }
+          
         })})
+        db.collection("users").doc(user.uid).onSnapshot(doc => {
+          currentUser = db.collection("users").doc(user.uid);
+          document.querySelector("#like").onclick = () => saveLikedEvent(eventId);});
         
     } else {
       // No user is signed in.
@@ -94,4 +99,21 @@ function saveEventInfo(){
     console.log("Event info successfully updated!");
   });
   document.getElementById('eventInfoFields').disabled = true;
+}
+
+//-----------------------------------------------------------------------------
+// This function is called whenever the user clicks on the "bookmark" icon.
+// It adds the event to the "like" array
+// Then it will change the bookmark icon from the hollow to the solid version. 
+//-----------------------------------------------------------------------------
+function saveLikedEvent(eventId) {
+  currentUser.collection("likedEvents").doc(eventId).set({
+          eventId:eventId
+      }, {
+          merge: true
+      })
+      .then(function () {
+          console.log("Liked event has been saved!");
+          document.getElementById("like").className = 'fa-solid fa-thumbs-up fa-xl';
+      });
 }

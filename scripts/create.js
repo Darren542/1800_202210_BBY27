@@ -166,13 +166,8 @@ function saveDocument() {
     location: locationValue,
     creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
     online: online,
-    //
+    //comments map
     comments: {
-      comment1: {
-        userId: "unused",
-        userName:"unused",
-        comment: "unused"
-      }
     }
     
   }).then(function (docRef) {

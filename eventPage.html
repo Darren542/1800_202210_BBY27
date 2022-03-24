@@ -139,7 +139,7 @@
     </form>
 
     <form>
-      <fieldset class="mb-3" id="comment-section" disabled>
+      <fieldset class="mb-3" id="comment-section" autocomplete="off" disabled>
         <p>Comments</p>
         <div>
           <input type="text" id="comment" class="form-control" placeholder="Add a comment...">
@@ -147,7 +147,7 @@
       </fieldset>
       <div class="d-flex justify-content-start mt-5">
         
-        <button type="button" class="btn btn-secondary" onclick="">Comment</button>
+        <button type="button" class="btn btn-secondary" id="cmtsbtn" onclick="writeComments()">Comment</button>
       </div>
     </form>
   </div>

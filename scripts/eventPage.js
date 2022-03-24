@@ -141,11 +141,11 @@ function postComment() {
   //get the comment map size (an object that represents each comment)
   //reference the comment map size + 1 and assign it to a variable (represents a new comment object)
   //write the new comment object with, comment_text, userID, and UserName as states of the comment object's attributes.
-
+  
   //add a new comment div above the comment box
-
+  
   document.getElementById('comment-section').disabled = true;
-
+  
 }
 
 function populateComments() {

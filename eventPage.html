@@ -83,10 +83,6 @@
       <button type="button" class="btn btn-info">Save</button>
     </div>
 
-    <div class="comment-section">
-      <p>Test comment section</p>
-    </div>
-
   </div> -->
 
   <div class="container">
@@ -139,6 +135,19 @@
         <button type="button" class="btn btn-secondary" onclick="editEventInfo()">Edit</button>
         <span style="width: 10px"></span>
         <button type="button" class="btn btn-info" onclick="saveEventInfo()">Save</button>
+      </div>
+    </form>
+
+    <form>
+      <fieldset class="mb-3" id="comment-section" disabled>
+        <p>Comments</p>
+        <div>
+          <input type="text" id="comment" class="form-control" placeholder="Add a comment...">
+        </div>
+      </fieldset>
+      <div class="d-flex justify-content-start mt-5">
+        
+        <button type="button" class="btn btn-secondary" onclick="">Comment</button>
       </div>
     </form>
   </div>

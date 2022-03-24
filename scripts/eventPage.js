@@ -136,6 +136,7 @@ function postComment() {
   userId = sessionStorage.getItem('userId');
   userName = sessionStorage.getItem('userName');
 
+
   //reference the comment map and assign it to a variable
   //get the comment map size (an object that represents each comment)
   //reference the comment map size + 1 and assign it to a variable (represents a new comment object)
@@ -147,3 +148,21 @@ function postComment() {
 
 }
 
+function populateComments() {
+  let commentCardTemplate = document.getElementById("commentTemplate");
+  let commentCardGroup = document.getElementById("commentCardGroup");
+  
+  db.collection("events").doc(eventId).get()
+      .then(allComments => {
+          allComments.forEach(doc => {
+              var comment_content = doc.data().name; 
+              var userName = doc.data().id; 
+              let testCommentCard = hikeCardTemplate.content.cloneNode(true);
+              testCommentCard.querySelector('.comment-content').innerHTML = comment_content;
+              testCommentCard.querySelector('.comment-author').innerHTML = userName;
+              commentCardGroup.appendChild(testCommentCard);
+          })
+
+      })
+}
+populateComments();

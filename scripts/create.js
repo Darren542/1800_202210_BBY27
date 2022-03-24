@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const locationBtn = document.getElementById("#locationBtn");
   const locationBtnLbl = document.getElementById("#locationbtnlbl");
   const inputEventName = document.getElementById("#inputEventName");
-  const inputSport = document.getElementById("#inputSport"); 
+  const inputSport = document.getElementById("#inputSport");
   console.log('DOM fully loaded and parsed');
 });
 
@@ -51,18 +51,18 @@ function onlineSwitch() {
   document.getElementById('inputLocation').type = 'url';
 
   /** changes the input pattern to url */
-  document.getElementById("inputLocation").setAttribute("pattern", "https://.*"); 
+  document.getElementById("inputLocation").setAttribute("pattern", "https://.*");
 
   /** clears the field  */
-  document.getElementById("inputLocation").setAttribute("value", ""); 
+  document.getElementById("inputLocation").setAttribute("value", "");
 
-  document.getElementById("locationBtn").setAttribute("onclick", "window.open('https://zoom.us/signin')"); 
+  document.getElementById("locationBtn").setAttribute("onclick", "window.open('https://zoom.us/signin')");
 
-  document.getElementById("locationBtn").setAttribute("target", "_blank"); 
+  document.getElementById("locationBtn").setAttribute("target", "_blank");
 
-  document.getElementById("locationbtnlbl").innerHTML = "Start a Video Call"; 
+  document.getElementById("locationbtnlbl").innerHTML = "Start a Video Call";
 
-  document.getElementById("locationBtn").innerHTML = "Start a Video Call"; 
+  document.getElementById("locationBtn").innerHTML = "Start a Video Call";
 
   //track which page user on
   online = true;
@@ -83,16 +83,16 @@ function inPersonSwitch() {
   document.getElementById('inputLocation').type = 'text';
 
   /** changes the input pattern to no restrictions */
-  document.getElementById("inputLocation").removeAttribute("pattern"); 
+  document.getElementById("inputLocation").removeAttribute("pattern");
 
   /** clears the field  */
-  document.getElementById("inputLocation").setAttribute("value", ""); 
+  document.getElementById("inputLocation").setAttribute("value", "");
 
-  document.getElementById("locationbtnlbl").innerHTML = "Use Your Location"; 
+  document.getElementById("locationbtnlbl").innerHTML = "Use Your Location";
 
   document.getElementById("locationBtn").innerHTML = "Get my location";
-  
-  document.getElementById("locationBtn").setAttribute("onclick", "getLocation()"); 
+
+  document.getElementById("locationBtn").setAttribute("onclick", "getLocation()");
 
   //track which page user on
   online = false;
@@ -104,13 +104,13 @@ function inPersonSwitch() {
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
+  } else {
     document.getElementById("inputLocation").setAttribute("value", "Geolocation is not supported by this browser.");
   }
 }
 
 function showPosition(position) {
-  
+
 
   document.getElementById("inputLocation").setAttribute("value", "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
 
@@ -118,7 +118,7 @@ function showPosition(position) {
 var newDocId;
 var eventName;
 var eventDesc;
-var inputSportVar; 
+var inputSportVar;
 var locationValue;
 var startDate;
 var startTime;
@@ -128,6 +128,8 @@ var endTime;
 var timeStampEnd;
 var userId;
 var EventRef;
+// contains the comments map 
+var comments;
 // Code to write event to database
 
 function saveDocument() {
@@ -146,69 +148,79 @@ function saveDocument() {
   userId = sessionStorage.getItem('userId');
   EventRef = db.collection("events");
 
-    EventRef.add({
-        description: eventDesc,
-        endTime: endTime,
-        endDate: endDate,
-        timeStampEnd: timeStampEnd,
-        startTime: startTime,
-        startDate: startDate,
-        timeStampStart: timeStampStart,
-        eventName: eventName,
-        owner: sessionStorage.getItem('userName'),
-        ownerId: userId,
-        postalCode: 'unused',
-        province: "unused",
-        streetAddress: "unused",
-        type: inputSportVar,
-        location: locationValue,
-        creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
-        online : online
-    }).then(function(docRef) {
-      console.log("First Document written with ID: ", docRef.id);
-      console.log(docRef);
-      newDocId = docRef.id;
-      console.log("newDocId", newDocId);
-      uploadImage();
-      writeEvents();
-      
+  EventRef.add({
+    description: eventDesc,
+    endTime: endTime,
+    endDate: endDate,
+    timeStampEnd: timeStampEnd,
+    startTime: startTime,
+    startDate: startDate,
+    timeStampStart: timeStampStart,
+    eventName: eventName,
+    owner: sessionStorage.getItem('userName'),
+    ownerId: userId,
+    postalCode: 'unused',
+    province: "unused",
+    streetAddress: "unused",
+    type: inputSportVar,
+    location: locationValue,
+    creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    online: online,
+    //
+    comments: {
+      comment1: {
+        userId: "unused",
+        userName:"unused",
+        comment: "unused"
+      }
+    }
+    
+  }).then(function (docRef) {
+    console.log("First Document written with ID: ", docRef.id);
+    console.log(docRef);
+    newDocId = docRef.id;
+    console.log("newDocId", newDocId);
+    uploadImage();
+    writeEvents();
+
   })
-  .catch(function(error) {
+    .catch(function (error) {
       console.error("Error adding document: ", error);
-  });
+    });
 }
 //code to get information entered
 function writeEvents() {
-    //define a variable for the collection you want to create in Firestore to populate data
-   //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
-    //console.log("new Doc idea function", newDocId);
-    db.collection('users').doc(userId).collection("hosting").doc(newDocId).set({
-      ownerId: userId,
-      description: eventDesc,
-      endTime: endTime,
-      endDate: endDate,
-      timeStampEnd: timeStampEnd,
-      startTime: startTime,
-      startDate: startDate,
-      timeStampStart: timeStampStart,
-      eventName: eventName,
-      owner: sessionStorage.getItem('userName'),
-      ownerId: sessionStorage.getItem('userId'),
-      postalCode: 'unused',
-      province: "unused",
-      streetAddress: "unused",
-      type: inputSportVar,
-      location: locationValue,
-      creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      online: online
-    }).then(function(docRef2) {
-      console.log("Second Document written with ID: ");
-      console.log(docRef2);
-      window.location.assign(`eventPage.html?eventId=${newDocId}`);
+  //define a variable for the collection you want to create in Firestore to populate data
+  //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
+  //console.log("new Doc idea function", newDocId);
+  db.collection('users').doc(userId).collection("hosting").doc(newDocId).set({
+    ownerId: userId,
+    description: eventDesc,
+    endTime: endTime,
+    endDate: endDate,
+    timeStampEnd: timeStampEnd,
+    startTime: startTime,
+    startDate: startDate,
+    timeStampStart: timeStampStart,
+    eventName: eventName,
+    owner: sessionStorage.getItem('userName'),
+    ownerId: sessionStorage.getItem('userId'),
+    postalCode: 'unused',
+    province: "unused",
+    streetAddress: "unused",
+    type: inputSportVar,
+    location: locationValue,
+    creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    online: online,
+    
+  }).then(function (docRef2) {
+    console.log("Second Document written with ID: ");
+    console.log(docRef2);
+    window.location.assign(`eventPage.html?eventId=${newDocId}`);
   })
-  .catch(function(error) {
+    .catch(function (error) {
       console.error("Error adding document: ", error);
-  });
+    });
 }
 
 function uploadImage() {
@@ -219,7 +231,7 @@ function uploadImage() {
   // only have it for pngs atm
   // read the file in not sure if this is needed, but can be used to display preview of image if we want
   var reader = new FileReader;
-  
+
   try {
     reader.readAsDataURL(file);
     console.log("image loaded");
@@ -232,12 +244,13 @@ function uploadImage() {
       console.log('Uploaded an Image!');
     });
   }
-  catch(err) {
+  catch (err) {
     console.log("no image loaded");
   }
   //console.log("file", file);
   //setTimeout(function() { console.log("file", file); }, 500);
 
 
-  
+
 }
+

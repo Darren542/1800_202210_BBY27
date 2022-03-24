@@ -148,6 +148,29 @@ function postComment() {
 
 }
 
+function postComment2() {
+  db.collection('events').doc(eventId).collection("comments").doc().set({
+    // comment_text : document.getElementById("comment").value,
+    // userId : sessionStorage.getItem('userId'),
+    // userName : sessionStorage.getItem('userName')
+
+    comment_text : "testCommentText",
+    userId : "testUserID",
+    userName : "testUserName"
+    
+  }).then(function (docRef2) {
+    console.log("Second Document written with ID: ");
+    console.log(docRef2);
+  })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+}
+
+
+  
+
+
 function populateComments() {
   let commentCardTemplate = document.getElementById("commentTemplate");
   let commentCardGroup = document.getElementById("commentCardGroup");

@@ -15,6 +15,8 @@ function loadSkeleton() {
         firebase.storage().ref('users/' + user.uid + '/profile.png').getDownloadURL().then(imgUrl => {
           document.querySelector("#profile-img").src = imgUrl;
           console.log("imgUrl", imgUrl);
+        }).catch( () => {
+          console.log("no profile image found");
         });
         //go to the correct user document by referencing to the user uid
         currentUser = db.collection("users").doc(user.uid);

@@ -51,3 +51,4 @@ Project planning links
 Figjam: https://www.figma.com/files/project/46421912/Web-App?fuid=1062589601194972131
 Github: https://github.com/Darren542/1800_202210_BBY27
 Trello: https://trello.com/invite/b/6UXkL7Ow/addedfebfe0b51dd5c27eca0d2775138/bby27
+PresentationPlanningSheet https://docs.google.com/document/d/1W-lpZSqoFRKnoDF2FWZyB_qdSFIGn7x8DU6Nb2s6Jk4/edit

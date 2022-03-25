@@ -36,7 +36,7 @@ function displayCards(collection) {
 
     //performs the search with the categories selected
     //only does category atm.
-    db.collection(collection).where('type', catSym, category).limit(5).get()
+    db.collection(collection).where('type', catSym, category).limit(2).get()
         .then(snap => {
             var i = 1;
             snap.forEach(doc => { //iterate thru each doc
@@ -61,8 +61,10 @@ function displayCards(collection) {
                 newcard.querySelector('.card-text').innerHTML = description;
                 newcard.querySelector('.card-date').innerHTML = time;
                 newcard.querySelector('.card-time').innerHTML = startTime;
-                newcard.querySelector('.card-image').src = "./images/" + type + ".jpeg"; //hikes.jpg
 
+               
+                //This gets displayed if event have no image of it's own.
+                newcard.querySelector('.card-image').src = "./images/" + type + ".jpeg"; //hikes.jpg
                 //give unique ids to all elements for future use
                 newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
@@ -72,6 +74,7 @@ function displayCards(collection) {
 
                 let formatedLink = "location.href='./eventPage.html?eventId=" + eventID + "'";
                 newcard.querySelector('.card').setAttribute("onClick", formatedLink);
+                newcard.querySelector('.card').setAttribute("id", eventID);
                 //attach to gallery
                 document.getElementById("cards-go-here").appendChild(newcard);
                 //newcard.addEventListener('click' => {
@@ -79,7 +82,28 @@ function displayCards(collection) {
                 //});
                 i++;
             })
-        })
+        }).then(snap => {
+            /* If there is an image for the event stored in firebase use it.
+             * if there is no image use the default image for that event type */
+            let allCards = document.querySelectorAll(".card");
+            
+            allCards.forEach(element =>{
+                console.log("card", element.id);
+                let elementId = element.id
+                console.log(elementId);
+                firebase.storage().ref('images/' + elementId).getDownloadURL()
+             .then(imgUrl => {
+                 element.src = imgUrl;
+                 element.querySelector('.card-image').src = imgUrl;
+                 console.log("element", element);
+                 console.log("imgUrl", imgUrl);
+             })
+             .catch((error) => {
+                 console.log("No image found ", error);
+             });
+            });
+            console.log("does this work?")
+        });
 }
 
 // db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx").get().then(snap => {

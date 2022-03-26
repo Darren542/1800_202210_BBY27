@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- Boostrap Library JS CDN  go here -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <!-- navbar is loaded into here -->
+  <nav id="navbarPlaceholder"></nav>
+
+  <!-- Code for the new HTML page goes here-->
+  <div id="body">
+    <div class="container">
+      <h1>My liked events Gallery</h1>
+      <!-- Here is container for cards  -->
+      <div class="container">
+        <div id="eventCardGroup" class="row row-cols-auto">
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Templates for general use, not displayed -->
+    <template id="CardTemplate">
+      <div class="card py-2 mx-2" style="width: 18rem;">
+        <img class="card-image card-img-top" src=" ..." alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-type">placeholder</p>
+          <p class="card-location">placeholder</p>
+          <p class="card-startTime">placeholder</p>
+          <p class="card-startDate">placeholder</p>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's content.</p>
+          <a class="btn btn-primary card-href">Get Details</a>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- Footer is loaded into here-->
+  <nav id="footerPlaceholder"></nav>
+
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/likedEvents.js"></script>
+</body>
+
+</html>

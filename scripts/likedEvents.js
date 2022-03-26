@@ -24,10 +24,12 @@ function getLikedEvents(user) {
             var time = doc.data().startTime; //gets the start time
             var date = doc.data().startDate; //gets the event date
             var description = doc.data().description; //gets the event description
+            var location = doc.data().location;
             let newCard = CardTemplate.content.cloneNode(true);
             //populate the template with this event's info
             newCard.querySelector('.card-title').innerHTML = eventName;
             newCard.querySelector('.card-type').innerHTML = type;
+            newCard.querySelector('.card-location').innerHTML = location;
             newCard.querySelector('.card-startTime').innerHTML = time;
             newCard.querySelector('.card-startDate').innerHTML = date;
             newCard.querySelector('.card-text').innerHTML = description;

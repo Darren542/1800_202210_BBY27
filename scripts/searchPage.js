@@ -64,7 +64,7 @@ function displayCards(collection) {
 
                
                 //This gets displayed if event have no image of it's own.
-                newcard.querySelector('.card-image').src = "./images/" + type + ".jpeg"; //hikes.jpg
+                newcard.querySelector('.card-image').src = "./images/" + type + ".webp"; //hikes.jpg
                 //give unique ids to all elements for future use
                 newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);

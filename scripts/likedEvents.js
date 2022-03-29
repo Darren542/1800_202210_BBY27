@@ -26,6 +26,7 @@ function getLikedEvents(user) {
             var description = doc.data().description; //gets the event description
             var location = doc.data().location;
             let newCard = CardTemplate.content.cloneNode(true);
+            var docId = doc.id;
             //populate the template with this event's info
             newCard.querySelector('.card-title').innerHTML = eventName;
             newCard.querySelector('.card-type').innerHTML = type;
@@ -33,7 +34,7 @@ function getLikedEvents(user) {
             newCard.querySelector('.card-startTime').innerHTML = time;
             newCard.querySelector('.card-startDate').innerHTML = date;
             newCard.querySelector('.card-text').innerHTML = description;
-            newCard.querySelector('.card').setAttribute('id', thisEventId);
+            newCard.querySelector('.card').setAttribute('id', docId);
             console.log("Card id: ",newCard.querySelector('.card').id);
             eventCardGroup.appendChild(newCard);
           })

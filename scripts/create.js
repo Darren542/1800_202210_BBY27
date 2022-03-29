@@ -128,6 +128,7 @@ var endTime;
 var timeStampEnd;
 var userId;
 var EventRef;
+var city;
 // contains the comments map 
 var comments;
 // Code to write event to database
@@ -137,16 +138,18 @@ function saveDocument() {
   eventDesc = document.querySelector("#descriptionBox").value;
   inputSportVar = inputSport.value;
   locationValue = document.querySelector("#inputLocation").value;
-  startDate = document.querySelector("#inputStartDate").value
-  startTime = document.querySelector("#inputStartTime").value
+  startDate = document.querySelector("#inputStartDate").value;
+  startTime = document.querySelector("#inputStartTime").value;
   timeStampStart = document.querySelector("#inputStartTime").valueAsNumber + document.querySelector("#inputStartDate").valueAsNumber;
-  endDate = document.querySelector("#inputEndDate").value
-  endTime = document.querySelector("#inputEndTime").value
+  endDate = document.querySelector("#inputEndDate").value;
+  endTime = document.querySelector("#inputEndTime").value;
   timeStampEnd = document.querySelector("#inputEndTime").valueAsNumber + document.querySelector("#inputEndDate").valueAsNumber;
   console.log('eventName', eventName, eventDesc, inputSportVar, locationValue, startDate, startTime, timeStampStart);
   console.log("userDetails", sessionStorage.getItem('userId'));
   userId = sessionStorage.getItem('userId');
   EventRef = db.collection("events");
+  city = document.querySelector("#inputCity").value;
+  
 
   EventRef.add({
     description: eventDesc,
@@ -166,6 +169,7 @@ function saveDocument() {
     location: locationValue,
     creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
     online: online,
+    city: city,
     //comments map
     comments: {
     }

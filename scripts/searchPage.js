@@ -5,16 +5,21 @@ const urlParams = new URLSearchParams(queryString);
 //get the category from params
 let category = "nothing";
 let catSym = "!=";
+let catSearch = false;
 if (urlParams.get('categoryToggle')) {
     category = urlParams.get('categories');
     catSym = "==";
+    catSearch = true;
 } 
 
 //get the location from params
 let locationId = "nothing"
+let locationSearch = false;
 if (urlParams.get('locationToggle')) {
-    location = urlParams.get('locationId');
+    locationId = urlParams.get('locations');
+    locationSearch = true;
 } 
+console.log("the city", locationId);
 
 //get the distance from user
 //TODO no code here yet
@@ -30,15 +35,42 @@ if (urlParams.get('locationToggle')) {
     
 // });
 
-
+ /* ------------------------------------------------------------------------
+    * Displays the cards on the pages body
+    * Cards that are displayed are choosen from the search parameters picked
+    ------------------------------------------------------------------------*/
 function displayCards(collection) {
     let cardTemplate = document.getElementById("eventCardTemplate2");
 
-    //performs the search with the categories selected
-    //only does category atm.
-    db.collection(collection).where('type', catSym, category).limit(2).get()
-        .then(snap => {
-            var i = 1;
+    /* ****************************************************************
+    * Search parameters change depending on the params in the url
+    *  You can't do multiple queries in one search if they are not '=='
+    ******************************************************************/
+    if (catSearch && locationSearch) {
+        db.collection(collection).where('type', "==", category).where('city' , '==', locationId).limit(3).get().then(function(snap) {
+            displayCards(snap);
+            displayImages(snap);
+        })
+    } else if (catSearch) {
+        db.collection(collection).where('type', "==", category).limit(3).get().then(function(snap) {
+            displayCards(snap);
+            displayImages(snap);
+        });
+    } else if (locationSearch) {
+        db.collection(collection).where('city' , '==', locationId).limit(3).get().then(function(snap) {
+            displayCards(snap);
+            displayImages(snap);
+        });
+    } else {
+        db.collection(collection).limit(3).get().then(function(snap) {
+            displayCards(snap);
+            displayImages(snap);
+        })
+    }
+
+function displayCards(snap) {
+    var i = 1;
+            
             snap.forEach(doc => { //iterate thru each doc
                 var eventName = doc.data().eventName;   // get value of the "name" key
                 var description = doc.data().description;   // get value of the "details" key
@@ -82,29 +114,102 @@ function displayCards(collection) {
                 //});
                 i++;
             })
-        }).then(snap => {
-            /* If there is an image for the event stored in firebase use it.
-             * if there is no image use the default image for that event type */
-            let allCards = document.querySelectorAll(".card");
-            
-            allCards.forEach(element =>{
-                console.log("card", element.id);
-                let elementId = element.id
-                console.log(elementId);
-                firebase.storage().ref('images/' + elementId).getDownloadURL()
-             .then(imgUrl => {
-                 element.src = imgUrl;
-                 element.querySelector('.card-image').src = imgUrl;
-                 console.log("element", element);
-                 console.log("imgUrl", imgUrl);
-             })
-             .catch((error) => {
-                 console.log("No image found ", error);
-             });
-            });
-            console.log("does this work?")
-        });
+        }
 }
+
+function displayImages(snap) {
+        /* If there is an image for the event stored in firebase use it.
+         * if there is no image use the default image for that event type */
+        let allCards = document.querySelectorAll(".card");
+        
+        allCards.forEach(element =>{
+            console.log("card", element.id);
+            let elementId = element.id
+            console.log(elementId);
+            firebase.storage().ref('images/' + elementId).getDownloadURL()
+         .then(imgUrl => {
+             element.src = imgUrl;
+             element.querySelector('.card-image').src = imgUrl;
+             console.log("element", element);
+             console.log("imgUrl", imgUrl);
+         })
+         .catch((error) => {
+             console.log("No image found ", error);
+         });
+        });
+        console.log("does this work?")
+}
+
+//     db.collection(collection).where('type', catSym, category).where('city' , '==', "Burnaby").limit(3).get()
+//         .then(snap => {
+//             var i = 1;
+            
+//             snap.forEach(doc => { //iterate thru each doc
+//                 var eventName = doc.data().eventName;   // get value of the "name" key
+//                 var description = doc.data().description;   // get value of the "details" key
+//                 var type = doc.data().type;   // get value of the "details" key
+//                 var time = doc.data().startDate;   // get value of the "details" key
+//                 //var time = time.toDate();
+//                 var startTime = doc.data().startTime;
+//                 if (!startTime) {
+//                     startTime = "no start time";
+//                 }
+//                 var eventID = doc.id;
+//                 console.log(eventID);
+//                 time = time.toString();
+//                 time = time.slice(0, 24);
+//                 let newcard = cardTemplate.content.cloneNode(true);
+
+//                 //update title and text and image
+//                 newcard.querySelector('.card-title').innerHTML = eventName;
+//                 //newcard.querySelector('.card-title').href = "./eventPage.html?eventId=" + eventID;
+//                 newcard.querySelector('.card-text').innerHTML = description;
+//                 newcard.querySelector('.card-date').innerHTML = time;
+//                 newcard.querySelector('.card-time').innerHTML = startTime;
+
+               
+//                 //This gets displayed if event have no image of it's own.
+//                 newcard.querySelector('.card-image').src = "./images/" + type + ".webp"; //hikes.jpg
+//                 //give unique ids to all elements for future use
+//                 newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
+//                 newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
+//                 newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
+//                 newcard.querySelector('.card-date').setAttribute("id", "cdate" + i);
+//                 newcard.querySelector('.card-time').setAttribute("id", "ctime" + i);
+
+//                 let formatedLink = "location.href='./eventPage.html?eventId=" + eventID + "'";
+//                 newcard.querySelector('.card').setAttribute("onClick", formatedLink);
+//                 newcard.querySelector('.card').setAttribute("id", eventID);
+//                 //attach to gallery
+//                 document.getElementById("cards-go-here").appendChild(newcard);
+//                 //newcard.addEventListener('click' => {
+//                 //    alert("test");
+//                 //});
+//                 i++;
+//             })
+//         }).then(snap => {
+//             /* If there is an image for the event stored in firebase use it.
+//              * if there is no image use the default image for that event type */
+//             let allCards = document.querySelectorAll(".card");
+            
+//             allCards.forEach(element =>{
+//                 console.log("card", element.id);
+//                 let elementId = element.id
+//                 console.log(elementId);
+//                 firebase.storage().ref('images/' + elementId).getDownloadURL()
+//              .then(imgUrl => {
+//                  element.src = imgUrl;
+//                  element.querySelector('.card-image').src = imgUrl;
+//                  console.log("element", element);
+//                  console.log("imgUrl", imgUrl);
+//              })
+//              .catch((error) => {
+//                  console.log("No image found ", error);
+//              });
+//             });
+//             console.log("does this work?")
+//         });
+// }
 
 // db.collection("events").doc("TeL6VGcmj5kW9QAl5pGx").get().then(snap => {
 //     console.log(snap);

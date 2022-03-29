@@ -7,6 +7,7 @@ console.log(eventId);
 
 var currentUser;
 var currentUserHostingEvent;
+
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
@@ -18,7 +19,7 @@ function populateInfo() {
           .then(userDoc => {
             // if the data fields are not empty, then write them in to the form.
             // var eventName = userDoc.data().eventName;
-
+            showEventImage();
             var sport_type = userDoc.data().type;
             var event_name = userDoc.data().eventName;
             var start_date = userDoc.data().startDate;
@@ -70,6 +71,17 @@ function populateInfo() {
   });
 }
 
+//Render the image associated with the event ID.
+function showEventImage() {
+  firebase.storage().ref('images/' + eventId).getDownloadURL()
+    .then(imgUrl => {
+      document.querySelector('.card-img-top').src = imgUrl;
+      console.log(imgUrl);
+    }).catch((error) => {
+      console.log("No image found ", error);
+  });
+}
+
 //call the function to run it 
 populateInfo();
 
@@ -77,6 +89,7 @@ function editEventInfo() {
   //Enable the form fields
   document.getElementById('eventInfoFields').disabled = false;
 }
+
 function saveEventInfo() {
   event_name = document.getElementById("event").value;
   sport_type = document.getElementById("type").value;
@@ -110,10 +123,10 @@ function saveEventInfo() {
 //-----------------------------------------------------------------------------
 function saveLikedEvent(eventId) {
   currentUser.collection("likedEvents").doc(eventId).set({
-    eventId: eventId
-  }, {
-    merge: true
-  })
+      eventId: eventId
+    }, {
+      merge: true
+    })
     .then(function () {
       console.log("Liked event has been saved!");
       document.getElementById("like").className = 'fa-solid fa-thumbs-up fa-xl';
@@ -141,51 +154,51 @@ function postComment() {
   //get the comment map size (an object that represents each comment)
   //reference the comment map size + 1 and assign it to a variable (represents a new comment object)
   //write the new comment object with, comment_text, userID, and UserName as states of the comment object's attributes.
-  
+
   //add a new comment div above the comment box
-  
+
   document.getElementById('comment-section').disabled = true;
-  
+
 }
 
 function postComment2() {
   db.collection('events').doc(eventId).collection("comments").doc().set({
-    // comment_text : document.getElementById("comment").value,
-    // userId : sessionStorage.getItem('userId'),
-    // userName : sessionStorage.getItem('userName')
+      // comment_text : document.getElementById("comment").value,
+      // userId : sessionStorage.getItem('userId'),
+      // userName : sessionStorage.getItem('userName')
 
-    comment_text : "testCommentText",
-    userId : "testUserID",
-    userName : "testUserName"
-    
-  }).then(function (docRef2) {
-    console.log("Second Document written with ID: ");
-    console.log(docRef2);
-  })
+      comment_text: "testCommentText",
+      userId: "testUserID",
+      userName: "testUserName"
+
+    }).then(function (docRef2) {
+      console.log("Second Document written with ID: ");
+      console.log(docRef2);
+    })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
 }
 
 
-  
+
 
 
 function populateComments() {
   let commentCardTemplate = document.getElementById("commentTemplate");
   let commentCardGroup = document.getElementById("commentCardGroup");
-  
-  db.collection("events").doc(eventId).get()
-      .then(allComments => {
-          allComments.forEach(doc => {
-              var comment_content = doc.data().name; 
-              var userName = doc.data().id; 
-              let testCommentCard = hikeCardTemplate.content.cloneNode(true);
-              testCommentCard.querySelector('.comment-content').innerHTML = comment_content;
-              testCommentCard.querySelector('.comment-author').innerHTML = userName;
-              commentCardGroup.appendChild(testCommentCard);
-          })
 
+  db.collection("events").doc(eventId).get()
+    .then(allComments => {
+      allComments.forEach(doc => {
+        var comment_content = doc.data().name;
+        var userName = doc.data().id;
+        let testCommentCard = hikeCardTemplate.content.cloneNode(true);
+        testCommentCard.querySelector('.comment-content').innerHTML = comment_content;
+        testCommentCard.querySelector('.comment-author').innerHTML = userName;
+        commentCardGroup.appendChild(testCommentCard);
       })
+
+    })
 }
 populateComments();

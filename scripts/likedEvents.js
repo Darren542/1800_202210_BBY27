@@ -6,15 +6,15 @@ firebase.auth().onAuthStateChanged(user => {
     console.log("No user is signed in");
   }
 });
-
+var thisEventId;
 //gets the current user's favorite events.
 function getLikedEvents(user) {
   db.collection("users").doc(user.uid).collection("likedEvents").get()
     .then((querySnapshot) => {
       console.log(user.uid);
       querySnapshot.forEach((doc) => {
-        console.log(doc.data().eventId);
         thisEventId = doc.data().eventId;
+        console.log(thisEventId);
         let CardTemplate = document.getElementById("CardTemplate");
         db.collection("events").where(firebase.firestore.FieldPath.documentId(), "==", thisEventId).get().then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
@@ -33,9 +33,30 @@ function getLikedEvents(user) {
             newCard.querySelector('.card-startTime').innerHTML = time;
             newCard.querySelector('.card-startDate').innerHTML = date;
             newCard.querySelector('.card-text').innerHTML = description;
+            newCard.querySelector('.card').setAttribute('id', thisEventId);
+            console.log("Card id: ",newCard.querySelector('.card').id);
             eventCardGroup.appendChild(newCard);
           })
-        });
+        }).then(snap => {
+          /* If there is an image for the event stored in firebase use it.
+           * if there is no image use the default image for that event type */
+          let allCards = document.querySelectorAll(".card");
+          
+          allCards.forEach(element =>{
+              console.log("card", element.id);
+              let elementId = element.id
+              firebase.storage().ref('images/' + elementId).getDownloadURL()
+           .then(imgUrl => {
+               element.src = imgUrl;
+               element.querySelector('.card-image').src = imgUrl;
+               console.log("element", element);
+               console.log("imgUrl", imgUrl);
+           })
+           .catch((error) => {
+               console.log("No image found ", error);
+           });
+          });
+      });
       })
     })
 }

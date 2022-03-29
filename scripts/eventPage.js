@@ -7,12 +7,18 @@ console.log(eventId);
 
 var currentUser;
 var currentUserHostingEvent;
+var eventDocument;
+var userId;
+var newDocId
 
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
     if (user) {
+      userId = user.uid;
       db.collection("events").doc(eventId).onSnapshot(doc => {
+        eventDocument = doc;
+        newDocId = doc.id;
         currentUserHostingEvent = db.collection("users").doc(user.uid).collection("hosting").doc(eventId);
         //get the document for current user's hosting event.
         currentUserHostingEvent.get()
@@ -202,3 +208,18 @@ function populateComments() {
     })
 }
 populateComments();
+
+
+function writeEvents(userDoc, collect) {
+  //define a variable for the collection you want to create in Firestore to populate data
+  //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
+  //console.log("new Doc idea function", newDocId);
+  db.collection('users').doc(userId).collection(collect).doc(newDocId).set(userDoc.data())
+  .then(function (docRef2) {
+    console.log("Second Document written with ID: ");
+    console.log(docRef2);
+  })
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
+}

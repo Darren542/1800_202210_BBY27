@@ -211,6 +211,7 @@ function writeEvents() {
     location: locationValue,
     creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
     online: online,
+    city: city
     
   }).then(function (docRef2) {
     console.log("Second Document written with ID: ");

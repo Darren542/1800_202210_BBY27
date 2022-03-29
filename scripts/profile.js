@@ -12,6 +12,7 @@ const historyNav = document.querySelector("#historyNav");
 const calendarNav = document.querySelector("#calendarNav");
 const userProfile = document.querySelector("#userProfile");
 const cards = document.querySelector("#cards");
+const likedNav = document.querySelector("#favouritesNav");
 
 //event listeners set up on the buttons
 myProfileNav.addEventListener("click", () => {
@@ -23,6 +24,9 @@ attendingNav.addEventListener("click", () => {
 });
 hostingNav.addEventListener("click", () => {
     changeDisplay("hosting");
+});
+likedNav.addEventListener("click", () => {
+    changeDisplay("liked");
 });
 
 function testFunction() {
@@ -77,7 +81,7 @@ function displayCards(collection) {
                 //newcard.querySelector('.card-title').href = "./eventPage.html?eventId=" + eventID;
                 newcard.querySelector('.card-text').innerHTML = description;
                 newcard.querySelector('.card-time').innerHTML = time;
-                newcard.querySelector('.card-image').src = "./images/" + type + ".jpeg"; //hikes.jpg
+                newcard.querySelector('.card-image').src = "./images/" + type + ".webp"; //hikes.jpg
 
                 //give unique ids to all elements for future use
                 newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);

@@ -10,7 +10,7 @@ var currentUser;
 var currentUserHostingEvent;
 var eventDocument;
 var userId;
-var newDocId
+var newDocId;
 
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
@@ -26,7 +26,7 @@ function populateInfo() {
           .then(userDoc => {
             // if the data fields are not empty, then write them in to the form.
             // var eventName = userDoc.data().eventName;
-            showEventImage();
+            showEventImage(userDoc.data().type);
             var sport_type = userDoc.data().type;
             var event_name = userDoc.data().eventName;
             var start_date = userDoc.data().startDate;
@@ -79,12 +79,13 @@ function populateInfo() {
 }
 
 //Render the image associated with the event ID.
-function showEventImage() {
+function showEventImage(type) {
   firebase.storage().ref('images/' + eventId).getDownloadURL()
     .then(imgUrl => {
       document.querySelector('.card-img-top').src = imgUrl;
       console.log(imgUrl);
     }).catch((error) => {
+      document.querySelector('.card-img-top').src = "./images/" + type + ".webp";
       console.log("No image found ", error);
   });
 }
@@ -195,7 +196,7 @@ populateComments();
 
 
 
-function writeEvents() {
+function writeEvents(userDoc, collect) {
   //define a variable for the collection you want to create in Firestore to populate data
   //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
   //console.log("new Doc idea function", newDocId);

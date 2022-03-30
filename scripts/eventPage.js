@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 console.log(urlParams);
 const eventId = urlParams.get('eventId');
 console.log(eventId);
+const commentID = db.collection("comments");
 
 var currentUser;
 var currentUserHostingEvent;
@@ -143,43 +144,27 @@ function saveLikedEvent(eventId) {
 function writeComments() {
   document.getElementById('comment-section').disabled = false;
   document.getElementById('cmtsbtn').innerHTML = "Post";
-  document.getElementById('cmtsbtn').setAttribute("onclick", "");
+
+  // document.getElementById('cmtsbtn').setAttribute("onclick", "");
   document.getElementById('cmtsbtn').setAttribute("onclick", "postComment()");
+  console.log("This button works")
+
 }
 
 var comments;
 var commentId;
 
 function postComment() {
-  comment_text = document.getElementById("comment").value;
-  userId = sessionStorage.getItem('userId');
-  userName = sessionStorage.getItem('userName');
+  console.log("This button works too")
 
-
-  //reference the comment map and assign it to a variable
-  //get the comment map size (an object that represents each comment)
-  //reference the comment map size + 1 and assign it to a variable (represents a new comment object)
-  //write the new comment object with, comment_text, userID, and UserName as states of the comment object's attributes.
-
-  //add a new comment div above the comment box
-
-  document.getElementById('comment-section').disabled = true;
-
-}
-
-function postComment2() {
   db.collection('events').doc(eventId).collection("comments").doc().set({
-      // comment_text : document.getElementById("comment").value,
-      // userId : sessionStorage.getItem('userId'),
-      // userName : sessionStorage.getItem('userName')
 
-      comment_text: "testCommentText",
-      userId: "testUserID",
-      userName: "testUserName"
-
-    }).then(function (docRef2) {
-      console.log("Second Document written with ID: ");
-      console.log(docRef2);
+      comment_text: document.getElementById("comment").value,
+      userId: sessionStorage.getItem('userId'),
+      userName: sessionStorage.getItem('userName')
+    }).then(function () {
+      console.log("Comment has been posted. ");
+      location.reload();
     })
     .catch(function (error) {
       console.error("Error adding document: ", error);
@@ -187,30 +172,30 @@ function postComment2() {
 }
 
 
-
-
-
 function populateComments() {
   let commentCardTemplate = document.getElementById("commentTemplate");
   let commentCardGroup = document.getElementById("commentCardGroup");
 
-  db.collection("events").doc(eventId).get()
-    .then(allComments => {
-      allComments.forEach(doc => {
-        var comment_content = doc.data().name;
-        var userName = doc.data().id;
-        let testCommentCard = hikeCardTemplate.content.cloneNode(true);
-        testCommentCard.querySelector('.comment-content').innerHTML = comment_content;
+  db.collection("events").doc(eventId).collection("comments").get()
+    .then(snap => {
+      snap.forEach(doc => {
+        var comment_body = doc.data().comment_text; 
+        var userName = doc.data().userName;
+        let testCommentCard = commentCardTemplate.content.cloneNode(true);
         testCommentCard.querySelector('.comment-author').innerHTML = userName;
+        testCommentCard.querySelector('.comment-content').innerHTML = comment_body;
         commentCardGroup.appendChild(testCommentCard);
-      })
-
-    })
+      // })
+      console.log("Comment is viewable");
+      });
+    });
+    // })
 }
 populateComments();
 
 
-function writeEvents(userDoc, collect) {
+
+function writeEvents() {
   //define a variable for the collection you want to create in Firestore to populate data
   //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
   //console.log("new Doc idea function", newDocId);

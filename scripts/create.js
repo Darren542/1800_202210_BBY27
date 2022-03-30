@@ -169,10 +169,7 @@ function saveDocument() {
     location: locationValue,
     creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
     online: online,
-    city: city,
-    //comments map
-    comments: {
-    }
+    city: city
     
   }).then(function (docRef) {
     console.log("First Document written with ID: ", docRef.id);

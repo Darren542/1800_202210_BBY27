@@ -94,7 +94,27 @@ function displayCards(snap) {
                 newcard.querySelector('.card-date').innerHTML = time;
                 newcard.querySelector('.card-time').innerHTML = startTime;
 
-               
+                //-----------------------------------------------------------------------
+                // Checks the events start and end timeStamp againts the current time.
+                // Displays the time until the event starts if event has not started yet.
+                // If event is ongoing displays that event is ongoinging.
+                // If event has ended displays that event has ended.
+                //-----------------------------------------------------------------------
+                var timeUntilStart = doc.data().timeStampStart - Date.now();
+                var timeUntilEnd = doc.data().timeStampEnd - Date.now();
+                // console.log("Time until start", timeUntilStart);
+                if (timeUntilStart > 0){
+                    var secondsTotal = timeUntilStart / 1000; // convert ms to seconds
+                    var daysTotal = Math.floor(secondsTotal / 86400); // seconds in a day
+                    var hoursTotal = Math.floor(secondsTotal / 3600) % 24; // seconds in an hour
+                    var minutesTotal = Math.floor(secondsTotal / 60) % 60; // seconds in a minute
+                    newcard.querySelector('.card-time-to').innerHTML = "Starts in: " + daysTotal + " days, " + hoursTotal + " hours, " + minutesTotal + " mins";
+                } else if (timeUntilEnd > 0){
+                    newcard.querySelector('.card-time-to').innerHTML = "Currently Ongoing!";
+                } else {
+                    newcard.querySelector('.card-time-to').innerHTML = "Already Ended";
+                }
+                
                 //This gets displayed if event have no image of it's own.
                 newcard.querySelector('.card-image').src = "./images/" + type + ".webp"; //hikes.jpg
                 //give unique ids to all elements for future use

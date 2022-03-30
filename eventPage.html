@@ -96,20 +96,11 @@
     <template id="commentTemplate">
       <div class="commentcard">
         <div class="card-body">
-          <h3 class="comment-author">placeholder</h3>
-          <p class="comment-content">placeholder</p>
+          <h3 class="comment-author"></h3>
+          <p class="comment-content"></p>
         </div>
       </div>
     </template>
-
-    <div class="container">
-      <h2>Comments</h2>
-      <!-- Here is container for comments  -->
-      <div class="container">
-        <div id="commentCardGroup" class="row row-cols-auto">
-        </div>
-      </div>
-    </div>
 
     <form>
       <fieldset class="mb-3" id="comment-section" autocomplete="off" disabled>
@@ -123,6 +114,16 @@
         <button type="button" class="btn btn-secondary" id="cmtsbtn" onclick="writeComments()">Comment</button>
       </div>
     </form>
+
+    <div class="container">
+      <h2>Comments</h2>
+      <!-- Here is container for comments  -->
+      <div class="container">
+        <div id="commentCardGroup" class="row">
+        </div>
+      </div>
+    </div>
+
   </div>
   <!-- Footer is loaded into here-->
 

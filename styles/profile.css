@@ -58,6 +58,7 @@
 
 #frame {
     grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
     object-fit: scale-down;
     width: 80%;
     height: 80%;

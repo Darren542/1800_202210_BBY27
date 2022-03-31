@@ -163,8 +163,8 @@ function displayImages(snap) {
 // If event has ended returns that event has ended.
 //-----------------------------------------------------------------------
 function displayTimeUntilStart(doc){
-    var timeUntilStart = doc.data().timeStampStart - Date.now();
-    var timeUntilEnd = doc.data().timeStampEnd - Date.now();
+    var timeUntilStart = doc.data().timeStampStart - Date.now() + 25200001;
+    var timeUntilEnd = doc.data().timeStampEnd - Date.now() + 25200001;
     let StartTime;
     // console.log("Time until start", timeUntilStart);
     if (timeUntilStart > 0) {

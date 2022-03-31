@@ -167,8 +167,13 @@ function saveUserInfo() {
 
 
 firebase.auth().onAuthStateChanged(user => {
+  if(user){
     userId = user.uid;
     console.log(userId);
+  }else{
+    window.location.href = "./login.html";
+  }
+    
 });
 
 //Testing code here

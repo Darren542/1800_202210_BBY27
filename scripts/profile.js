@@ -128,6 +128,8 @@ function populateInfo() {
                     if (userCity != null) {
                         document.getElementById("cityInput").value = userCity;
                     }
+                    // console.log(sessionStorage.getItem("profileURL"));
+                    document.getElementById("frame").src = sessionStorage.getItem("profileURL");
                 })
         } else {
             // No user is signed in.
@@ -142,6 +144,7 @@ function editUserInfo() {
 }
 
 function saveUserInfo() {
+    uploadImage();
     userName = document.getElementById('nameInput').value;
     aboutMe = document.getElementById('aboutMeInput').value;
     userCity = document.getElementById('cityInput').value;
@@ -159,6 +162,7 @@ function saveUserInfo() {
             document.getElementById('personalInfoFields').disabled = true;
         }
     });
+    
 }
 
 
@@ -227,7 +231,11 @@ function uploadImage() {
     //console.log("file", file);
     //setTimeout(function() { console.log("file", file); }, 500);
   
-  
+    location.reload();
+}
+// to preview the image
+function preview() {
+    document.getElementById("frame").src = URL.createObjectURL(event.target.files[0]);
 }
 
 document.querySelector("#submit-button").addEventListener("click", () => {

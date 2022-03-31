@@ -14,6 +14,7 @@ function loadSkeleton() {
         //trying to get profile image to work
         firebase.storage().ref('users/' + user.uid + '/profile.png').getDownloadURL().then(imgUrl => {
           document.querySelector("#profile-img").src = imgUrl;
+          sessionStorage.setItem('profileURL', imgUrl);
           console.log("imgUrl", imgUrl);
         }).catch( () => {
           console.log("no profile image found");

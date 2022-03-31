@@ -34,6 +34,61 @@
     cursor: pointer;
 }
 
+/* Profile display css */
+#profileForm {
+    display: grid;
+    grid-template-rows: 200px 1fr 100px;
+    grid-template-columns: 40% 60%;
+    width: 100%;
+}
+
+#profileForm h1 {
+    display: flex;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+}
+
+#imageSubmitDiv {
+    display: grid;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+#frame {
+    grid-row: 1 / span 2;
+    grid-column: 1 / span 1;
+    object-fit: contain;
+    width: 80%;
+}
+
+#uploadFileLabel {
+    display: flex;
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#uploadFile {
+    display: flex;
+    justify-content: center;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 2;
+    width: 90%;
+}
+
+#personalInfoFields {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+}
+
+#profileSaveDiv {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+}
+
 @media (min-width: 1000px){
     #body {
         display: grid;

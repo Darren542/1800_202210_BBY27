@@ -24,6 +24,7 @@ body {
 
 #footerPlaceholder {
   grid-row: 3 / span 1;
+  grid-column: 1 /span 2;
 }
 
 a {

@@ -162,7 +162,8 @@ function postComment() {
 
       comment_text: document.getElementById("comment").value,
       userId: sessionStorage.getItem('userId'),
-      userName: sessionStorage.getItem('userName')
+      userName: sessionStorage.getItem('userName'),
+      timeStamp: Date.now()
     }).then(function () {
       console.log("Comment has been posted. ");
       location.reload();
@@ -208,4 +209,31 @@ function writeEvents(userDoc, collect) {
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
+
+  db.collection('events').doc(eventId).collection(collect).doc(userId).set({
+
+    userId: sessionStorage.getItem('userId'),
+    userName: sessionStorage.getItem('userName'),
+    timeStamp: Date.now()
+  }).then(function () {
+    console.log("Comment has been posted. ");
+  })
+  .catch(function (error) {
+    console.error("Error adding document: ", error);
+  });
+
+  if (collect == "liked") {
+    console.log("eventLiked", collect)
+    document.getElementById("liked").className = 'bi bi-heart-fill';
+    document.getElementById("liked").innerHTML= 'Liked';
+    document.getElementById("likedDiv").className = 'btn btn-success';
+  }
+
+  if (collect == "attending") {
+    console.log("eventAttended", collect)
+    console.log(document.getElementById("attending"));
+    document.getElementById("attending").className = 'btn btn-success';
+    document.getElementById("attending").innerHTML = 'Successfully Joined';
+  }
+  console.log("how many times am i running");
 }

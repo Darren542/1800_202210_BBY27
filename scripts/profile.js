@@ -143,8 +143,7 @@ function editUserInfo() {
    document.getElementById('personalInfoFields').disabled = false;
 }
 
-function saveUserInfo() {
-    uploadImage();
+function saveUserInfo() {  
     userName = document.getElementById('nameInput').value;
     aboutMe = document.getElementById('aboutMeInput').value;
     userCity = document.getElementById('cityInput').value;
@@ -157,6 +156,7 @@ function saveUserInfo() {
             })
                 .then(() => {
                     console.log("Document successfully updated!");
+                    uploadImage();
                 });
 
             document.getElementById('personalInfoFields').disabled = true;
@@ -220,6 +220,8 @@ function uploadImage() {
       
       var storageRef = firebase.storage().ref('users/' + userId + '/profile.png').put(file).then(function () {
           console.log("successfully uploaded")
+      }).then( () => {
+        location.reload();
       }).catch(error => {
           console.log(error.message)
       });
@@ -236,15 +238,15 @@ function uploadImage() {
     //console.log("file", file);
     //setTimeout(function() { console.log("file", file); }, 500);
   
-    location.reload();
+    //location.reload();
 }
 // to preview the image
 function preview() {
     document.getElementById("frame").src = URL.createObjectURL(event.target.files[0]);
 }
 
-document.querySelector("#submit-button").addEventListener("click", () => {
-    //save the document to be created into database
-    uploadImage();
-  });
+// document.querySelector("#submit-button").addEventListener("click", () => {
+//     //save the document to be created into database
+//     uploadImage();
+//   });
 

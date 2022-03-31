@@ -30,3 +30,7 @@ body {
 a {
   text-decoration: none;
 }
+.likedImg{
+  width: 262px;
+  height: 174px;
+}

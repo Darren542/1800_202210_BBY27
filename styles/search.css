@@ -118,6 +118,7 @@
 
 #datesSelector{
     grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
     display:flex;
     align-items:center;
     gap:10px;
@@ -128,7 +129,8 @@
 }
 
 #dates {
-    grid-row: 4 / span 1;
+    margin-left: 150px;
+    grid-row: 3 / span 1;
     grid-column: 1 / span 2;
     display:flex;
     align-items:center;

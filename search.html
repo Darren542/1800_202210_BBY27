@@ -39,7 +39,7 @@
   <!-- Code for the new HTML page goes here-->
   <div id="body">
     <div id="searchBar">
-      <form class="d-flex searchBarDiv">
+      <form class="d-flex searchBarDiv" action="search.html">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button id="searchButton" class="btn btn-primary searchBtn" type="submit">Search</button>
 
@@ -53,72 +53,68 @@
           <input id="locationToggle" name="locationToggle" type="checkbox" />
           <div id="locationsLabel">Filter by location:</div>
           <div id="locationsBar">
-          <select name="locations" id="locations">
-            <option value="Abbotsford">Abbotsford</option>
-            <option value="Burnaby">Burnaby</option>
-            <option value="Coquiltlam">Coquiltlam</option>
-            <option value="Delta">Delta</option>
-            <option value="Langley">Langley</option>
-            <option value="MapleRidge">Maple Ridge</option>
-            <option value="Mission">Mission</option>
-            <option value="NorthVancouver">North Vancouver</option>
-            <option value="NewWestminster">New Westminster</option>
-            <option value="Port Moody">Port Moody</option>
-            <option value="Richmond">Richmond</option>
-            <option value="Surrey">Surrey</option>
-            <option value="Vancouver">Vancouver</option>
-            <option value="WestVancouver">West Vancouver</option>
-            <option value="WhiteRock">White Rock</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
+            <select name="locations" id="locations">
+              <option value="Abbotsford">Abbotsford</option>
+              <option value="Burnaby">Burnaby</option>
+              <option value="Coquiltlam">Coquiltlam</option>
+              <option value="Delta">Delta</option>
+              <option value="Langley">Langley</option>
+              <option value="MapleRidge">Maple Ridge</option>
+              <option value="Mission">Mission</option>
+              <option value="NorthVancouver">North Vancouver</option>
+              <option value="NewWestminster">New Westminster</option>
+              <option value="Port Moody">Port Moody</option>
+              <option value="Richmond">Richmond</option>
+              <option value="Surrey">Surrey</option>
+              <option value="Vancouver">Vancouver</option>
+              <option value="WestVancouver">West Vancouver</option>
+              <option value="WhiteRock">White Rock</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
         </div>
 
         <div id="categorySearch">
           <input id="categoryToggle" name="categoryToggle" type="checkbox" />
           <div id="categoriesLabel">Filter by category:</div>
           <div class="categoriesBar">
-          <select name="categories" id="categories">
-            <option value="AlpineSkiing" selected>Alpine Skiing</option>
-            <option value="Biathlon">Biathlon</option>
-            <option value="Bobsleigh">Bobsleigh</option>
-            <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
-            <option value="Curling">Curling</option>
-            <option value="FigureSkating">Figure Skating</option>
-            <option value="FreestyleSkiing">Freestyle Skiing</option>
-            <option value="Hockey">Hockey</option>
-            <option value="Luge">Luge</option>
-            <option value="NordicCombined">Nordic Combined</option>
-            <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
-            <option value="Skeleton">Skeleton</option>
-            <option value="SkiJumping">Ski Jumping</option>
-            <option value="Snowboard">Snowboard</option>
-            <option value="SpeedSkating">Speed Skating</option>
-            <option value="Other">Other</option>
-          </select>
-        </div>
+            <select name="categories" id="categories">
+              <option value="AlpineSkiing" selected>Alpine Skiing</option>
+              <option value="Biathlon">Biathlon</option>
+              <option value="Bobsleigh">Bobsleigh</option>
+              <option value="Cross-CountrySkiing">Cross-Country Skiing</option>
+              <option value="Curling">Curling</option>
+              <option value="FigureSkating">Figure Skating</option>
+              <option value="FreestyleSkiing">Freestyle Skiing</option>
+              <option value="Hockey">Hockey</option>
+              <option value="Luge">Luge</option>
+              <option value="NordicCombined">Nordic Combined</option>
+              <option value="ShortTrackSpeedSkating">Short Track Speed Skating</option>
+              <option value="Skeleton">Skeleton</option>
+              <option value="SkiJumping">Ski Jumping</option>
+              <option value="Snowboard">Snowboard</option>
+              <option value="SpeedSkating">Speed Skating</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
         </div>
 
         <div id="datesSelector">
           <input id="dateToggle" name="dateToggle" type="checkbox" />
           <div id="datesLabel">Filter by date:</div>
-          
         </div>
+
         <div id="dates">
-          <div id="startLabel">Start Date:</div>
-          <input id="startTime" type="date"/>
-          <div id="startLabel">End Date:</div>
-          <input id="endTime" type="date"/>
+          <div id="startLabel">Start After:</div>
+          <input id="startTime" name="startTime" type="datetime-local" />
         </div>
 
         <div class="sortBy">
           <div id="sortByText">Sort by:</div>
-          <input type="radio" id="distance" checked="checked" name="sort-by" value="distance">
-          <label for="html">Distance</label><br>
-          <input type="radio" id="start" name="sort-by" value="start">
+          <input type="radio" id="start" checked="checked" name="sort-by" value="timeStampStart">
           <label for="css">Start time</label><br>
-          <input type="radio" id="end" name="sort-by" value="end">
-          <label for="javascript">End time</label>
+          <input type="radio" id="distance"  name="sort-by" value="timeStampStart">
+          <label for="html">Distance</label><br>          
         </div>
 
 

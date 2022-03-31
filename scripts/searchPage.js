@@ -17,14 +17,27 @@ if (urlParams.get('locationToggle')) {
     locationId = urlParams.get('locations');
     locationSearch = true;
 }
+
+//get the sortby type and the timeStamp for search
+let sortBy = urlParams.get('sort-by');
+let minTimeStamp = Date.parse('2000-02-28T13:09');
+//console.log("min date", minTimeStamp)
+//console.log(sortBy);
+if (sortBy = "timeStampStart") {
+    let minDate = urlParams.get('startTime');
+    minTimeStamp = Date.parse(minDate) - 25200001; //messy timezone correction
+    //console.log("minDate", minDate);
+}
+// don't display events before this time by default
+if (!minTimeStamp){
+    //minTimeStamp = Date.now() - 86400000;
+    minTimeStamp = Date.parse('2000-02-28T13:09');
+}
+
 //console.log("the city", locationId);
 
 //get the distance from user
 //TODO no code here yet
-
-//get the start and end date user wants
-//TODO no code here yet
-
 
 //--------------------------------------------------------------------------------------
 // Displays the cards on the pages body. Param is what collection to search in.
@@ -38,22 +51,24 @@ function display(collection) {
     // You can't do multiple queries in one search if they are not '=='
     //--------------------------------------------------------------------
     if (catSearch && locationSearch) {
-        db.collection(collection).where('type', "==", category).where('city', '==', locationId).limit(3).get().then(function (snap) {
+        db.collection(collection).where('type', "==", category).where('city', '==', locationId).where(sortBy, ">", minTimeStamp).orderBy(sortBy).limit(5).get().then(function (snap) {
             displayCards(snap);
             displayImages(snap);
         })
     } else if (catSearch) {
-        db.collection(collection).where('type', "==", category).limit(3).get().then(function (snap) {
+        db.collection(collection).where('type', "==", category).where(sortBy, ">=", minTimeStamp).orderBy(sortBy).limit(5).get().then(function (snap) {
             displayCards(snap);
             displayImages(snap);
         });
     } else if (locationSearch) {
-        db.collection(collection).where('city', '==', locationId).limit(3).get().then(function (snap) {
+        db.collection(collection).where('city', '==', locationId).where(sortBy, ">=", minTimeStamp).orderBy(sortBy).limit(5).get().then(function (snap) {
             displayCards(snap);
             displayImages(snap);
         });
     } else {
-        db.collection(collection).limit(3).get().then(function (snap) {
+        console.log("no search params")
+        console.log(minTimeStamp);
+        db.collection(collection).where(sortBy, ">=", minTimeStamp).orderBy(sortBy).limit(5).get().then(function (snap) {
             displayCards(snap);
             displayImages(snap);
         })

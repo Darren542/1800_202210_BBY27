@@ -2,7 +2,7 @@ UX/UI:
 change the logo and name
 center the login widget
 
-footer "home and create" are repeats 
+footer "home and create" are repeats - Done
 
 move search bar from nav bar to under h1 in main.html
 

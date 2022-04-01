@@ -4,7 +4,7 @@ center the login widget
 
 footer "home and create" are repeats - Done
 
-move search bar from nav bar to under h1 in main.html
+move search bar from nav bar to under h1 in main.html - Done
 
 turn off previous suggestions, autocomplete off, create.html
 

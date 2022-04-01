@@ -27,3 +27,37 @@ function insertName() {
   });
 }
 insertName();
+
+//------------------------------------------------------------------------
+// Get a random id to link to.
+// generates a random key and uses that to find document with closest Id.
+// keeps running until a document is found
+//------------------------------------------------------------------------
+async function randomDoc(collection) {
+    
+    var answer = db.collection(collection).doc().id;
+    var docId = 0;
+    //console.log("Random id to search against", answer);
+    db.collection(collection).where("__name__", ">", answer).limit(1).get()
+        .then(function (snap) {
+            let count = 0;
+            snap.forEach(doc => {
+                //console.log("returned documents", doc.id);
+                let discoverButton = document.getElementById("discover");
+                discoverButton.addEventListener('click', () => {
+                    let randomId3 = randomDoc("events");
+                    //console.log("click button", doc.id);
+                    window.location.href=`./eventPage.html?eventId=${doc.id}`;
+                });
+                count++
+            });  
+            if (count == 0){
+                console.log("no document found");
+                randomDoc(collection);
+            }          
+        })
+        .catch((error) => {
+            console.log("does this error go")
+        });        
+}
+randomDoc("events");

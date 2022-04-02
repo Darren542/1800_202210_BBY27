@@ -33,8 +33,8 @@ insertName();
 // generates a random key and uses that to find document with closest Id.
 // keeps running until a document is found
 //------------------------------------------------------------------------
-async function randomDoc(collection) {
-    
+async function randomDoc(collection, callback) {
+
     var answer = db.collection(collection).doc().id;
     var docId = 0;
     //console.log("Random id to search against", answer);
@@ -42,22 +42,24 @@ async function randomDoc(collection) {
         .then(function (snap) {
             let count = 0;
             snap.forEach(doc => {
-                //console.log("returned documents", doc.id);
-                let discoverButton = document.getElementById("discover");
+                callback(doc.id);
+                count++
+            });
+            if (count == 0) {
+                console.log("no document found");
+                randomDoc(collection);
+            }
+        })
+        .catch((error) => {
+            console.log("does this error go", error);
+        });
+}
+
+randomDoc("events", function(docid) {
+    let discoverButton = document.getElementById("discover");
                 discoverButton.addEventListener('click', () => {
                     let randomId3 = randomDoc("events");
                     //console.log("click button", doc.id);
-                    window.location.href=`./eventPage.html?eventId=${doc.id}`;
+                    window.location.href = `./eventPage.html?eventId=${docid}`;
                 });
-                count++
-            });  
-            if (count == 0){
-                console.log("no document found");
-                randomDoc(collection);
-            }          
-        })
-        .catch((error) => {
-            console.log("does this error go")
-        });        
-}
-randomDoc("events");
+})

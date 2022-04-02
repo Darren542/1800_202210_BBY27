@@ -59,11 +59,11 @@ async function randomDoc(collection, callback) {
 // Callback function sends back random doc id as function parameter of anonymous function.
 // attaches docId as url param to discover button.
 //----------------------------------------------------------------------------------------
-randomDoc("events", function(docid) {
+randomDoc("events", function (docid) {
     let discoverButton = document.getElementById("discover");
-                discoverButton.addEventListener('click', () => {
-                    let randomId3 = randomDoc("events");
-                    //console.log("click button", docid);
-                    window.location.href = `./eventPage.html?eventId=${docid}`;
-                });
+    discoverButton.addEventListener('click', () => {
+        let randomId3 = randomDoc("events");
+        //console.log("click button", docid);
+        window.location.href = `./eventPage.html?eventId=${docid}`;
+    });
 })

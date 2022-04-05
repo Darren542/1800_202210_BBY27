@@ -1,9 +1,13 @@
+
+//------------------------------------------------------------------
+// get params from the URL so they appropriate results can be shown.
+//------------------------------------------------------------------
 const queryString = window.location.search;
-console.log(queryString);
+//console.log(queryString);
 const urlParams = new URLSearchParams(queryString);
-console.log(urlParams);
+//console.log(urlParams);
 const eventId = urlParams.get('eventId');
-console.log(eventId);
+//console.log(eventId);
 const commentID = db.collection("comments");
 
 var currentUser;
@@ -12,6 +16,10 @@ var eventDocument;
 var userId;
 var newDocId;
 
+//----------------------------------------------------------------
+// Displays all the events Information on the webpage.
+// The event to be displayed is choosen from the param in the url
+//----------------------------------------------------------------
 function populateInfo() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
@@ -20,7 +28,8 @@ function populateInfo() {
       db.collection("events").doc(eventId).onSnapshot(doc => {
         eventDocument = doc;
         newDocId = doc.id;
-        currentUserHostingEvent = db.collection("users").doc(user.uid).collection("hosting").doc(eventId);
+        console.log("userid", user.id);
+        currentUserHostingEvent = db.collection("events").doc(eventId);
         //get the document for current user's hosting event.
         currentUserHostingEvent.get()
           .then(userDoc => {
@@ -78,7 +87,11 @@ function populateInfo() {
   });
 }
 
-//Render the image associated with the event ID.
+//-----------------------------------------------------------
+// Render the image associated with the event ID.
+// Default image for event type is used if not event Image
+// If event has an Image that is displayed.
+//-----------------------------------------------------------
 function showEventImage(type) {
   firebase.storage().ref('images/' + eventId).getDownloadURL()
     .then(imgUrl => {
@@ -93,11 +106,19 @@ function showEventImage(type) {
 //call the function to run it 
 populateInfo();
 
+//-----------------------------------------------------------------
+// Makes the fields on the page editable
+// This should only be allowed for the event owner.
+//-----------------------------------------------------------------
 function editEventInfo() {
   //Enable the form fields
   document.getElementById('eventInfoFields').disabled = false;
 }
 
+//------------------------------------------------------------------
+// Saves the changes made to the event by the owner.
+// Should not be run if event is not owned by user.
+//------------------------------------------------------------------
 function saveEventInfo() {
   event_name = document.getElementById("event").value;
   sport_type = document.getElementById("type").value;
@@ -159,7 +180,6 @@ function postComment() {
   console.log("This button works too")
 
   db.collection('events').doc(eventId).collection("comments").doc().set({
-
       comment_text: document.getElementById("comment").value,
       userId: sessionStorage.getItem('userId'),
       userName: sessionStorage.getItem('userName'),
@@ -173,7 +193,10 @@ function postComment() {
     });
 }
 
-
+//-----------------------------------------------------------------------------
+// Displays all the event's comments on the page.
+// Creates then appends a card for each comment found.
+//-----------------------------------------------------------------------------
 function populateComments() {
   let commentCardTemplate = document.getElementById("commentTemplate");
   let commentCardGroup = document.getElementById("commentCardGroup");
@@ -196,11 +219,14 @@ function populateComments() {
 populateComments();
 
 
-
+//--------------------------------------------------------------------------------------
+// When a user clicks to attend or like an event a copy is saved in their account.
+// Information about the user who clicked attend or like is also saved in the events
+// document in its own collection.
+//--------------------------------------------------------------------------------------
 function writeEvents(userDoc, collect) {
-  //define a variable for the collection you want to create in Firestore to populate data
-  //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
   //console.log("new Doc idea function", newDocId);
+  // Saves the event into the users document in the right collection.
   db.collection('users').doc(userId).collection(collect).doc(newDocId).set(userDoc.data())
   .then(function (docRef2) {
     console.log("Second Document written with ID: ");
@@ -210,8 +236,8 @@ function writeEvents(userDoc, collect) {
       console.error("Error adding document: ", error);
     });
 
+  // Saves the information about the user attending or liking the event.
   db.collection('events').doc(eventId).collection(collect).doc(userId).set({
-
     userId: sessionStorage.getItem('userId'),
     userName: sessionStorage.getItem('userName'),
     timeStamp: Date.now()
@@ -222,6 +248,7 @@ function writeEvents(userDoc, collect) {
     console.error("Error adding document: ", error);
   });
 
+  // Changes the display to show that event was liked.
   if (collect == "liked") {
     console.log("eventLiked", collect)
     document.getElementById("liked").className = 'bi bi-heart-fill';
@@ -229,11 +256,12 @@ function writeEvents(userDoc, collect) {
     document.getElementById("likedDiv").className = 'btn btn-success';
   }
 
+  // Changes the display to show event is attended.
   if (collect == "attending") {
     console.log("eventAttended", collect)
     console.log(document.getElementById("attending"));
     document.getElementById("attending").className = 'btn btn-success';
     document.getElementById("attending").innerHTML = 'Successfully Joined';
   }
-  console.log("how many times am i running");
+  //console.log("how many times am i running");
 }

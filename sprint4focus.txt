@@ -34,6 +34,8 @@ timezone issue in search function
 
 remove history and calendar 
 
+profile page, grab event images from storage if they exist.
+
 
 
 

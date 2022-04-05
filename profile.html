@@ -44,8 +44,8 @@
         <li class="profileNavItem" id="attendingNav">Attending</li>
         <li class="profileNavItem" id="hostingNav">Hosting</li>
         <li class="profileNavItem" id="favouritesNav">Favourites</li>
-        <li class="profileNavItem" id="historyNav">History</li>
-        <li class="profileNavItem" id="calendarNav">Calendar</li>
+        <!-- <li class="profileNavItem" id="historyNav">History</li>
+        <li class="profileNavItem" id="calendarNav">Calendar</li> -->
       </ul>
     </div>
     <div class="profileBody">
@@ -63,17 +63,22 @@
 
       <!-- For the my Profile View-->
       <div class="UserProfile hidden" id="userProfile">
-        <div class="container">
+       
 
           <form id="profileForm">
-            <h1>User Profile </h1>
-            <div id="imageSubmitDiv">              
-              <img id="frame" src="" />
+            <div id="topProfile">
+              <h1 id="profileGreeting">User Profile </h1>           
               <label for="uploadFile" id="uploadFileLabel" class="form-label">Change Profile Image</label>
               <input type="file" onchange="preview()" id="uploadFile" name="filename" class="btn btn-primary"
                 accept="image/x-png,image/gif,image/jpeg,image/jpg,/image/png">
               <!--<button type="button" id="submit-button">Submit image</button> -->
             </div>
+            <div id="frameDiv">
+              <img id="frame" src="" />
+            </div>
+            
+
+            
 
 
             <fieldset class="mb-3" id="personalInfoFields" disabled>
@@ -98,8 +103,9 @@
               <button type="button" class="btn btn-info" id="saveButton" onclick="saveUserInfo()">Save</button>
             </div>
           </form>
-        </div>
+       
       </div>
+    </div>
     </div>
 
     <!-- Templates for general use, not displayed -->

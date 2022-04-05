@@ -6,12 +6,13 @@
     display: grid;
     grid-template-rows: 100px 1fr;
     grid-template-columns: 1fr;
+    grid-column: 1 / span 2;
 }
 
 .profileNav {
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
-    background-color: red;
+    background-color: #BB4430;
     
 }
 
@@ -32,6 +33,17 @@
 
 .profileNavList > * {
     cursor: pointer;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius:5px;
+    color:black;
+    background-color: #5ABCB9;
+    width: 120px;
+    text-align:center;
+}
+
+.profileNavList > *:hover {
+    background-color: #3D52D5;
 }
 
 /* Profile display css */
@@ -40,37 +52,44 @@
     grid-template-rows: 200px 1fr 100px;
     grid-template-columns: 40% 60%;
     width: 100%;
+    padding:8px;
 }
 
-#profileForm h1 {
-    display: flex;
+
+#profileTop {
     grid-row: 1 / span 1;
-    grid-column: 1 / span 1;
+    grid-column: 1 / span 2;
 }
 
-#imageSubmitDiv {
+#topProfile {
     display: grid;
-    grid-row: 1 / span 1;
-    grid-column: 2 / span 1;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 50px 50px
+
 }
 
+#profileGreeting {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 2;
+}
+
+#frameDiv {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    display:flex;
+}
 #frame {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 2;
-    object-fit: scale-down;
-    width: 80%;
-    height: 80%;
-    margin-left: auto;
+    width: 200px;
+    height: 200px;
     margin-right: auto;
     margin-top: 10px;
+    object-fit: fill;
+    padding: 10px;
 }
 
 #uploadFileLabel {
     display: flex;
-    grid-row: 1 / span 1;
-    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 2;
     justify-content: center;
     align-items: center;
 }
@@ -78,7 +97,7 @@
 #uploadFile {
     display: flex;
     justify-content: center;
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
     grid-column: 2 / span 2;
     width: 90%;
 }

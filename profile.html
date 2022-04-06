@@ -63,77 +63,79 @@
 
       <!-- For the my Profile View-->
       <div class="UserProfile hidden" id="userProfile">
-       
 
-          <form id="profileForm">
-            <div id="topProfile">
-              <h1 id="profileGreeting">User Profile </h1>           
-              <label for="uploadFile" id="uploadFileLabel" class="form-label">Change Profile Image</label>
-              <input type="file" onchange="preview()" id="uploadFile" name="filename" class="btn btn-primary"
-                accept="image/x-png,image/gif,image/jpeg,image/jpg,/image/png">
-              <!--<button type="button" id="submit-button">Submit image</button> -->
+        <h1 id="profileGreeting">User Profile </h1>
+
+        <form id="profileForm">
+          
+          <div id="frameDiv">
+            <img id="frame" src="" />
+          </div>
+
+          <div id="topProfile">
+            <!-- <label for="uploadFile" id="uploadFileLabel" class="form-label">Change Profile Image</label> -->
+            <input type="file" onchange="preview()" id="uploadFile" name="filename" class="btn btn-primary"
+              accept="image/x-png,image/gif,image/jpeg,image/jpg,/image/png">
+          </div>
+
+          <fieldset class="mb-3" id="personalInfoFields" disabled>
+
+            
+            <div class="form-group">
+              <label>Name</label>
+              <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
             </div>
-            <div id="frameDiv">
-              <img id="frame" src="" />
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
             </div>
+            <div class="form-group">
+              <label>About me</label>
+              <textarea id="aboutMeInput" name="aboutMeInput" class="form-control" rows="6" cols="50"
+                placeholder="Write about yourself"></textarea>
+            </div>
+
             
 
-            
+          </fieldset>
 
+          <div id="profileSaveDiv">
+            <!--event-listener that call the function editUserInfo after clicking on the button. -->
+            <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
+            <button type="button" class="btn btn-info" id="saveButton" onclick="saveUserInfo()">Save</button>
+          </div>
+        </form>
 
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
-              <div class="form-group">
-                <label>Name</label>
-                <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-              </div>
-              <div class="form-group">
-                <label>City</label>
-                <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
-              </div>
-              <div class="form-group">
-                <label>About me</label>
-                <textarea id="aboutMeInput" name="aboutMeInput" class="form-control" rows="6" cols="50"
-                  placeholder="Write about yourself"></textarea>
-              </div>
-            </fieldset>
-            <div id="profileSaveDiv" class="d-flex justify-content-end mt-5">
-              <!--event-listener that call the function editUserInfo after clicking on the button. -->
-              <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-              <span style="width: 10px"></span>
-              <button type="button" class="btn btn-info" id="saveButton" onclick="saveUserInfo()">Save</button>
-            </div>
-          </form>
-       
       </div>
     </div>
-    </div>
+  </div>
 
-    <!-- Templates for general use, not displayed -->
-    <template id="eventCardTemplate2">
+  <!-- Templates for general use, not displayed -->
+  <template id="eventCardTemplate2">
 
-      <div class="card mb-3" onclick="location.href='./main.html';" style="cursor: pointer;">
-        <div class="row grid-test">
-          <div class="image-box">
-            <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
-          </div>
-          <div class="test-box">
-            <div class="card-body">
-              <h3 class="card-title">Card title</h3>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <p class="card-time text-muted">time will go here</p>
-            </div>
+    <div class="card mb-3" onclick="location.href='./main.html';" style="cursor: pointer;">
+      <div class="row grid-test">
+        <div class="image-box">
+          <img src="..." class="img-fluid rounded-start card-image card-image-test" alt="...">
+        </div>
+        <div class="test-box">
+          <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+            <p class="card-time text-muted">time will go here</p>
           </div>
         </div>
       </div>
-    </template>
+    </div>
+  </template>
 
-    <!-- Footer is loaded into here-->
-    <nav id="footerPlaceholder"></nav>
+  <!-- Footer is loaded into here-->
+  <nav id="footerPlaceholder"></nav>
 
-    <script src="./scripts/firebaseAPI_bby27.js"></script>
-    <script src="./scripts/skeleton.js"></script>
-    <script src="./scripts/profile.js"></script>
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/profile.js"></script>
 </body>
 
 </html>

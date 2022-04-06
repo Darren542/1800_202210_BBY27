@@ -1,0 +1,31 @@
+a > img {
+    height: 50px;
+}
+
+.navbar-dark .navbar-brand {
+    background-color: #3d52d5;
+}
+
+.bg-primary {
+    background-color: #3d52d5 !important;
+}
+
+.navbar-collapse {
+    color: white;
+}
+
+.dropdown-menu[data-bs-popper] {
+    right: 0;
+    left: 0%;
+    background-color: #DDE8F5;
+}
+
+.dropdown-toggle {
+    background-color: #B6C8EB !important;
+    color: black;
+}
+
+#profile-img {
+    width: 39px;
+    height: 39px;
+}

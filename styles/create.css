@@ -64,6 +64,11 @@
     display: none;
   }
 
+.btn-primary {
+    background-color: #B6C8EB;
+    color: black;
+}
+
 @media (max-width: 700px){
 
 

@@ -26,123 +26,80 @@
 }
 
 .advancedOptions {
-    position:absolute;
+    position: absolute;
     display: flex;
-    padding: 10px;
+    padding-bottom: 50px;
+    padding-top: 50px;
     z-index: 100;
-    background-color:rgb(207, 242, 248);
-    width: 80%;
+    background-color:#DDE8F5;
+    width: 93%;
     justify-content: center;
-    margin-left:10%;
-    margin-right:10%;
-    margin-top: 5px;
-    box-shadow: 4px 4px 4px rgb(190, 190, 248);
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 #advancedContainer {
-    display:grid;
-    margin-left:auto;
-    margin-right:auto;
-    grid-template-rows:50px 50px 50px 30px 50px;
-    
+    display: grid();
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr 1fr; 
+
 }
 
 #locationSearch {
-    grid-row: 1 / span 1;
-    display:grid;
-    grid-template-columns: 4fr 6fr;
-    grid-template-rows: 1fr;
-    gap: 5px;
+    grid-row: 1 /span 1;
+    grid-column: 1 /span 1;
+    display: grid;
+
 }
 
 #locationToggle {
-    display:flex;
-    align-self:center;
-    grid-row: 1 / span 1;
-    grid-column: 1 /span 1;
-    z-index: 200;
+
 }
 
 #locationsLabel {
-    display:flex;
-    align-self:center;
-    padding-left: 30px;
-    grid-row: 1 / span 1;
-    grid-column: 1 /span 1;
+
 }
 
 #locationsBar {
-    display:flex;
-    align-self:center;
-    padding-left: 30px;
-    grid-row: 1 / span 1;
-    grid-column: 2 /span 1;
+
 }
 
 #locations {
-    grid-row:1 / span 1;
-    grid-column: 2 / span 2;
+
 }
 
 #categorySearch{
-    grid-row: 2 / span 1;
-    display:grid;
-    grid-template-columns: 4fr 6fr;
-    grid-template-rows: 1fr;
-    gap: 5px;
+
 }
 
 #categoryToggle {
-    display:flex;
-    align-self:center;
-    grid-row: 1 / span 1;
-    grid-column: 1 /span 1;
-    z-index: 200;
+
 }
 
 #categoriesLabel {
-    display:flex;
-    align-self:center;
-    padding-left: 30px;
-    grid-row: 1 / span 1;
-    grid-column: 1 /span 1;
+
 }
 
 .categoriesBar {
-    display:flex;
-    align-self:center;
-    padding-left: 30px;
-    grid-row: 1 / span 1;
-    grid-column: 2 /span 1;
+
 }
 
 #datesSelector{
-    grid-row: 3 / span 1;
-    grid-column: 1 / span 2;
-    display:flex;
-    align-items:center;
-    gap:10px;
+
 }
 
 #datesLabel {
-    padding-left: 8px;
+
 }
 
 #dates {
-    margin-left: 150px;
-    grid-row: 3 / span 1;
-    grid-column: 1 / span 2;
-    display:flex;
-    align-items:center;
-    gap:10px;
+
 }
 
 .sortBy {
-    grid-row: 5 / span 1;
-    grid-column: 1 / span 2;
-    display:flex;
-    align-items:center;
-    gap:10px;
+
 }
 
 #searchBarDiv {
@@ -153,12 +110,10 @@
 }
 
 #searchBar {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding-top: 1em;;
     display: flex;
     justify-content: center;
-    gap:12px;
+    gap: 12px;
 }
 
 
@@ -174,3 +129,37 @@
     width: 150px;
 }
 
+#searchButton {
+    background-color: #DDE8F5;
+    color: black;
+}
+
+#searchButton:hover {
+    background-color: #B6C8EB;
+    color: black;
+}
+
+#searchOptions {
+    background-color: #DDE8F5;
+    color: black;
+}
+
+#searchOptions:hover {
+    background-color: #B6C8EB;
+    color: black;
+}
+
+#h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    padding-top: 1em;
+}
+
+.cards > h3 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+
+}

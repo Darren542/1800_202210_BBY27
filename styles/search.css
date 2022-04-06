@@ -216,6 +216,16 @@ input[type='checkbox'] {
     color: black;
 }
 
+.card {
+    background-color: #B6C8EB;
+    padding-left: 2em;
+    color: white;
+}
+
+#cards-go-here {
+    padding: 1em;
+}
+
 #h1 {
     display: flex;
     justify-content: center;

@@ -32,7 +32,9 @@ likedNav.addEventListener("click", () => {
 function testFunction() {
     console.log("test function has run");
 }
+//----------------------------------------------------------------
 //function to get events from the right search depends on menu on
+//----------------------------------------------------------------
 function changeDisplay(choice) {
     if (choice == "profile") {
         userProfile.classList.remove('hidden');
@@ -51,8 +53,9 @@ function changeDisplay(choice) {
     
 }
 
-
-//function to write events onto the html
+//-----------------------------------------------------------------------------
+// displays the correct collection of cards on page
+//-----------------------------------------------------------------------------
 function displayCards(collection) {
     let cardTemplate = document.getElementById("eventCardTemplate2");
 
@@ -66,8 +69,9 @@ function displayCards(collection) {
         });
 }
 
-
-// Javascript for the User Profile Page
+//--------------------------------------------------------------
+// Fills in the profile page with the users information.
+//--------------------------------------------------------------
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
@@ -103,11 +107,19 @@ function populateInfo() {
     });
 }
 
+//---------------------------------------------------------------------------
+// Makes the fields on the page editable so values can be changed.
+// Only the event owner should be able to do this.
+//---------------------------------------------------------------------------
 function editUserInfo() {
    //Enable the form fields
    document.getElementById('personalInfoFields').disabled = false;
 }
 
+//---------------------------------------------------------------------------
+// Save the newly filled in user information
+// Also runs the image upload function, which will update user profile image.
+//---------------------------------------------------------------------------
 function saveUserInfo() {  
     userName = document.getElementById('nameInput').value;
     aboutMe = document.getElementById('aboutMeInput').value;
@@ -158,7 +170,10 @@ var newDate2 = new Date( myDate2[2], myDate2[1] - 1, myDate2[0]);
 
 setTimeout(function() { changeDisplay(displayedPage); }, 500);
 
-
+//-----------------------------------------------------------------------
+// Uploads the new profile image for the user.
+// If not file is choosen does nothing.
+//-----------------------------------------------------------------------
 function uploadImage() {
     //get reference to file input
     var file = document.querySelector('input[type=file]').files[0];
@@ -168,29 +183,20 @@ function uploadImage() {
       reader.readAsDataURL(file);
       console.log("image loaded");
       // get a reference to firebases storage
-      
+      // get a reference to where image will be stored
       var storageRef = firebase.storage().ref('users/' + userId + '/profile.png').put(file).then(function () {
           console.log("successfully uploaded")
       }).then( () => {
         location.reload();
       }).catch(error => {
           console.log(error.message)
-      });
-      // get a reference to where image will be stored
-      
-    //   // write the image into storage
-    //   storageRef.put(file).then((snapshot) => {
-    //     console.log('Uploaded an Image!');
-    //   });
+      });     
      }
     catch(err) {
       console.log("no image loaded");
     }
-    //console.log("file", file);
-    //setTimeout(function() { console.log("file", file); }, 500);
-  
-    //location.reload();
 }
+
 // to preview the image
 function preview() {
     document.getElementById("frame").src = URL.createObjectURL(event.target.files[0]);

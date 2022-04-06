@@ -2,11 +2,11 @@ UX/UI:
 change the logo and name
 center the login widget
 
-footer "home and create" are repeats - Done
+footer "home and create" are repeats - Done Darren
 
-move search bar from nav bar to under h1 in main.html - Done
+move search bar from nav bar to under h1 in main.html - Done Darren
 
-turn off previous suggestions, autocomplete off, create.html
+turn off previous suggestions, autocomplete off, create.html - Done Darren
 
 eventpage appearance update
 
@@ -16,7 +16,7 @@ get rid of edit and save if you are not the owner of the event
 
 comments section, input div as the button to start typing, leave "post"
 
-footer is not appearing on the event page
+footer is not appearing on the event page - Done Darren
 
 comments section; add a no comments message if no comments
 

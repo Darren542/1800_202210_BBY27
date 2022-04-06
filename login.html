@@ -28,7 +28,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-  <link rel="stylesheet" href="./styles/style.css"/>
+  <link rel="stylesheet" href="./styles/login.css"/>
 </head>
 
 <body>
@@ -36,11 +36,13 @@
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Code for the new HTML page goes here--> 
-  <div id="body">
-    <div class="container">
+  <div id="body" class="loginbody">
+    <div class="container" id="headcontainer">
         <h1>Let's Login!</h1>
     </div>
-    <div id="firebaseui-auth-container"></div>
+    <div id="firebasecontainer">
+      <div id="firebaseui-auth-container"></div>
+    </div>
     <div id="loader">Loading...</div>
   </div>
 

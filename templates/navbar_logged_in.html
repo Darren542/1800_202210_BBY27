@@ -1,67 +1,44 @@
+<head>
+
+  <link rel="stylesheet" href="./styles/navbarloggedin.css"/>
+
+</head>
+
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="./main.html"> <img class="d-block" src="./images/AppIcon.png" alt="appIcon" height="50"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <!-- <li class="filler"></li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="./main.html">Home</a>
+    <a class="navbar-brand" href="./main.html"> <img class="d-block" src="./images/newLogo.png" alt="appIcon"
+        height="50"></a>
+
+
+    <div class="btn-group">
+      <img src="./images/profile.png" id="profile-img">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="username">User name</span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="./profile.html?display=profile">My Profile</a></li>
+        <li>
+          <hr class="dropdown-divider">
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./create.html">Create</a>
+        <li>
+          <a class="dropdown-item" href="./create.html">Create</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./search.html">Search</a>
+
+        <li>
+          <a class="dropdown-item" href="./search.html">Search</a>
         </li>
-        <!-- unused old profile menu-->
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false">
-            Profile
-          </a> -->
-          
-          <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./profile.html">My Profile</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            
-            <li><a class="dropdown-item" href="./myevents.html">Attending</a></li>
-            <li><a class="dropdown-item" href="#">Hosting</a></li>
-            <li><a class="dropdown-item" href="#">Favourites</a></li>
-            <li><a class="dropdown-item" href="#">History</a></li>
-            <li><a class="dropdown-item" href="./mycalendar.html">My Calendar</a></li>
-          </ul> -->
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark" type="submit">Search</button>
-      </form>
       
-      <div class="btn-group">
-        <img src="./images/profile.png" id="profile-img" style="width: 40px;height: 40px; margin-left: 1rem;">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class = "username">User name</span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="./profile.html?display=profile">My Profile</a></li>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-          <!-- <li><a class="dropdown-item" href="./profile.html"></a></li> -->
-          <li><a class="dropdown-item" href="./profile.html?display=attending">Attending</a></li>
-          <li><a class="dropdown-item" href="./profile.html?display=hosting">Hosting</a></li>
-          <li><a class="dropdown-item" href="./profile.html?display=liked">Favourites</a></li>
-          <li><a class="dropdown-item" href="./profile.html?display=history">History</a></li>
-          <li><a class="dropdown-item" href="./mycalendar.html">My Calendar</a></li>
-          <li><a id="logout" class="dropdown-item" href="#">Log out</a></li>
-        </ul>
-      </div>
+        <li><a class="dropdown-item" href="./profile.html?display=attending">Attending</a></li>
+        <li><a class="dropdown-item" href="./profile.html?display=hosting">Hosting</a></li>
+        <li><a class="dropdown-item" href="../likeEvents.html">Favourites</a></li>
+        
+        
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li><a id="logout" class="dropdown-item" href="#">Log out</a></li>
+      </ul>
     </div>
   </div>
 </nav>

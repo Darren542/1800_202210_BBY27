@@ -36,3 +36,35 @@
 .hidden {
     display: none;
 }
+
+.container > h1 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#eventInfoFields {
+    background-color: #B6C8EB;
+}
+
+div > label {
+    padding-top: 1em;
+    padding-left: 0.5em;
+
+}
+
+input[type="text"] {
+    width: 90%;
+    margin-left: 1.3em;
+    margin-bottom: 1em;
+
+} 
+
+.btn-info {
+    background-color: #B6C8EB !important;
+    width: 100%;
+}
+
+.btn-info:hover {
+    background-color: #B6C8EB !important;
+    border: 1px solid black;
+}

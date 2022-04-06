@@ -1,0 +1,12 @@
+/* Css for the owner display and attendee displays */
+#ownerFrame {
+    height: 75px;
+    width: 75px;
+    object-fit: fill;
+}
+
+.attendeeFrame {
+    height: 75px;
+    width: 75px;
+    object-fit: fill;
+}

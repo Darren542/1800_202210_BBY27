@@ -15,6 +15,8 @@ var currentUserHostingEvent;
 var eventDocument;
 var userId;
 var newDocId;
+var EventOwnerName;
+var EventOwnerId;
 
 //----------------------------------------------------------------
 // Displays all the events Information on the webpage.
@@ -45,6 +47,7 @@ function populateInfo() {
             var event_owner = userDoc.data().owner;
             var event_location = userDoc.data().location;
             var event_description = userDoc.data().description;
+            EventOwnerId = userDoc.data().ownerId;
             if (event_name != null) {
               document.getElementById("event").value = event_name;
             }
@@ -65,6 +68,7 @@ function populateInfo() {
             }
             if (event_owner != null) {
               document.getElementById("owner").value = event_owner;
+              EventOwnerName = event_owner
             }
             if (event_location != null) {
               document.getElementById("location").value = event_location;
@@ -72,7 +76,8 @@ function populateInfo() {
             if (event_description != null) {
               document.getElementById("description").value = event_description;
             }
-
+            displayHost();
+            displayAttendees();
           })
       })
       db.collection("users").doc(user.uid).onSnapshot(doc => {
@@ -264,4 +269,55 @@ function writeEvents(userDoc, collect) {
     document.getElementById("attending").innerHTML = 'Successfully Joined';
   }
   //console.log("how many times am i running");
+}
+
+//----------------------------------------------------------------------
+// Function to display the current host on page
+//----------------------------------------------------------------------
+function displayHost() {
+  console.log('EventOwnerId', EventOwnerId);
+  firebase.storage().ref('users/' + EventOwnerId + '/profile.png').getDownloadURL().then(imgUrl => {
+    document.getElementById("ownerFrame").src = imgUrl;
+    console.log("imgUrl", imgUrl);
+  }).catch( () => {
+    console.log("no profile image found");
+  }); 
+  document.getElementById("ownerName").innerHTML = EventOwnerName;
+}
+
+//----------------------------------------------------------------------
+// Function to display the events attendees
+//----------------------------------------------------------------------
+function displayAttendees() {
+  let template = document.getElementById("attendeeTemplate");
+  var i = 0;  
+  db.collection("events").doc(newDocId).collection("attending").get().then(function (snap) {
+    snap.forEach(doc => {
+      let newName = doc.data().userName;
+      let newUserId = doc.data().userId;
+      console.log("newUserId", newUserId);
+      var newCard = template.content.cloneNode(true);
+      newCard.querySelector(".attendeeName").innerHTML = newName;
+      newCard.querySelector('.attendeeFrame').setAttribute("id", newUserId);
+      displayAttendeeImage(newUserId);
+      document.getElementById("attendee").appendChild(newCard);
+      i++;
+    })
+});
+}
+
+function displayAttendeeImage(userId) {
+  console.log("userID", userId);
+  // firebase.storage().ref('users/' + userId + '/profile.png').getDownloadURL().then(imgUrl => {
+  //   document.querySelector(userId).src = imgUrl;
+  //   console.log("imgUrl4", imgUrl);
+  // }).catch( () => {
+  //   console.log("no profile image found");
+  // }); 
+  firebase.storage().ref('users/' + userId + '/profile.png').getDownloadURL().then(imgUrl => {
+    document.getElementById(userId).src = imgUrl;
+    console.log("imgUrl", imgUrl);
+  }).catch( () => {
+    console.log("no profile image found");
+  }); 
 }

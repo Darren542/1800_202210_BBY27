@@ -20,7 +20,7 @@ footer is not appearing on the event page - Done Darren
 
 comments section; add a no comments message if no comments
 
-user profile page, preview image not updating
+user profile page, preview image not updating - Done Darren
 
 shorten the event description character count: Attending events/hosting/favorited.
 

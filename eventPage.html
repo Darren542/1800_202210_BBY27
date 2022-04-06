@@ -33,6 +33,7 @@
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/events.css" />
 </head>
 
 <body>
@@ -95,7 +96,21 @@
           <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'attending')" id="attending">Attend Event</button>
         </div>
       </form>
-  
+      <div id="owner">
+        <div id="ownerTitle">Hosted By</div>
+      <img id="ownerFrame" src="" />
+      <div id="ownerName"></div>
+      </div>
+<div>Attended By: </div>
+      <div id="attendee">
+        
+      </div>
+      
+      <template id="attendeeTemplate">
+        <img class="attendeeFrame" src="" />
+        <div class="attendeeName">Name</div>
+      </template>
+
       <template id="commentTemplate">
         <div class="commentcard">
           <div class="card-body">

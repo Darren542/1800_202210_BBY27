@@ -53,3 +53,7 @@ Github: https://github.com/Darren542/1800_202210_BBY27
 Trello: https://trello.com/invite/b/6UXkL7Ow/addedfebfe0b51dd5c27eca0d2775138/bby27
 PresentationPlanningSheet: https://docs.google.com/document/d/1W-lpZSqoFRKnoDF2FWZyB_qdSFIGn7x8DU6Nb2s6Jk4/edit
 Presentation: https://www.canva.com/design/DAE8qC_lUC4/ZXm7jnpPsn0CPwIoi1s57g/edit?utm_content=DAE8qC_lUC4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
+## ColorPalete
+252627 399E5A 5ABCB9      BB4430 3D52D5
+Black  Green  bluegreen   orange blue

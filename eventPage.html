@@ -85,11 +85,11 @@
         </fieldset>
         <div class="d-flex justify-content-end mt-5">
   
-          <button type="button" class="btn btn-secondary"><i id="like" class="fa-regular fa-thumbs-up fa-xl"></i></button>
+          <!-- <button type="button" class="btn btn-secondary"><i id="like" class="fa-regular fa-thumbs-up fa-xl"></i></button>
+          <span style="width: 10px"></span> -->
+          <button type="button" id="editButton" class="btn btn-secondary hidden" onclick="editEventInfo()">Edit</button>
           <span style="width: 10px"></span>
-          <button type="button" class="btn btn-secondary" onclick="editEventInfo()">Edit</button>
-          <span style="width: 10px"></span>
-          <button type="button" class="btn btn-info" onclick="saveEventInfo()">Save</button>
+          <button type="button" id="saveButton" class="btn btn-info hidden" onclick="saveEventInfo()">Save</button>
           <span style="width: 10px"></span>
           <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'liked')" id="likedDiv"><i id="liked" class="bi bi-heart">Bookmark</i></button>
           <span style="width: 10px"></span>
@@ -98,17 +98,20 @@
       </form>
       <div id="owner">
         <div id="ownerTitle">Hosted By</div>
-      <img id="ownerFrame" src="" />
-      <div id="ownerName"></div>
+        <img id="ownerFrame" src="" />
+        <div id="ownerName"></div>
       </div>
-<div>Attended By: </div>
+
+      <div>Attended By: </div>
       <div id="attendee">
-        
+      <!-- Attendee Cards are loaded in here-->
       </div>
       
       <template id="attendeeTemplate">
-        <img class="attendeeFrame" src="" />
-        <div class="attendeeName">Name</div>
+        <div class="attendeeCard">
+          <img class="attendeeFrame" src="" />
+          <div class="attendeeName">Name</div>
+        </div>
       </template>
 
       <template id="commentTemplate">

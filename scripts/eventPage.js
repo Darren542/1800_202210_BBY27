@@ -48,6 +48,10 @@ function populateInfo() {
             var event_location = userDoc.data().location;
             var event_description = userDoc.data().description;
             EventOwnerId = userDoc.data().ownerId;
+            // Show edit options if you are event owner.
+            if (EventOwnerId == userId) {
+              displayEdit();
+            }
             if (event_name != null) {
               document.getElementById("event").value = event_name;
             }
@@ -320,4 +324,9 @@ function displayAttendeeImage(userId) {
   }).catch( () => {
     console.log("no profile image found");
   }); 
+}
+
+function displayEdit() {
+  document.querySelector("#editButton").classList.remove('hidden');
+  document.querySelector("#saveButton").classList.remove('hidden');
 }

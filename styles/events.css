@@ -9,6 +9,7 @@
     height: 75px;
     width: 75px;
     object-fit: fill;
+    border: 1px solid black;
 }
 
 #attendee {

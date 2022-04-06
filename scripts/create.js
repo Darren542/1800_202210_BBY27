@@ -15,27 +15,12 @@ document.querySelector("#submit-button").addEventListener("click", () => {
   //save the document to be created into database
   saveDocument();
   // redirect to the newly created events page
-  //window.location.assign(`eventPage/{eventId}`);
 
 });
 // Data to be saved into database
 var online = false;
 var userId;
 var userName;
-
-/** This got replaced with sessionStorage
-firebase.auth().onAuthStateChanged(user => {
-  userId = user.uid;
-  currentUser = db.collection("users").doc(userId);
-//get the document for current user.
-  currentUser.get()
-    .then(userDoc => {
-      userName = userDoc.data().name;
-      console.log("test", userName);
-    });
-  console.log("userName and Id", userId, userName);
-});
-*/
 
 /**changes the view to online */
 

@@ -7,14 +7,29 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand" href="./main.html"> <img class="d-block" src="./images/newLogo.png" alt="appIcon"
-        height="50"></a>
-
+        height="50">
+    </a>
+    
+    <div class="collapse navbar-collapse" id="navbarLoggedIn">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a id="createanchor" class="nav-link" href="./create.html">Create</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./search.html">Search</a>
+        </li>
+      </ul> 
+    </div>
 
     <div class="btn-group">
       <img src="./images/profile.png" id="profile-img">
       <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
         <span class="username">User name</span>
       </button>
+
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="./profile.html?display=profile">My Profile</a></li>
         <li>

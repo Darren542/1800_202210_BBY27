@@ -29,3 +29,10 @@ a > img {
     width: 39px;
     height: 39px;
 }
+
+
+@media (min-width: 1000px){
+    #navbarLoggedIn {
+        display: none;
+    }
+}

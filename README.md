@@ -15,8 +15,10 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* Firebase
-* Firestore
+* Firebase Firestore
+* Firebase Auth
+* Firebase Storage
+* Jquery
 	
 ## Content
 Content of the project folder:
@@ -25,64 +27,65 @@ Content of the project folder:
 .
 ├── 404.html
 ├── README.md
-├── create.html
-├── eventPage.html
+├── create.html                             # create HTML file, what is used when user creating an event.
+├── eventPage.html                          # event HTML file, what users see when viewing an event.
 ├── firebase.json
 ├── firestore.indexes.json
 ├── firestore.rules
-├── htmlTemplate.html
+├── htmlTemplate.html                       # template for creating new HTML pages, is not used anywhere.
 ├── images
-│   ├── AlpineSkiing.webp
-│   ├── Biathlon.webp
-│   ├── Bobsleigh.jpeg
-│   ├── Bobsleigh.webp
-│   ├── Cross-countrySkiing.webp
-│   ├── Curling.webp
-│   ├── FigureSkating.webp
-│   ├── FreestyleSkiing.webp
-│   ├── Hockey.jpeg
-│   ├── Hockey.webp
-│   ├── Hockey_EventPage.jpg
-│   ├── Luge.webp
-│   ├── NordicCombined.webp
-│   ├── Other.webp
-│   ├── ShortTrackSpeedSkating.webp
-│   ├── Skating.webp
-│   ├── Skeleton.webp
-│   ├── SkiJumping.webp
-│   ├── Snowboard.webp
-│   ├── SpeedSkating.webp
-│   ├── VOEF-logos (1)
+│   ├── AlpineSkiing.webp                   # default image for AlpineSkiing events.
+│   ├── Biathlon.webp                       # default image for Biathlon events.
+│   ├── Bobsleigh.jpeg                      # Used on landing page to advertise events.
+│   ├── Bobsleigh.webp                      # default image for Bobsleigh events.
+│   ├── Cross-countrySkiing.webp            # default image for Cross-countrySkiing events.
+│   ├── Curling.webp                        # default image for Curling events
+│   ├── FigureSkating.webp                  # default image for FigureSkating events.
+│   ├── FreestyleSkiing.webp                # default image for FreestyleSkiing events.
+│   ├── Hockey.jpeg                         # Used on landing page to advertise events.
+│   ├── Hockey.webp                         # default image for Hockey events.
+│   ├── Hockey_EventPage.jpg                # displayed on the eventPage before another image loads in.       
+│   ├── Luge.webp                           # default image for Luge events.
+│   ├── NordicCombined.webp                 # default image for NordicCombined events.
+│   ├── Other.webp                          # default image for Other events.
+│   ├── ShortTrackSpeedSkating.webp         # default image for ShortTrackSpeedSkating events.
+│   ├── Skating.webp                        # Used on landing page to advertise events. 
+│   ├── Skeleton.webp                       # default image for Skeleton events.
+│   ├── SkiJumping.webp                     # default image for SkiJumping events.
+│   ├── Snowboard.webp                      # default image for Snowboard events.
+│   ├── SpeedSkating.webp                   # default image for SpeedSkating events.
+│   ├── VOEF-logos (1)                      # Alternate logos.
 │   │   ├── FinalLogo.png
 │   │   ├── VOEF-logos.jpeg
 │   │   ├── VOEF-logos_black.png
 │   │   ├── VOEF-logos_transparent.png
 │   │   ├── VOEF-logos_white.png
 │   │   └── logo_info.txt
-│   ├── curling.jpeg
-│   ├── flag_1.jpg
-│   ├── newLogo.png
-│   ├── newbackground4.png
-│   ├── olympics.png
-│   ├── profile.png
-│   └── skeleton.jpeg
-├── index.html
-├── login.html
-├── main.html
+│   ├── curling.jpeg                        # Used on landing page to advertise events.
+│   ├── flag_1.jpg                          # On the background of the unlogged in landing page.
+│   ├── newLogo.png                         # logo displayed on top right of navbar.
+│   ├── newbackground4.png                  # background image for logged in landing page.
+│   ├── olympics.png                        # Olympic logo currently unused.
+│   ├── profile.png                         # default profile image, is used if user has no profile image.
+│   |── skeleton.jpeg                       # Used on landing page to advertise events.
+|   └── favicon.ico                         # Icon used for website.
+├── index.html                              # index HTML file, what is used as the landing page for unlogged in users.
+├── login.html                              # login HTML file, what is displayed on the login page.
+├── main.html                               # main HTML file, what is used as the landing page for logged in users.
 ├── package-lock.json
 ├── package.json
-├── profile.html
+├── profile.html                            # profile HTML file, what is displayed on the users profile page.
 ├── scripts
-│   ├── authentication.js
-│   ├── create.js
-│   ├── eventPage.js
-│   ├── firebaseAPI_bby27.js
-│   ├── main.js
-│   ├── profile.js
-│   ├── script.js
-│   ├── searchPage.js
-│   └── skeleton.js
-├── search.html
+│   ├── authentication.js                   # Javascript for the user authentication
+│   ├── create.js                           # Javascript for the create.html page
+│   ├── eventPage.js                        # Javascript for the eventPage.html page
+│   ├── firebaseAPI_bby27.js                # Connects website to firebase server
+│   ├── main.js                             # Javascript file for the main.html page
+│   ├── profile.js                          # Javascript file for the profile.html page
+│   ├── script.js                           # A test Javascript file to check javascript loading in
+│   ├── searchPage.js                       # Javascript file for the searchPage.html page
+│   └── skeleton.js                         # Javascript file to load in the navbar and footer
+├── search.html                             # search HTML file, what is used when users searching for events
 ├── sprint4focus.txt
 ├── storage.rules
 ├── styles

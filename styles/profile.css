@@ -32,11 +32,16 @@
     list-style-type: none;
 }
 
+.profileNavItem {
+    padding: 1.5em;
+    
+}
+
 .profileNavList > *:hover {
-    background-color: #B6C8EB;
+    background-color: #B6C8EB; 
     border-radius: 5px;
     color: white;
-    padding: 2em;
+    cursor:pointer;   
 }
 
 #profileTop {

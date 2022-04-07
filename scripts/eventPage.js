@@ -335,6 +335,7 @@ function displayAttendeeImage(userId) {
   }); 
 }
 
+// Prevents users who are not event owner from seeing these options.
 function displayEdit() {
   document.querySelector("#editButton").classList.remove('hidden');
   document.querySelector("#saveButton").classList.remove('hidden');

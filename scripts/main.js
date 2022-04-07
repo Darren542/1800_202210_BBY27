@@ -1,3 +1,7 @@
+//------------------------------------------------------------------------------
+// Inserts the users name onto the greeting.
+// If the user is not logged in redirects them to the login page.
+//------------------------------------------------------------------------------
 function insertName() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
@@ -13,14 +17,13 @@ function insertName() {
         .then(userDoc => {
           var user_Name = userDoc.data().name;
           console.log(user_Name);
-          //method #1:  insert with html only
-          //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-          //method #2:  insert using jquery
+          //insert using jquery
           $(".username").text(user_Name);
 
         })
     } else {
       window.location.replace("./login.html");
+      //skeleton.js does this not needed.
       // console.log($('#navbarPlaceholder').load('./templates/navbar.html'));
       // console.log($('#footerPlaceholder').load('./templates/footer/html'));
     }

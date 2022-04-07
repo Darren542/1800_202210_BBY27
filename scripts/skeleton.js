@@ -1,6 +1,8 @@
 //---------------------------------------------------
-// This function loads the parts of your skeleton 
-// (navbar, footer, and other things) into html doc. 
+// This function loads the parts of your skeleton. 
+// Loads in different navbars depends on if the user
+// is logged in or not. 
+// Saves sessionStorage info about logged in user.
 //---------------------------------------------------
 function loadSkeleton() {
     firebase.auth().onAuthStateChanged(user => {
@@ -15,7 +17,7 @@ function loadSkeleton() {
         firebase.storage().ref('users/' + user.uid + '/profile.png').getDownloadURL().then(imgUrl => {
           document.querySelector("#profile-img").src = imgUrl;
           sessionStorage.setItem('profileURL', imgUrl);
-          console.log("imgUrl", imgUrl);
+          //console.log("imgUrl", imgUrl);
         }).catch( () => {
           console.log("no profile image found");
         });

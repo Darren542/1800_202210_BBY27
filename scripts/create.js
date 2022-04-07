@@ -1,31 +1,16 @@
-//TODO Make document element references variables
-document.addEventListener('DOMContentLoaded', (event) => {
-  const locationLabel = document.getElementById("locationlabel");
-  const inputLocation = document.getElementById("inputLocation");
-  const locationBtn = document.getElementById("#locationBtn");
-  const locationBtnLbl = document.getElementById("#locationbtnlbl");
-  const inputEventName = document.getElementById("#inputEventName");
-  const inputSport = document.getElementById("#inputSport");
-  console.log('DOM fully loaded and parsed');
-});
-
-
 // make create form save into database
 document.querySelector("#submit-button").addEventListener("click", () => {
   //save the document to be created into database
   saveDocument();
-  // redirect to the newly created events page
-
 });
+
 // Data to be saved into database
 var online = false;
 var userId;
 var userName;
 
 /**changes the view to online */
-
 function onlineSwitch() {
-
   /** changes the label to Link */
   document.getElementById("locationlabel").innerHTML = "Link";
 
@@ -40,13 +25,9 @@ function onlineSwitch() {
 
   /** clears the field  */
   document.getElementById("inputLocation").setAttribute("value", "");
-
   document.getElementById("locationBtn").setAttribute("onclick", "window.open('https://zoom.us/signin')");
-
   document.getElementById("locationBtn").setAttribute("target", "_blank");
-
   document.getElementById("locationbtnlbl").innerHTML = "Start a Video Call";
-
   document.getElementById("locationBtn").innerHTML = "Start a Video Call";
 
   //track which page user on
@@ -55,9 +36,7 @@ function onlineSwitch() {
 }
 
 /**changes the view to in person */
-
 function inPersonSwitch() {
-
   /** changes the label to Location */
   document.getElementById("locationlabel").innerHTML = "Location";
 
@@ -72,20 +51,15 @@ function inPersonSwitch() {
 
   /** clears the field  */
   document.getElementById("inputLocation").setAttribute("value", "");
-
   document.getElementById("locationbtnlbl").innerHTML = "Use Your Location";
-
   document.getElementById("locationBtn").innerHTML = "Get my location";
-
   document.getElementById("locationBtn").setAttribute("onclick", "getLocation()");
-
   //track which page user on
   online = false;
 }
 
 
 /**displays your location in latitude and longitude coordinates, in the input field Location */
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -94,12 +68,14 @@ function getLocation() {
   }
 }
 
+//-------------------------------------------------------
+// fills in location spot with your current coords.
+//-------------------------------------------------------
 function showPosition(position) {
-
-
   document.getElementById("inputLocation").setAttribute("value", "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);
-
 }
+
+// Gobal variables so that multiple function can use them
 var newDocId;
 var eventName;
 var eventDesc;
@@ -118,6 +94,12 @@ var city;
 var comments;
 // Code to write event to database
 
+//-------------------------------------------------------------------------
+// Saves the newly created event into the event collection in.
+// the firebase database.
+// calls function to try to upload image to firebase storage.
+// calls the function to save into logged in users hosting collection after.
+//--------------------------------------------------------------------------
 function saveDocument() {
   eventName = inputEventName.value;
   eventDesc = document.querySelector("#descriptionBox").value;
@@ -135,7 +117,6 @@ function saveDocument() {
   EventRef = db.collection("events");
   city = document.querySelector("#inputCity").value;
   
-
   EventRef.add({
     description: eventDesc,
     endTime: endTime,
@@ -169,7 +150,10 @@ function saveDocument() {
       console.error("Error adding document: ", error);
     });
 }
-//code to get information entered
+//----------------------------------------------------------------------------------
+// code to get information entered into users collection in the firebase database.
+// After this runs they get redirected to the new events page.
+//----------------------------------------------------------------------------------
 function writeEvents() {
   //define a variable for the collection you want to create in Firestore to populate data
   //var EventRef = db.collection('users').doc(userId).collection("hosting").doc(newDocId);
@@ -205,6 +189,12 @@ function writeEvents() {
     });
 }
 
+
+//--------------------------------------------------------------------------
+// Uploads the user selected image to the firebase storage.
+// If the do not select an image nothing happens.
+// The event will load in with a the default image for it's sport type.
+//---------------------------------------------------------------------------
 function uploadImage() {
   //get reference to file input
   var file = document.querySelector('input[type=file]').files[0];
@@ -231,8 +221,5 @@ function uploadImage() {
   }
   //console.log("file", file);
   //setTimeout(function() { console.log("file", file); }, 500);
-
-
-
 }
 

@@ -1,3 +1,10 @@
+#body {
+    margin:0;
+    padding:0;
+    width:100%;
+    grid-column: 1 / span 2;
+}
+
 .grid-test {
     display:grid;
     grid-template-columns: 40% 60%;
@@ -83,8 +90,6 @@ input[type='checkbox'] {
     padding-left: 2.6em;
 }
 
-#locations {
-}
 
 #categorySearch{
     grid-row: 2 /span 1;
@@ -134,9 +139,6 @@ input[type='checkbox'] {
     
 }
 
-#dates {
-
-}
 
 #startTime {
     margin-left: 1.1em;

@@ -1,4 +1,3 @@
-
 //------------------------------------------------------------------
 // get params from the URL so they appropriate results can be shown.
 //------------------------------------------------------------------
@@ -85,10 +84,11 @@ function populateInfo() {
             displayAttendees();
           })
       })
-      db.collection("users").doc(user.uid).onSnapshot(doc => {
-        currentUser = db.collection("users").doc(user.uid);
-        document.querySelector("#like").onclick = () => saveLikedEvent(eventId);
-      });
+      // Old code for like button
+      // db.collection("users").doc(user.uid).onSnapshot(doc => {
+      //   currentUser = db.collection("users").doc(user.uid);
+      //   document.querySelector("#like").onclick = () => saveLikedEvent(eventId);
+      // });
 
     } else {
       // No user is signed in.
@@ -172,7 +172,10 @@ function saveLikedEvent(eventId) {
     });
 }
 
-//Enable the form fields
+//-------------------------------------------------------------------------------
+// Enable the form fields.
+// Needs to run to allow user access to fields to post comments.
+//-------------------------------------------------------------------------------
 function writeComments() {
   document.getElementById('comment-section').disabled = false;
   document.getElementById('cmtsbtn').innerHTML = "Post";
@@ -184,7 +187,10 @@ function writeComments() {
 
 var comments;
 var commentId;
-
+//-----------------------------------------------------------------------
+// Posts a comment into the database.
+// reloads page afterwords so that comment can be seen.
+//-----------------------------------------------------------------------
 function postComment() {
   console.log("This button works too")
 

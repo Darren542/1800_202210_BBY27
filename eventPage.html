@@ -86,7 +86,7 @@
         </fieldset>
         <div class="d-flex justify-content-end mt-5" id="btncontainer">
   
-          <!-- <button type="button" class="btn btn-secondary"><i id="like" class="fa-regular fa-thumbs-up fa-xl"></i></button>
+           <!--  old like button <button type="button" class="btn btn-secondary"><i id="like" class="fa-regular fa-thumbs-up fa-xl"></i></button>
           <span style="width: 10px"></span> -->
           <button type="button" id="editButton" class="btn btn-secondary hidden" onclick="editEventInfo()">Edit</button>
           <button type="button" id="saveButton" class="btn btn-info hidden" onclick="saveEventInfo()">Save</button>
@@ -125,6 +125,16 @@
         </div>
       </template>
   
+
+      <div class="container">
+        <h2>Comments</h2>
+        <!-- Here is container for comments  -->
+        <div class="container">
+          <div id="commentCardGroup" class="row">
+          </div>
+        </div>
+      </div>
+
       <form>
         <fieldset class="mb-3" id="comment-section" autocomplete="off" disabled>
           <div>
@@ -137,14 +147,7 @@
         </div>
       </form>
   
-      <div class="container">
-        <h2>Comments</h2>
-        <!-- Here is container for comments  -->
-        <div class="container">
-          <div id="commentCardGroup" class="row">
-          </div>
-        </div>
-      </div>
+     
   
     </div>
   </div>

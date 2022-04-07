@@ -107,8 +107,8 @@ function displayCards(snap) {
         // inserts data into the new cards innerHTML
         newcard.querySelector('.card-title').innerHTML = eventName;
         newcard.querySelector('.card-text').innerHTML = description;
-        newcard.querySelector('.card-date').innerHTML = time;
-        newcard.querySelector('.card-time').innerHTML = startTime;
+        newcard.querySelector('.card-date').innerHTML = "Date: " + time;
+        newcard.querySelector('.card-time').innerHTML = "Starts at: " + startTime;
         newcard.querySelector('.card-time-to').innerHTML = displayTimeUntilStart(doc);
 
         //give unique ids to all elements in card for future use
@@ -174,9 +174,9 @@ function displayTimeUntilStart(doc){
         var minutesTotal = Math.floor(secondsTotal / 60) % 60; // seconds in a minute
         StartTime = "Starts in: " + daysTotal + " days, " + hoursTotal + " hours, " + minutesTotal + " mins";
     } else if (timeUntilEnd > 0) {
-        StartTime = "Currently Ongoing!";
+        StartTime = '<span style="color:green;">Currently Ongoing!</span>';
     } else {
-        StartTime = "Already Ended";
+        StartTime = '<span style="color:red;">Already Ended</span>';
     }
     return StartTime;
 }

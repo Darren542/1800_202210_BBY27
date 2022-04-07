@@ -58,6 +58,7 @@
 
 #eventInfoFields {
     background-color: #B6C8EB;
+    padding-bottom: 40px;  
 }
 
 div > label {
@@ -124,4 +125,16 @@ input[type="text"] {
 
 fieldset {
     margin: 0em;
+}
+
+
+#description2 {
+    margin-left: 23px;
+    
+    width: 90%;
+    height:fit-content;
+    
+    background-color: #eaedf3;
+    border-radius: 5px;
+    padding:8px;
 }

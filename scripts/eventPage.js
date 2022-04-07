@@ -79,6 +79,7 @@ function populateInfo() {
             }
             if (event_description != null) {
               document.getElementById("description").value = event_description;
+              document.getElementById("description2").innerHTML = event_description;
             }
             displayHost();
             displayAttendees();
@@ -211,6 +212,7 @@ function populateComments() {
 
   db.collection("events").doc(eventId).collection("comments").get()
     .then(snap => {
+      console.log("snapLength", snap.length);
       snap.forEach(doc => {
         var comment_body = doc.data().comment_text; 
         var userName = doc.data().userName;

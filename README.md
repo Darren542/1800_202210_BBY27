@@ -1,4 +1,4 @@
-## My Web Application (Add your Title here)
+## My Web Application (Vancouver Olympic Event Finder)
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -6,7 +6,7 @@
 * [Resources](#resources)
 
 ## General Info
-This browser based web application to help people find where watch Olympics games
+This browser based web application to help people discover,attend and create events during the 2030 Vancouver Omplypic games
 * Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
 * Hi my name is Alex. I'm excited about this project because it is useful for co-op
 * Hi my name is Eric. I am excited about this project because it's helpful to gain some project experience
@@ -22,23 +22,94 @@ Technologies used for this project:
 Content of the project folder:
 
 ```
- Top level of project folder: 
-├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
-└── README.md
-
-It has the following subfolders and files:
-├── .git                     # Folder for git repo
-├── images                   # Folder for images
-    /blah.jpg                # 
-├── scripts                  # Folder for scripts
-    /blah.js                 # 
-├── styles                   # Folder for styles
-    /blah.css                # 
-
-Firebase hosting files: 
-├── .firebaserc...
-
+.
+├── 404.html
+├── README.md
+├── create.html
+├── eventPage.html
+├── firebase.json
+├── firestore.indexes.json
+├── firestore.rules
+├── htmlTemplate.html
+├── images
+│   ├── AlpineSkiing.webp
+│   ├── Biathlon.webp
+│   ├── Bobsleigh.jpeg
+│   ├── Bobsleigh.webp
+│   ├── Cross-countrySkiing.webp
+│   ├── Curling.webp
+│   ├── FigureSkating.webp
+│   ├── FreestyleSkiing.webp
+│   ├── Hockey.jpeg
+│   ├── Hockey.webp
+│   ├── Hockey_EventPage.jpg
+│   ├── Luge.webp
+│   ├── NordicCombined.webp
+│   ├── Other.webp
+│   ├── ShortTrackSpeedSkating.webp
+│   ├── Skating.webp
+│   ├── Skeleton.webp
+│   ├── SkiJumping.webp
+│   ├── Snowboard.webp
+│   ├── SpeedSkating.webp
+│   ├── VOEF-logos (1)
+│   │   ├── FinalLogo.png
+│   │   ├── VOEF-logos.jpeg
+│   │   ├── VOEF-logos_black.png
+│   │   ├── VOEF-logos_transparent.png
+│   │   ├── VOEF-logos_white.png
+│   │   └── logo_info.txt
+│   ├── curling.jpeg
+│   ├── flag_1.jpg
+│   ├── newLogo.png
+│   ├── newbackground4.png
+│   ├── olympics.png
+│   ├── profile.png
+│   └── skeleton.jpeg
+├── index.html
+├── login.html
+├── main.html
+├── package-lock.json
+├── package.json
+├── profile.html
+├── scripts
+│   ├── authentication.js
+│   ├── create.js
+│   ├── eventPage.js
+│   ├── firebaseAPI_bby27.js
+│   ├── main.js
+│   ├── profile.js
+│   ├── script.js
+│   ├── searchPage.js
+│   └── skeleton.js
+├── search.html
+├── sprint4focus.txt
+├── storage.rules
+├── styles
+│   ├── create.css
+│   ├── events.css
+│   ├── login.css
+│   ├── main.css
+│   ├── navbar.css
+│   ├── navbarloggedin.css
+│   ├── profile.css
+│   ├── search.css
+│   └── style.css
+├── templates
+│   ├── footer.html
+│   ├── navbar.html
+│   └── navbar_logged_in.html
+└── unused
+    ├── css
+    │   └── myevents.css
+    ├── html
+    │   ├── likeEvents.html
+    │   ├── mycalendar.html
+    │   └── myevents.html
+    ├── images
+    │   └── AppIcon.png
+    └── scripts
+        └── likedEvents.js
 
 ```
 

@@ -76,9 +76,12 @@ input[type='checkbox'] {
 
 #locationToggle {
     margin-right: 1em;
-    width: 19px;
-    height: 19px;
+    width: 25px;
+    height: 25px;
 
+}
+#locations{
+ width:170px;
 }
 
 #locationsLabel {
@@ -109,16 +112,17 @@ input[type='checkbox'] {
 }
 
 #categoriesLabel {
-    width: 60%;
+    margin-right:3.6em;
 }
 
 .categoriesBar {
-    padding-right: 3em;
+    
+    margin-left: .5em;
 }
 
 #categories {
     /* margin-right: 1em; */
-    width: 100%;
+    width: 170px;
 }
 
 #datesSelector{
@@ -129,12 +133,12 @@ input[type='checkbox'] {
 }
 
 #datesLabel {
-    margin-right: 1.3em;
+    margin-right: .4em;
 
 }
 
 #dateToggle {
-    width: 18px;
+    width: 25px;
     margin-right: 1.1em;
     
 }
@@ -143,8 +147,7 @@ input[type='checkbox'] {
 #startTime {
     margin-left: 1.1em;
     margin-right: 2em;
-
-    width: 146px;
+    width: 170px;
 }
 
 

@@ -277,7 +277,8 @@ function writeEvents(userDoc, collect) {
 }
 
 //----------------------------------------------------------------------
-// Function to display the current host on page
+// Function to display the current host on page.
+// Uses default image if they have no image in firestore.
 //----------------------------------------------------------------------
 function displayHost() {
   console.log('EventOwnerId', EventOwnerId);
@@ -286,6 +287,7 @@ function displayHost() {
     console.log("imgUrl", imgUrl);
   }).catch( () => {
     console.log("no profile image found");
+    document.getElementById("ownerFrame").src = './images/profile.png';
   }); 
   document.getElementById("ownerName").innerHTML = EventOwnerName;
 }

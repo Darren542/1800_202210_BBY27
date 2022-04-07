@@ -175,8 +175,7 @@ function saveLikedEvent(eventId) {
 function writeComments() {
   document.getElementById('comment-section').disabled = false;
   document.getElementById('cmtsbtn').innerHTML = "Post";
-
-  // document.getElementById('cmtsbtn').setAttribute("onclick", "");
+  document.getElementById('cmtsbtn').setAttribute("onclick", "");
   document.getElementById('cmtsbtn').setAttribute("onclick", "postComment()");
   console.log("This button works")
 

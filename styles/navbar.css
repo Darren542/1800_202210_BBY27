@@ -13,3 +13,7 @@ a > img {
 .navbar-collapse {
     color: white;
 }
+
+#createanchor {
+    display: none;
+}

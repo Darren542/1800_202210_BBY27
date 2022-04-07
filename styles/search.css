@@ -199,6 +199,8 @@ input[type='checkbox'] {
 #searchButton {
     background-color: #DDE8F5;
     color: black;
+    border: 1px solid black;
+
 }
 
 #searchButton:hover {
@@ -209,6 +211,8 @@ input[type='checkbox'] {
 #searchOptions {
     background-color: #DDE8F5;
     color: black;
+    border: 1px solid black;
+
 }
 
 #searchOptions:hover {
@@ -219,7 +223,6 @@ input[type='checkbox'] {
 .card {
     background-color: #B6C8EB;
     padding-left: 2em;
-    color: white;
 }
 
 #cards-go-here {

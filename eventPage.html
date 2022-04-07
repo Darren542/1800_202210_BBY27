@@ -90,18 +90,20 @@
           <button type="button" id="editButton" class="btn btn-secondary hidden" onclick="editEventInfo()">Edit</button>
           <button type="button" id="saveButton" class="btn btn-info hidden" onclick="saveEventInfo()">Save</button>
           <span style="width: 10px"></span>
-          <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'liked')" id="likedDiv"><i id="liked" class="bi bi-heart">Bookmark</i></button>
+          <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'liked')" id="likedDiv"><i id="liked" class="bi bi-heart"></i> Favorites</button>
           <span style="width: 35px"></span>
           <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'attending')" id="attending">Attend Event</button>
         </div>
       </form>
-      <div id="owner">
-        <div id="ownerTitle">Hosted By</div>
+
+      <div id="ownerTitle"><p id="hostedHeading">Host: </p></div>
+
+      <div id="ownerContainer">
         <img id="ownerFrame" src="" />
         <div id="ownerName"></div>
       </div>
 
-      <div>Attended By: </div>
+      <div><p id="attendHeading">Attending: </p></div>
       <div id="attendee">
       <!-- Attendee Cards are loaded in here-->
       </div>
@@ -124,14 +126,13 @@
   
       <form>
         <fieldset class="mb-3" id="comment-section" autocomplete="off" disabled>
-          <p>Write a Comment</p>
           <div>
             <input type="text" id="comment" class="form-control" placeholder="Add a comment...">
           </div>
         </fieldset>
-        <div class="d-flex justify-content-start mt-5">
+        <div class="d-flex justify-content-start mt-5" id="commentbtncontainer">
   
-          <button type="button" class="btn btn-secondary" id="cmtsbtn" onclick="writeComments()">Comment</button>
+          <button type="button" class="btn btn-secondary" id="cmtsbtn" onclick="writeComments()">Write a comment</button>
         </div>
       </form>
   

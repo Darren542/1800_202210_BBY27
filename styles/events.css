@@ -9,7 +9,6 @@
     height: 75px;
     width: 75px;
     object-fit: fill;
-    border: 1px solid black;
 }
 
 #attendee {
@@ -18,20 +17,35 @@
 }
 
 .attendeeCard {
-    padding-right:10px;
-    padding-left:10px;
-    padding-top: 5px;
-    margin-right:5px;
     text-align:center;
-    border: black 2px solid;
-    border-radius:6px;
-    width: 100px;
-    background-color: #5ABCB9;
+    border-radius:5px;
+    width: 75px;
+    background-color: #B6C8EB;
 }
 
-#ownerTitle {
-    font-size: 1.2em;
+#ownerContainer {
+    text-align:center;
+    border-radius:5px;
+    width: 75px;
+    background-color: #B6C8EB;
 }
+
+#hostedHeading {
+    font-size: 25px;
+}
+
+#attendHeading {
+    font-size: 25px;
+    padding-top: 1em;
+}
+
+#attendee {
+    padding-bottom: 4em;
+}
+
+
+
+
 
 .hidden {
     display: none;
@@ -75,4 +89,39 @@ input[type="text"] {
 
 #btncontainer {
     margin-bottom: 4em;
+}
+
+#commentbtncontainer {
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 3em;
+    
+}
+
+#cmtsbtn {
+    width: 100%;
+    background-color: #B6C8EB !important;
+    color: black;
+}
+
+#cmtsbtn:hover {
+    background-color: #B6C8EB !important;
+    border: 1px solid black;
+}
+
+.commentcard {
+    background-color: #B6C8EB;
+    border-radius: 10px;
+}
+
+.commentcard {
+    margin-top: 1em;
+}
+
+#comment {
+    padding: 1em;
+}
+
+fieldset {
+    margin: 0em;
 }

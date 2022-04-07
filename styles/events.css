@@ -68,3 +68,11 @@ input[type="text"] {
     background-color: #B6C8EB !important;
     border: 1px solid black;
 }
+
+.container {
+    border-radius: 10px;
+}
+
+#btncontainer {
+    margin-bottom: 4em;
+}

@@ -32,13 +32,14 @@
     padding-top: 50px;
     z-index: 100;
     background-color:#DDE8F5;
-    width: 93%;
+    width: 93.5%;
     justify-content: center;
     margin-left: 1em;
     margin-right: 1em;
     margin-top: 1em;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding-left: 3em;
+    border-radius: 10px;
 }
 
 #advancedContainer {

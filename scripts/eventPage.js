@@ -311,18 +311,18 @@ function displayAttendees() {
 });
 }
 
+//----------------------------------------------------------------------------
+// Gets image of an attendee of the event.
+// The parameter is the Id of the user in the firebase database
+// If no image exists then a default image is used.
+//----------------------------------------------------------------------------
 function displayAttendeeImage(userId) {
-  console.log("userID", userId);
-  // firebase.storage().ref('users/' + userId + '/profile.png').getDownloadURL().then(imgUrl => {
-  //   document.querySelector(userId).src = imgUrl;
-  //   console.log("imgUrl4", imgUrl);
-  // }).catch( () => {
-  //   console.log("no profile image found");
-  // }); 
+  //console.log("userID", userId);
   firebase.storage().ref('users/' + userId + '/profile.png').getDownloadURL().then(imgUrl => {
     document.getElementById(userId).src = imgUrl;
-    console.log("imgUrl", imgUrl);
+    //console.log("imgUrl", imgUrl);
   }).catch( () => {
+    document.getElementById(userId).src = './images/profile.png';
     console.log("no profile image found");
   }); 
 }

@@ -77,3 +77,19 @@ a {
   align-items: center;
   padding-bottom: 1em;
 }
+
+.previewImage {
+  cursor:pointer;
+}
+
+@media (min-width: 1000px){
+  .featuredEvents {
+    display:flex;
+    justify-content: center;
+    text-align:center;
+  }
+  .featuredItem {
+    width: 400px;
+    height: 300px;
+  }
+}

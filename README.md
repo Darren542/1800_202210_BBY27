@@ -28,6 +28,7 @@ Technologies used for this project:
 Content of the project folder:
 
 ```
+<<<<<<< HEAD
  Top level of project folder: 
 ├── index.html               # index HTML file, what is used as the landing page for unlogged in users.
 ├── login.html               # login HTML file, what is displayed on the login page.

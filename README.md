@@ -4,9 +4,10 @@
 * [Technologies](#technologies)
 * [Contents](#content)
 * [Resources](#resources)
+* [Colour Palete](#colour-palete)
 
 ## General Info
-This browser based web application to help people discover,attend and create events during the 2030 Vancouver Omplypic games
+This browser based web application to help people discover, attend and create events during the 2030 Vancouver Omplypic games.
 * Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
 * Hi my name is Alex. I'm excited about this project because it is useful for co-op
 * Hi my name is Eric. I am excited about this project because it's helpful to gain some project experience
@@ -88,7 +89,7 @@ Content of the project folder:
 ├── search.html                             # search HTML file, what is used when users searching for events
 ├── sprint4focus.txt
 ├── storage.rules
-├── styles
+├── styles                                  # Folder with all styles for website
 │   ├── create.css                          # Styles for create.html page
 │   ├── events.css                          # Styles for eventPage.html page
 │   ├── login.css                           # Styles for login.html page
@@ -129,6 +130,6 @@ Trello: https://trello.com/invite/b/6UXkL7Ow/addedfebfe0b51dd5c27eca0d2775138/bb
 PresentationPlanningSheet: https://docs.google.com/document/d/1W-lpZSqoFRKnoDF2FWZyB_qdSFIGn7x8DU6Nb2s6Jk4/edit
 Presentation: https://www.canva.com/design/DAE8qC_lUC4/ZXm7jnpPsn0CPwIoi1s57g/edit?utm_content=DAE8qC_lUC4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-## ColorPalete
+## Colour Palete
 000000 3D525D B6C8EB            DDE8F5     000000 
 Black  Iris   Light Steele Blue Alice Blue Black

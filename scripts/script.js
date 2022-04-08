@@ -2,7 +2,7 @@
 // File to check that javascript is being loaded into pages
 //----------------------------------------------------------
 function sayHello() {
-    console.log("Hello");
+  console.log("Hello");
 }
 
 sayHello();

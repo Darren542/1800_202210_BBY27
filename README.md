@@ -36,36 +36,36 @@ Top level project folder:
 ├── firestore.rules                         # Firestore storage rules.
 ├── htmlTemplate.html                       # template for creating new HTML pages, is not used anywhere.
 ├── images
-│   ├── AlpineSkiing.webp                   # default image for AlpineSkiing events.
-│   ├── Biathlon.webp                       # default image for Biathlon events.
-│   ├── Bobsleigh.jpeg                      # Used on landing page to advertise events.
-│   ├── Bobsleigh.webp                      # default image for Bobsleigh events.
-│   ├── Cross-countrySkiing.webp            # default image for Cross-countrySkiing events.
-│   ├── Curling.webp                        # default image for Curling events
-│   ├── FigureSkating.webp                  # default image for FigureSkating events.
-│   ├── FreestyleSkiing.webp                # default image for FreestyleSkiing events.
-│   ├── Hockey.jpeg                         # Used on landing page to advertise events.
-│   ├── Hockey.webp                         # default image for Hockey events.
-│   ├── Hockey_EventPage.jpg                # displayed on the eventPage before another image loads in.       
-│   ├── Luge.webp                           # default image for Luge events.
-│   ├── NordicCombined.webp                 # default image for NordicCombined events.
-│   ├── Other.webp                          # default image for Other events.
-│   ├── ShortTrackSpeedSkating.webp         # default image for ShortTrackSpeedSkating events.
-│   ├── Skating.webp                        # Used on landing page to advertise events. 
-│   ├── Skeleton.webp                       # default image for Skeleton events.
-│   ├── SkiJumping.webp                     # default image for SkiJumping events.
-│   ├── Snowboard.webp                      # default image for Snowboard events.
-│   ├── SpeedSkating.webp                   # default image for SpeedSkating events.
-│   ├── VOEF-logos (1)                      # Alternate logos.
+│   ├── AlpineSkiing.webp                   # default image for AlpineSkiing events. from Olympics.com
+│   ├── Biathlon.webp                       # default image for Biathlon events. from Olympics.com
+│   ├── Bobsleigh.jpeg                      # Used on landing page to advertise events. from Olympics.com
+│   ├── Bobsleigh.webp                      # default image for Bobsleigh events. from Olympics.com
+│   ├── Cross-countrySkiing.webp            # default image for Cross-countrySkiing events. from Olympics.com
+│   ├── Curling.webp                        # default image for Curling events. from Olympics.com
+│   ├── FigureSkating.webp                  # default image for FigureSkating events. from Olympics.com
+│   ├── FreestyleSkiing.webp                # default image for FreestyleSkiing events. from Olympics.com
+│   ├── Hockey.jpeg                         # Used on landing page to advertise events. from Olympics.com
+│   ├── Hockey.webp                         # default image for Hockey events. from Olympics.com
+│   ├── Hockey_EventPage.jpg                # displayed on the eventPage before another image loads in. from Olympics.com   
+│   ├── Luge.webp                           # default image for Luge events. from Olympics.com
+│   ├── NordicCombined.webp                 # default image for NordicCombined events. from Olympics.com
+│   ├── Other.webp                          # default image for Other events. from Olympics.com
+│   ├── ShortTrackSpeedSkating.webp         # default image for ShortTrackSpeedSkating events. from Olympics.com
+│   ├── Skating.webp                        # Used on landing page to advertise events. from Olympics.com
+│   ├── Skeleton.webp                       # default image for Skeleton events. from Olympics.com
+│   ├── SkiJumping.webp                     # default image for SkiJumping events. from Olympics.com
+│   ├── Snowboard.webp                      # default image for Snowboard events. from Olympics.com
+│   ├── SpeedSkating.webp                   # default image for SpeedSkating events. from Olympics.com
+│   ├── VOEF-logos (1)                      # Alternate logos. Created using https://express.adobe.com/express-apps/logomaker/
 │   │   ├── FinalLogo.png                   # White text, blue body VOEF logo.
 │   │   ├── VOEF-logos.jpeg                 # Blue text, white body, blue background square VOEF logo.
 │   │   ├── VOEF-logos_black.png            # white text, black body VOEF logo.    
 │   │   ├── VOEF-logos_transparent.png      # blue text, white body VOEF logo.
 │   │   ├── VOEF-logos_white.png            # black text, white body VOEF logo.
 │   │   └── logo_info.txt                   # Outlines the fonts, colors, and icons used in the logo.
-│   ├── curling.jpeg                        # Used on landing page to advertise events.
+│   ├── curling.jpeg                        # Used on landing page to advertise events. from Olympics.com
 │   ├── flag_1.jpg                          # On the background of the unlogged in landing page.
-│   ├── newLogo.png                         # logo displayed on top right of navbar.
+│   ├── newLogo.png                         # logo displayed on top right of navbar. Created using https://express.adobe.com/express-apps/logomaker/
 │   ├── newbackground4.png                  # background image for logged in landing page.
 │   ├── olympics.png                        # Olympic logo currently unused. 
 │   ├── profile.png                         # default profile image, is used if user has no profile image.

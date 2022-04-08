@@ -47,6 +47,7 @@
         style="width: 100% ; height :auto; margin: auto">
       <form>
         <fieldset class="mb-3" id="eventInfoFields" disabled>
+
           <div class="form-group">
             <label>Event</label>
             <input type="text" id="event" class="form-control" placeholder="">
@@ -84,32 +85,38 @@
             <input type="text" id="description" class="form-control hidden" placeholder="Enter event description">
             <div id="description2"></div>
           </div>
+
         </fieldset>
+
         <div class="d-flex justify-content-end mt-5" id="btncontainer">
-  
-           <!--  old like button <button type="button" class="btn btn-secondary"><i id="like" class="fa-regular fa-thumbs-up fa-xl"></i></button>
-          <span style="width: 10px"></span> -->
           <button type="button" id="editButton" class="btn btn-secondary hidden" onclick="editEventInfo()">Edit</button>
           <button type="button" id="saveButton" class="btn btn-info hidden" onclick="saveEventInfo()">Save</button>
           <span style="width: 10px"></span>
-          <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'liked')" id="likedDiv"><i id="liked" class="bi bi-heart"></i> Favorite</button>
+          <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'liked')" id="likedDiv"><i
+              id="liked" class="bi bi-heart"></i> Favorite</button>
           <span style="width: 35px"></span>
-          <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'attending')" id="attending">Attend Event</button>
+          <button type="button" class="btn btn-info" onclick="writeEvents(eventDocument,'attending')"
+            id="attending">Attend Event</button>
         </div>
+        
       </form>
 
-      <div id="ownerTitle"><p id="hostedHeading">Host: </p></div>
+      <div id="ownerTitle">
+        <p id="hostedHeading">Host: </p>
+      </div>
 
       <div id="ownerContainer">
         <img id="ownerFrame" src="" />
         <div id="ownerName"></div>
       </div>
 
-      <div><p id="attendHeading">Attending: </p></div>
-      <div id="attendee">
-      <!-- Attendee Cards are loaded in here-->
+      <div>
+        <p id="attendHeading">Attending: </p>
       </div>
-      
+      <div id="attendee">
+        <!-- Attendee Cards are loaded in here-->
+      </div>
+
       <template id="attendeeTemplate">
         <div class="attendeeCard">
           <img class="attendeeFrame" src="" />
@@ -125,7 +132,7 @@
           </div>
         </div>
       </template>
-  
+
 
       <div class="container">
         <h2>Comments</h2>
@@ -143,16 +150,17 @@
           </div>
         </fieldset>
         <div class="d-flex justify-content-start mt-5" id="commentbtncontainer">
-  
-          <button type="button" class="btn btn-secondary" id="cmtsbtn" onclick="writeComments()">Write a comment</button>
+
+          <button type="button" class="btn btn-secondary" id="cmtsbtn" onclick="writeComments()">Write a
+            comment</button>
         </div>
       </form>
-  
-     
-  
+
+
+
     </div>
   </div>
-  
+
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 

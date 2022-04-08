@@ -36,3 +36,9 @@ a {
   width: 262px;
   height: 174px;
 }
+
+.img-fluid {
+  width: auto;
+  height: 100%;
+  padding-bottom: 2em;
+}

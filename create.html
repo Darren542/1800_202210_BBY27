@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>VOEF Create</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="comp1800 boilerplate code" content="my bcit project">
   <meta name="author" content="BCIT">
 
@@ -24,7 +24,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
   <link rel="stylesheet" href="./styles/create.css" />
@@ -32,31 +32,39 @@
 
 </head>
 
-
 <body>
   <!-- navbar is loaded into here -->
   <nav id="navbarPlaceholder"></nav>
 
   <!-- Code for the new HTML page goes here-->
   <div id="body">
+    <!-- Create events input form -->
     <form id="create-form" autocomplete="off">
 
       <h1 class="display-4 fw-bold">Create Event</h1>
 
+      <!-- Create events input form -->
       <div class="btn-group" style="width: 100%;">
-        <input type="radio" class="btn-check" name="options" id="onlineOption" onclick="onlineSwitch()" autocomplete="off" />
+
+        <!-- Button to switch to the online event form view -->
+        <input type="radio" class="btn-check" name="options" id="onlineOption" onclick="onlineSwitch()"
+          autocomplete="off" />
         <label class="btn btn-primary" for="onlineOption">Online</label>
 
-        <input type="radio" class="btn-check" name="options" id="inPersonOption" onclick="inPersonSwitch()" autocomplete="off" checked />
+        <!-- Button to switch to the in person event form view -->
+        <input type="radio" class="btn-check" name="options" id="inPersonOption" onclick="inPersonSwitch()"
+          autocomplete="off" checked />
         <label class="btn btn-primary" for="inPersonOption">In-Person</label>
       </div>
 
+      <!-- Button to switch to the online event form view -->
       <div id="formRow" class="row">
         <div class="form-group col-lg-9 col-md-12">
           <label for="inputEventName" class="form-label">Event Name</label>
           <input type="text" class="form-control" id="inputEventName" placeholder="Event Name">
         </div>
 
+        <!-- Sport dropdown -->
         <div class="form-group col-lg-3 col-md-12">
           <label for="inputSport" class="form-label">Sport</label>
           <select type="text" class="form-control" id="inputSport" placeholder="Sport">
@@ -79,22 +87,28 @@
           </select>
         </div>
 
+        <!-- Description input field -->
         <div class="form-group col-lg-9 col-md-12">
           <label for="Description" class="form-label">Description</label>
-          <textarea class="form-control" id="descriptionBox" rows="1" placeholder="Description" style="max-height: 158px; min-height: 58px;"></textarea>
+          <textarea class="form-control" id="descriptionBox" rows="1" placeholder="Description"
+            style="max-height: 158px; min-height: 58px;"></textarea>
         </div>
 
+        <!-- event photo input field -->
         <div class="form-group col-lg-3 col-sm-12">
           <label for="uploadFile" class="form-label">Upload Event Photo</label>
           <input type="file" id="uploadFile" name="filename" class="btn btn-primary"
-          accept="image/x-png,image/gif,image/jpeg,image/jpg,/image/png" style="color:black; width: 100%; height: 58px;">
+            accept="image/x-png,image/gif,image/jpeg,image/jpg,/image/png"
+            style="color:black; width: 100%; height: 58px;">
         </div>
 
+        <!-- Location input field -->
         <div class="form-group col-lg-6 col-sm-12">
           <label for="inputLocation" class="form-label" id="locationlabel">Location</label>
-          <input type="text" class="form-control"  id="inputLocation" placeholder="Location">
+          <input type="text" class="form-control" id="inputLocation" placeholder="Location">
         </div>
 
+        <!-- City dropdown -->
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputCity" class="form-label">City</label>
           <select type="text" class="form-control" id="inputCity" placeholder="City">
@@ -117,36 +131,38 @@
           </select>
         </div>
 
+        <!-- Use my location button -->
         <div class="form-group col-lg-3 col-sm-12" id="locationdiv">
           <label for="locationBtn" class="form-label" id="locationbtnlbl">Use Your Location</label>
           <button class="btn btn-primary" type="button" id="locationBtn" style="width: 100%; height: 57px;"
             onclick="getLocation()">Get my location</button>
         </div>
 
+        <!-- Start time input field -->
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputStartTime" class="form-label">Start Time</label>
           <input type="time" class="form-control" id="inputStartTime" placeholder="Start Time">
         </div>
 
+        <!-- Start date input field -->
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputStartDate" class="form-label">Start Date</label>
           <input type="date" class="form-control" id="inputStartDate" placeholder="Start Date">
         </div>
 
+        <!-- End time input field -->
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputEndTime" class="form-label">End Time</label>
           <input type="time" class="form-control" id="inputEndTime" placeholder="End Time">
         </div>
 
+        <!-- End date input field -->
         <div class="form-group col-lg-3 col-sm-12">
           <label for="inputEndDate" class="form-label">End Date</label>
           <input type="date" class="form-control" id="inputEndDate" placeholder="End Date">
         </div>
 
-        
-
-       
-
+        <!-- Submit button -->
         <div id="submit-button-container">
           <button type="button" class="btn btn-primary" id="submit-button"
             style="width:100%; height: 55px;">Confirm</button>
@@ -158,7 +174,7 @@
   <!-- Footer is loaded into here-->
   <nav id="footerPlaceholder"></nav>
 
-  <script src="./scripts/firebaseAPI_bby27.js"></script>  
+  <script src="./scripts/firebaseAPI_bby27.js"></script>
   <script src="./scripts/skeleton.js"></script>
   <script src="./scripts/create.js"></script>
 </body>

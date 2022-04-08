@@ -1,8 +1,5 @@
-
-
-#hero{
+#hero {
   background: url("../images/flag.webp") cover/center no-repeat;
-
 }
 
 body {
@@ -12,7 +9,6 @@ body {
   grid-template-rows: 77px 1fr auto;
   height: 100vh;
   overflow-x: hidden;
-
 }
 
 #navbarPlaceholder {
@@ -31,7 +27,8 @@ body {
 a {
   text-decoration: none;
 }
-.likedImg{
+
+.likedImg {
   width: 262px;
   height: 174px;
 }
@@ -51,7 +48,6 @@ a {
   background-color: #DDE8F5;
   padding: 1em;
   border-radius: 10px;
-  
 }
 
 .row {
@@ -62,12 +58,10 @@ a {
   padding-top: 1em;
   padding-bottom: 1em;
   border-radius: 10px;
-
   margin-top: 25px;
   margin-left: 25px;
   margin-right: 25px;
   margin-bottom: 25px;
-
   background-color: #DDE8F5;
 }
 
@@ -79,15 +73,16 @@ a {
 }
 
 .previewImage {
-  cursor:pointer;
+  cursor: pointer;
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1000px) {
   .featuredEvents {
-    display:flex;
+    display: flex;
     justify-content: center;
-    text-align:center;
+    text-align: center;
   }
+
   .featuredItem {
     width: 400px;
     height: 300px;

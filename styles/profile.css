@@ -13,7 +13,7 @@
     grid-row: 1 / span 1;
     grid-column: 1 / span 1;
     background-color: #DDE8F5;
-    
+
 }
 
 .profileBody {
@@ -22,7 +22,7 @@
 }
 
 .profileNavList {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
@@ -34,14 +34,14 @@
 
 .profileNavItem {
     padding: 1.5em;
-    
+
 }
 
-.profileNavList > *:hover {
-    background-color: #B6C8EB; 
+.profileNavList>*:hover {
+    background-color: #B6C8EB;
     border-radius: 5px;
     color: white;
-    cursor:pointer;   
+    cursor: pointer;
 }
 
 #profileTop {
@@ -122,7 +122,7 @@
 }
 
 .btn-info {
-    background-color:#DDE8F5 !important;   
+    background-color: #DDE8F5 !important;
 }
 
 .mt-5 {
@@ -135,38 +135,36 @@
     padding-top: 1em;
     background-color: #DDE8F5;
     border-radius: 10px;
-
 }
 
- @media (min-width: 1000px){
+@media (min-width: 1000px) {
     #body {
         display: grid;
         grid-template-rows: 1fr;
         grid-template-columns: 200px 1fr;
     }
-    
+
     .profileNav {
         grid-row: 1 / span 1;
         grid-column: 1 / span 1;
         background-color: white;
-        
     }
-    
+
     .profileBody {
         grid-row: 1 / span 1;
         grid-column: 2 / span 1;
     }
 
     .profileNavList {
-        display:block;
+        display: block;
         align-items: center;
         height: 100%;
         list-style-type: none;
         margin-top: 30px;
     }
-    
-    .profileNavList > * {
-        margin-top:30px;
+
+    .profileNavList>* {
+        margin-top: 30px;
     }
 
     .mb-3 {
@@ -181,36 +179,34 @@
 
 /* CSS for the cards */
 .grid-test {
-    display:grid;
+    display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: auto;
     padding: 0;
 }
 
 .image-box {
-    display:flex;
-    margin:0 ;
+    display: flex;
+    margin: 0;
     padding: 0.5em;
 }
 
 .card-image-test {
-    display:flex;
-    justify-self:center;
-    align-self:center;
-    padding-top:auto;
-    padding-bottom:auto;
-    
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding-top: auto;
+    padding-bottom: auto;
 }
 
 .card-body {
-    display:grid;
-    justify-content:left;
-    align-content:center;
+    display: grid;
+    justify-content: left;
+    align-content: center;
     height: 100%;
-} 
+}
 
-.cards > h1 {
+.cards>h1 {
     padding-top: 1em;
     padding-bottom: 1em;
-
 }

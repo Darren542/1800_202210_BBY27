@@ -1,30 +1,29 @@
 #body {
-    margin:0;
-    padding:0;
-    width:100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
     grid-column: 1 / span 2;
 }
 
 .grid-test {
-    display:grid;
+    display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: auto;
     padding: 0;
 }
 
 .image-box {
-    display:flex;
-    margin:0 ;
-    padding:0;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .card-image-test {
-    display:flex;
-    justify-self:center;
-    align-self:center;
-    padding-top:auto;
-    padding-bottom:auto;
-    
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    padding-top: auto;
+    padding-bottom: auto;
 }
 
 .hidden {
@@ -38,7 +37,7 @@
     padding-bottom: 50px;
     padding-top: 50px;
     z-index: 100;
-    background-color:#DDE8F5;
+    background-color: #DDE8F5;
     width: 93.5%;
     justify-content: center;
     margin-left: 1em;
@@ -52,17 +51,14 @@
 #advancedContainer {
     display: grid();
     grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 1fr; 
-
-
+    grid-template-rows: 1fr 1fr 1fr;
 }
 
 input[type='checkbox'] {
-    width:25px;
-    height:25px;
-    background:white;
-    border-radius:5px;
-
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 5px;
 }
 
 #locationSearch {
@@ -78,54 +74,48 @@ input[type='checkbox'] {
     margin-right: 1em;
     width: 25px;
     height: 25px;
-
 }
-#locations{
- width:170px;
+
+#locations {
+    width: 170px;
 }
 
 #locationsLabel {
     margin-right: 0.5em;
-
 }
 
 #locationsBar {
     padding-left: 2.6em;
 }
 
-
-#categorySearch{
+#categorySearch {
     grid-row: 2 /span 1;
     grid-column: 1 /span 1;
     display: flex;
     flex-direction: row;
     padding-top: 1em;
     padding-bottom: 1.5em;
-
 }
 
 #categoryToggle {
     margin-right: 1.1em;
     width: 25px;
     height: 25px;
-
 }
 
 #categoriesLabel {
-    margin-right:3.6em;
+    margin-right: 3.6em;
 }
 
 .categoriesBar {
-    
     margin-left: .5em;
 }
 
 #categories {
-    /* margin-right: 1em; */
     width: 170px;
 }
 
-#datesSelector{
+#datesSelector {
     grid-row: 3 /span 1;
     grid-column: 1 /span 1;
     display: flex;
@@ -134,15 +124,12 @@ input[type='checkbox'] {
 
 #datesLabel {
     margin-right: .4em;
-
 }
 
 #dateToggle {
     width: 25px;
     margin-right: 1.1em;
-    
 }
-
 
 #startTime {
     margin-left: 1.1em;
@@ -155,7 +142,6 @@ input[type='checkbox'] {
     display: flex;
     flex-direction: row;
     padding-bottom: 1em;
-
 }
 
 .sortBy {
@@ -177,28 +163,27 @@ input[type='checkbox'] {
 
 #searchBarDiv {
     display: flex;
-    align-items:right;
+    align-items: right;
     width: 60vw;
     gap: 10px;
 }
 
 #searchBar {
-    padding-top: 1em;;
+    padding-top: 1em;
     display: flex;
     justify-content: center;
     gap: 12px;
 }
 
-
 .card-body {
-    display:grid;
-    justify-content:left;
-    align-content:center;
+    display: grid;
+    justify-content: left;
+    align-content: center;
     height: 100%;
 }
 
 .searchBtn {
-    margin-right:10px;
+    margin-right: 10px;
     width: 150px;
 }
 
@@ -206,7 +191,6 @@ input[type='checkbox'] {
     background-color: #DDE8F5;
     color: black;
     border: 1px solid black;
-
 }
 
 #searchButton:hover {
@@ -218,7 +202,6 @@ input[type='checkbox'] {
     background-color: #DDE8F5;
     color: black;
     border: 1px solid black;
-
 }
 
 #searchOptions:hover {
@@ -243,9 +226,8 @@ input[type='checkbox'] {
     padding-top: 1em;
 }
 
-.cards > h3 {
+.cards>h3 {
     padding-top: 1em;
     padding-bottom: 1em;
     padding-left: 1em;
-
 }

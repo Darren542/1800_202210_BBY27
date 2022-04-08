@@ -12,20 +12,20 @@
 }
 
 #attendee {
-    display:flex;
-    
+    display: flex;
+
 }
 
 .attendeeCard {
-    text-align:center;
-    border-radius:5px;
+    text-align: center;
+    border-radius: 5px;
     width: 75px;
     background-color: #B6C8EB;
 }
 
 #ownerContainer {
-    text-align:center;
-    border-radius:5px;
+    text-align: center;
+    border-radius: 5px;
     width: 75px;
     background-color: #B6C8EB;
 }
@@ -43,25 +43,21 @@
     padding-bottom: 4em;
 }
 
-
-
-
-
 .hidden {
     display: none;
 }
 
-.container > h1 {
+.container>h1 {
     padding-top: 1em;
     padding-bottom: 1em;
 }
 
 #eventInfoFields {
     background-color: #B6C8EB;
-    padding-bottom: 40px;  
+    padding-bottom: 40px;
 }
 
-div > label {
+div>label {
     padding-top: 1em;
     padding-left: 0.5em;
 
@@ -72,7 +68,7 @@ input[type="text"] {
     margin-left: 1.3em;
     margin-bottom: 1em;
 
-} 
+}
 
 .btn-info {
     background-color: #B6C8EB !important;
@@ -96,7 +92,7 @@ input[type="text"] {
     padding-left: 1em;
     padding-right: 1em;
     padding-bottom: 3em;
-    
+
 }
 
 #cmtsbtn {
@@ -130,11 +126,11 @@ fieldset {
 
 #description2 {
     margin-left: 23px;
-    
+
     width: 90%;
-    height:fit-content;
-    
+    height: fit-content;
+
     background-color: #eaedf3;
     border-radius: 5px;
-    padding:8px;
+    padding: 8px;
 }

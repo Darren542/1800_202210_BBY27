@@ -29,15 +29,12 @@ if (sortBy = "timeStampStart") {
     //console.log("minDate", minDate);
 }
 // don't display events before this time by default
-if (!minTimeStamp){
+if (!minTimeStamp) {
     //minTimeStamp = Date.now() - 86400000;
     minTimeStamp = Date.parse('2000-02-28T13:09');
 }
 
 //console.log("the city", locationId);
-
-//get the distance from user
-//TODO no code here yet
 
 //--------------------------------------------------------------------------------------
 // Displays the cards on the pages body. Param is what collection to search in.
@@ -90,7 +87,7 @@ function displayCards(snap) {
         var description = doc.data().description;
         var type = doc.data().type;
         // get rid of date into that is not wanted to be displayed
-        var time = doc.data().startDate; 
+        var time = doc.data().startDate;
         time = time.toString();
         time = time.slice(0, 24);
         // display no start time instead of NaN
@@ -129,7 +126,6 @@ function displayCards(snap) {
     })
 }
 
-
 //-----------------------------------------------------------------------------
 // function for displaying images on cards.
 // Tries to get an image from the firebase storage.
@@ -162,7 +158,7 @@ function displayImages(snap) {
 // If event is ongoing returns that event is ongoinging.
 // If event has ended returns that event has ended.
 //-----------------------------------------------------------------------
-function displayTimeUntilStart(doc){
+function displayTimeUntilStart(doc) {
     var timeUntilStart = doc.data().timeStampStart - Date.now() + 25200001;
     var timeUntilEnd = doc.data().timeStampEnd - Date.now() + 25200001;
     let StartTime;
@@ -182,7 +178,7 @@ function displayTimeUntilStart(doc){
 }
 
 //-----------------------------------------------------------------
-// Code for testing creating dayes and spliting them for display
+// Code for testing creating days and spliting them for display
 //-----------------------------------------------------------------
 // //Testing code here
 // var myDate = "26-02-2022";

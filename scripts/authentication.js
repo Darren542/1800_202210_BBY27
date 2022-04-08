@@ -53,7 +53,7 @@ var uiConfig = {
 
 ui.start('#firebaseui-auth-container', uiConfig);
 window.addEventListener("load", function () {
-    setTimeout(function(){
+    setTimeout(function () {
         //do what you need here
     }, 2000);
     const logout = document.querySelector("#logout");

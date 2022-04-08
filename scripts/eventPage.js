@@ -110,7 +110,7 @@ function showEventImage(type) {
     }).catch((error) => {
       document.querySelector('.card-img-top').src = "./images/" + type + ".webp";
       console.log("No image found ", error);
-  });
+    });
 }
 
 //call the function to run it 
@@ -162,10 +162,10 @@ function saveEventInfo() {
 //-----------------------------------------------------------------------------
 function saveLikedEvent(eventId) {
   currentUser.collection("likedEvents").doc(eventId).set({
-      eventId: eventId
-    }, {
-      merge: true
-    })
+    eventId: eventId
+  }, {
+    merge: true
+  })
     .then(function () {
       console.log("Liked event has been saved!");
       document.getElementById("like").className = 'fa-solid fa-thumbs-up fa-xl';
@@ -195,14 +195,14 @@ function postComment() {
   console.log("This button works too")
 
   db.collection('events').doc(eventId).collection("comments").doc().set({
-      comment_text: document.getElementById("comment").value,
-      userId: sessionStorage.getItem('userId'),
-      userName: sessionStorage.getItem('userName'),
-      timeStamp: Date.now()
-    }).then(function () {
-      console.log("Comment has been posted. ");
-      location.reload();
-    })
+    comment_text: document.getElementById("comment").value,
+    userId: sessionStorage.getItem('userId'),
+    userName: sessionStorage.getItem('userName'),
+    timeStamp: Date.now()
+  }).then(function () {
+    console.log("Comment has been posted. ");
+    location.reload();
+  })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
@@ -220,17 +220,17 @@ function populateComments() {
     .then(snap => {
       console.log("snapLength", snap.length);
       snap.forEach(doc => {
-        var comment_body = doc.data().comment_text; 
+        var comment_body = doc.data().comment_text;
         var userName = doc.data().userName;
         let testCommentCard = commentCardTemplate.content.cloneNode(true);
         testCommentCard.querySelector('.comment-author').innerHTML = userName;
         testCommentCard.querySelector('.comment-content').innerHTML = comment_body;
         commentCardGroup.appendChild(testCommentCard);
-      // })
-      console.log("Comment is viewable");
+        // })
+        console.log("Comment is viewable");
       });
     });
-    // })
+  // })
 }
 populateComments();
 
@@ -244,10 +244,10 @@ function writeEvents(userDoc, collect) {
   //console.log("new Doc idea function", newDocId);
   // Saves the event into the users document in the right collection.
   db.collection('users').doc(userId).collection(collect).doc(newDocId).set(userDoc.data())
-  .then(function (docRef2) {
-    console.log("Second Document written with ID: ");
-    console.log(docRef2);
-  })
+    .then(function (docRef2) {
+      console.log("Second Document written with ID: ");
+      console.log(docRef2);
+    })
     .catch(function (error) {
       console.error("Error adding document: ", error);
     });
@@ -260,15 +260,15 @@ function writeEvents(userDoc, collect) {
   }).then(function () {
     console.log("Comment has been posted. ");
   })
-  .catch(function (error) {
-    console.error("Error adding document: ", error);
-  });
+    .catch(function (error) {
+      console.error("Error adding document: ", error);
+    });
 
   // Changes the display to show that event was liked.
   if (collect == "liked") {
     console.log("eventLiked", collect)
     document.getElementById("liked").className = 'bi bi-heart-fill';
-    document.getElementById("liked").innerHTML= 'Liked';
+    document.getElementById("liked").innerHTML = 'Liked';
     document.getElementById("likedDiv").className = 'btn btn-success';
   }
 
@@ -291,10 +291,10 @@ function displayHost() {
   firebase.storage().ref('users/' + EventOwnerId + '/profile.png').getDownloadURL().then(imgUrl => {
     document.getElementById("ownerFrame").src = imgUrl;
     console.log("imgUrl", imgUrl);
-  }).catch( () => {
+  }).catch(() => {
     console.log("no profile image found");
     document.getElementById("ownerFrame").src = './images/profile.png';
-  }); 
+  });
   document.getElementById("ownerName").innerHTML = EventOwnerName;
 }
 
@@ -303,7 +303,7 @@ function displayHost() {
 //----------------------------------------------------------------------
 function displayAttendees() {
   let template = document.getElementById("attendeeTemplate");
-  var i = 0;  
+  var i = 0;
   db.collection("events").doc(newDocId).collection("attending").get().then(function (snap) {
     snap.forEach(doc => {
       let newName = doc.data().userName;
@@ -316,7 +316,7 @@ function displayAttendees() {
       document.getElementById("attendee").appendChild(newCard);
       i++;
     })
-});
+  });
 }
 
 //----------------------------------------------------------------------------
@@ -329,10 +329,10 @@ function displayAttendeeImage(userId) {
   firebase.storage().ref('users/' + userId + '/profile.png').getDownloadURL().then(imgUrl => {
     document.getElementById(userId).src = imgUrl;
     //console.log("imgUrl", imgUrl);
-  }).catch( () => {
+  }).catch(() => {
     document.getElementById(userId).src = './images/profile.png';
     console.log("no profile image found");
-  }); 
+  });
 }
 
 // Prevents users who are not event owner from seeing these options.

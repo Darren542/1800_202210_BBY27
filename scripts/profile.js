@@ -167,7 +167,6 @@ myDate2 = myDate2.split("-");
 var newDate2 = new Date( myDate2[2], myDate2[1] - 1, myDate2[0]);
 //newDate2 = newDate2.getTime();
 
-
 setTimeout(function() { changeDisplay(displayedPage); }, 500);
 
 //-----------------------------------------------------------------------
@@ -197,7 +196,9 @@ function uploadImage() {
     }
 }
 
-// to preview the image
+//-----------------------------------------------------------------------------
+// Used to preview the image
+//-----------------------------------------------------------------------------
 function preview() {
     document.getElementById("frame").src = URL.createObjectURL(event.target.files[0]);
 }

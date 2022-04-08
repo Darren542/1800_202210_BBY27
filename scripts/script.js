@@ -1,7 +1,7 @@
 //----------------------------------------------------------
 // File to check that javascript is being loaded into pages
 //----------------------------------------------------------
-function sayHello () {
+function sayHello() {
     console.log("Hello");
 }
 

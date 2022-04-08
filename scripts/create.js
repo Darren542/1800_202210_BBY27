@@ -9,7 +9,9 @@ var online = false;
 var userId;
 var userName;
 
-/**changes the view to online */
+//-------------------------------------------------------
+// switches from in person view to online view
+//-------------------------------------------------------
 function onlineSwitch() {
   /** changes the label to Link */
   document.getElementById("locationlabel").innerHTML = "Link";
@@ -35,7 +37,9 @@ function onlineSwitch() {
 
 }
 
-/**changes the view to in person */
+//-------------------------------------------------------
+// switches from online view to in person view
+//-------------------------------------------------------
 function inPersonSwitch() {
   /** changes the label to Location */
   document.getElementById("locationlabel").innerHTML = "Location";
@@ -58,8 +62,9 @@ function inPersonSwitch() {
   online = false;
 }
 
-
-/**displays your location in latitude and longitude coordinates, in the input field Location */
+//-------------------------------------------------------
+// displays your location in latitude and longitude coordinates, in the input field Location
+//-------------------------------------------------------
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
@@ -90,8 +95,7 @@ var timeStampEnd;
 var userId;
 var EventRef;
 var city;
-// contains the comments map 
-var comments;
+
 // Code to write event to database
 
 //-------------------------------------------------------------------------
@@ -116,7 +120,7 @@ function saveDocument() {
   userId = sessionStorage.getItem('userId');
   EventRef = db.collection("events");
   city = document.querySelector("#inputCity").value;
-  
+
   EventRef.add({
     description: eventDesc,
     endTime: endTime,
@@ -136,7 +140,7 @@ function saveDocument() {
     creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
     online: online,
     city: city
-    
+
   }).then(function (docRef) {
     console.log("First Document written with ID: ", docRef.id);
     console.log(docRef);
@@ -150,6 +154,7 @@ function saveDocument() {
       console.error("Error adding document: ", error);
     });
 }
+
 //----------------------------------------------------------------------------------
 // code to get information entered into users collection in the firebase database.
 // After this runs they get redirected to the new events page.
@@ -178,7 +183,7 @@ function writeEvents() {
     creationTimestamp: firebase.firestore.FieldValue.serverTimestamp(),
     online: online,
     city: city
-    
+
   }).then(function (docRef2) {
     console.log("Second Document written with ID: ");
     console.log(docRef2);
@@ -188,7 +193,6 @@ function writeEvents() {
       console.error("Error adding document: ", error);
     });
 }
-
 
 //--------------------------------------------------------------------------
 // Uploads the user selected image to the firebase storage.

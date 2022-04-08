@@ -38,24 +38,24 @@ insertName();
 //------------------------------------------------------------------------
 async function randomDoc(collection, callback) {
 
-    var answer = db.collection(collection).doc().id;
-    var docId = 0;
-    //console.log("Random id to search against", answer);
-    db.collection(collection).where("__name__", ">", answer).limit(1).get()
-        .then(function (snap) {
-            let count = 0;
-            snap.forEach(doc => {
-                callback(doc.id);
-                count++
-            });
-            if (count == 0) {
-                console.log("no document found");
-                randomDoc(collection);
-            }
-        })
-        .catch((error) => {
-            console.log("does this error go", error);
-        });
+  var answer = db.collection(collection).doc().id;
+  var docId = 0;
+  //console.log("Random id to search against", answer);
+  db.collection(collection).where("__name__", ">", answer).limit(1).get()
+    .then(function (snap) {
+      let count = 0;
+      snap.forEach(doc => {
+        callback(doc.id);
+        count++
+      });
+      if (count == 0) {
+        console.log("no document found");
+        randomDoc(collection);
+      }
+    })
+    .catch((error) => {
+      console.log("does this error go", error);
+    });
 }
 
 //----------------------------------------------------------------------------------------
@@ -63,10 +63,10 @@ async function randomDoc(collection, callback) {
 // attaches docId as url param to discover button.
 //----------------------------------------------------------------------------------------
 randomDoc("events", function (docid) {
-    let discoverButton = document.getElementById("discover");
-    discoverButton.addEventListener('click', () => {
-        let randomId3 = randomDoc("events");
-        //console.log("click button", docid);
-        window.location.href = `./eventPage.html?eventId=${docid}`;
-    });
+  let discoverButton = document.getElementById("discover");
+  discoverButton.addEventListener('click', () => {
+    let randomId3 = randomDoc("events");
+    //console.log("click button", docid);
+    window.location.href = `./eventPage.html?eventId=${docid}`;
+  });
 })

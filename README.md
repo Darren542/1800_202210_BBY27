@@ -1,4 +1,4 @@
-## My Web Application (Vancouver Olympic Event Finder)
+## Vancouver Olympic Event Finder
 
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -6,10 +6,11 @@
 * [Resources](#resources)
 
 ## General Info
-This browser based web application to help people discover,attend and create events during the 2030 Vancouver Omplypic games
+This browser based web application to help people discover, attend and create events during the 2030 Vancouver Omplypic games.
 * Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
 * Hi my name is Alex. I'm excited about this project because it is useful for co-op
 * Hi my name is Eric. I am excited about this project because it's helpful to gain some project experience
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
@@ -24,14 +25,14 @@ Technologies used for this project:
 Content of the project folder:
 
 ```
-.
+Top level project folder:
 ├── 404.html
-├── README.md
+├── README.md                               # ReadMe file for passover.
 ├── create.html                             # create HTML file, what is used when user creating an event.
 ├── eventPage.html                          # event HTML file, what users see when viewing an event.
-├── firebase.json
-├── firestore.indexes.json
-├── firestore.rules
+├── firebase.json                           # JSON init object.
+├── firestore.indexes.json                  # JSON database routing.    
+├── firestore.rules                         # Firestore storage rules.
 ├── htmlTemplate.html                       # template for creating new HTML pages, is not used anywhere.
 ├── images
 │   ├── AlpineSkiing.webp                   # default image for AlpineSkiing events.
@@ -55,12 +56,12 @@ Content of the project folder:
 │   ├── Snowboard.webp                      # default image for Snowboard events.
 │   ├── SpeedSkating.webp                   # default image for SpeedSkating events.
 │   ├── VOEF-logos (1)                      # Alternate logos.
-│   │   ├── FinalLogo.png
-│   │   ├── VOEF-logos.jpeg
-│   │   ├── VOEF-logos_black.png
-│   │   ├── VOEF-logos_transparent.png
-│   │   ├── VOEF-logos_white.png
-│   │   └── logo_info.txt
+│   │   ├── FinalLogo.png                   # White text, blue body VOEF logo.
+│   │   ├── VOEF-logos.jpeg                 # Blue text, white body, blue background square VOEF logo.
+│   │   ├── VOEF-logos_black.png            # white text, black body VOEF logo.    
+│   │   ├── VOEF-logos_transparent.png      # blue text, white body VOEF logo.
+│   │   ├── VOEF-logos_white.png            # black text, white body VOEF logo.
+│   │   └── logo_info.txt                   # Outlines the fonts, colors, and icons used in the logo.
 │   ├── curling.jpeg                        # Used on landing page to advertise events.
 │   ├── flag_1.jpg                          # On the background of the unlogged in landing page.
 │   ├── newLogo.png                         # logo displayed on top right of navbar.
@@ -72,8 +73,8 @@ Content of the project folder:
 ├── index.html                              # index HTML file, what is used as the landing page for unlogged in users.
 ├── login.html                              # login HTML file, what is displayed on the login page.
 ├── main.html                               # main HTML file, what is used as the landing page for logged in users.
-├── package-lock.json
-├── package.json
+├── package-lock.json                       # keeps track of the exact version of every package that is installed.
+├── package.json                            # records important metadata about a project.
 ├── profile.html                            # Profile HTML file, what is displayed on the users profile page.
 ├── scripts
 │   ├── authentication.js                   # Javascript for the user authentication
@@ -86,8 +87,7 @@ Content of the project folder:
 │   ├── searchPage.js                       # Javascript file for the searchPage.html page
 │   └── skeleton.js                         # Javascript file to load in the navbar and footer
 ├── search.html                             # search HTML file, what is used when users searching for events
-├── sprint4focus.txt
-├── storage.rules
+├── storage.rules                           # controls the availability of files.
 ├── styles
 │   ├── create.css                          # Styles for create.html page
 │   ├── events.css                          # Styles for eventPage.html page

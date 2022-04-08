@@ -74,7 +74,7 @@ Content of the project folder:
 ├── main.html                               # main HTML file, what is used as the landing page for logged in users.
 ├── package-lock.json
 ├── package.json
-├── profile.html                            # profile HTML file, what is displayed on the users profile page.
+├── profile.html                            # Profile HTML file, what is displayed on the users profile page.
 ├── scripts
 │   ├── authentication.js                   # Javascript for the user authentication
 │   ├── create.js                           # Javascript for the create.html page
@@ -89,19 +89,19 @@ Content of the project folder:
 ├── sprint4focus.txt
 ├── storage.rules
 ├── styles
-│   ├── create.css
-│   ├── events.css
-│   ├── login.css
-│   ├── main.css
-│   ├── navbar.css
-│   ├── navbarloggedin.css
-│   ├── profile.css
-│   ├── search.css
-│   └── style.css
-├── templates
-│   ├── footer.html
-│   ├── navbar.html
-│   └── navbar_logged_in.html
+│   ├── create.css                          # Styles for create.html page
+│   ├── events.css                          # Styles for eventPage.html page
+│   ├── login.css                           # Styles for login.html page
+│   ├── main.css                            # Styles for main.html page
+│   ├── navbar.css                          # Styles for navbar.html page
+│   ├── navbarloggedin.css                  # Styles for navbar-logged-in.html page
+│   ├── profile.css                         # Styles for profile.html page
+│   ├── search.css                          # Styles for search.html page
+│   └── style.css                           # Styles for index.html and main.html page
+├── templates                               
+│   ├── footer.html                         # Template footer for html pages
+│   ├── navbar.html                         # Template navbar for html pages
+│   └── navbar_logged_in.html               # Template navbar for logged in users html pages
 └── unused
     ├── css
     │   └── myevents.css
@@ -130,5 +130,5 @@ PresentationPlanningSheet: https://docs.google.com/document/d/1W-lpZSqoFRKnoDF2F
 Presentation: https://www.canva.com/design/DAE8qC_lUC4/ZXm7jnpPsn0CPwIoi1s57g/edit?utm_content=DAE8qC_lUC4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## ColorPalete
-252627 399E5A 5ABCB9      BB4430 3D52D5
-Black  Green  bluegreen   orange blue
+000000 3D525D B6C8EB            DDE8F5     000000 
+Black  Iris   Light Steele Blue Alice Blue Black

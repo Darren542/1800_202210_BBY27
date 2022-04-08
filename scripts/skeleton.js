@@ -8,7 +8,7 @@ function loadSkeleton() {
   firebase.auth().onAuthStateChanged(user => {
     // Check if user is signed in:
     if (user) {
-      console.log($('#navbarPlaceholder').load('./templates/navbar_logged_in.html'));
+      console.log($('#navbarPlaceholder').load('./templates/navbar-logged-in.html'));
       console.log($('#footerPlaceholder').load('./templates/footer.html'));
       // Do something for the current logged-in user here: 
       console.log(user.uid);

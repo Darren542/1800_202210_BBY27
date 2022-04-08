@@ -7,7 +7,6 @@
 * [Colour Palete](#colour-palete)
 * [Contact](#contact)
 
-
 ## General Info
 This browser based web application to help people discover, attend and create events during the 2030 Vancouver Omplypic games.
 * Hi my name is Darren Luck, I'm excited about this project because it is culmination of what we have working towards in all are other classes.
@@ -27,8 +26,7 @@ Technologies used for this project:
 ## Content
 Content of the project folder:
 
-```
- Top level of project folder: 
+Top level of project folder: 
 ├── index.html               # index HTML file, what is used as the landing page for unlogged in users.
 ├── login.html               # login HTML file, what is displayed on the login page.
 ├── main.html                # main HTML file, what is used as the landing page for logged in users.
@@ -40,7 +38,6 @@ Content of the project folder:
 ├── .gitignore               # Git ignore file.
 └── README.md                # ReadMe file for passover.
 
-```
 It has the following subfolders and files:
 ├── images                   # Folder for images
         /VOEF-logos (1)                     # made with Adobe logo maker. 
@@ -126,8 +123,6 @@ Node express files:
     /package-lock.json        # keeps track of the exact version of every package that is installed.
     /package.json             # records important metadata about a project.
 
-```
-
 ## Resources
 - Figjam: https://www.figma.com/file/zCPu7sD7vHRGbtY8OL4UDk/1800-202210-CampusTeamBBY27-(Copy)
 - Github: https://github.com/Darren542/1800_202210_BBY27
@@ -135,7 +130,7 @@ Node express files:
 - PresentationPlanningSheet: https://docs.google.com/document/d/1W-lpZSqoFRKnoDF2FWZyB_qdSFIGn7x8DU6Nb2s6Jk4/edit
 - Presentation: https://www.canva.com/design/DAE8qC_lUC4/ZXm7jnpPsn0CPwIoi1s57g/edit?utm_content=DAE8qC_lUC4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-## Colour Palete
+## Colour-Palete
 000000 3D525D B6C8EB            DDE8F5     000000 
 Black  Iris   Light Steele Blue Alice Blue Black
 

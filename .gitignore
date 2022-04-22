@@ -3,4 +3,5 @@
 node_modules/
 scripts/firebaseAPI_bby27.js
 .firebase
+.vscode
 

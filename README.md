@@ -130,8 +130,10 @@ Node express files:
 - Jquery https://jquery.com/
 
 ## Colour-Palete
+<pre>
 000000 3D525D B6C8EB            DDE8F5     000000 
 Black  Iris   Light Steele Blue Alice Blue Black
+</pre>
 
 ## Contact 
 * Darren Luck - dluck@my.bcit.ca

@@ -24,6 +24,7 @@ Technologies used for this project:
 * Jquery
 		
 ## Content
+```
 Content of the project folder:
 
 Top level of project folder: 
@@ -122,7 +123,7 @@ Firebase hosting files:
 Node express files:
     /package-lock.json        # keeps track of the exact version of every package that is installed.
     /package.json             # records important metadata about a project.
-
+```
 ## Resources
 - Github: https://github.com/Darren542/1800_202210_BBY27
 - Firebase: https://firebase.google.com/ 
